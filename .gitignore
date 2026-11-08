@@ -1,0 +1,17 @@
+build/
+tools/vendor/
+node_modules/
+config/config.php
+js
+*.html
+test*
+tmp*
+*.pyc
+__pycache__/
+CHAT.md
+sources/
+CLAUDE.md
+.claude/
+MILNIKY.md
+ZADANI.md
+*.log

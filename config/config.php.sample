@@ -1,0 +1,6 @@
+<?php
+
+  $dbHostname = 'localhost';
+  $dbName = 'sabrewulf';
+  $dbUser = 'your-user-name';
+  $dbPassword = 'your-password';

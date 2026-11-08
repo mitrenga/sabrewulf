@@ -1,0 +1,9 @@
+{
+    "standalone": [
+        "sabremanPhysics.js",
+        "worldEntities.js",
+        "worldMonsters.js",
+        "gameWorker.js",
+        "svision/js/audio/worker/audioProcessor.js"
+    ]
+}
