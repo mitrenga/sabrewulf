@@ -1,0 +1,3390 @@
+{
+ "note": "M4: svet Sabre Wulf vytazeny z originalu (tools/dumpentities.py). Kazda hodnota je operand skutecne instrukce v build/sabrewulf-run.bin, adresa je v \"source\"; u kazde tabulky se navic kontroluje, ze konci presne tam, kde zacina neco jineho, co je pojmenovane nezavisle. Popis rutin: sources/docs/disasm_notes.md 16.",
+ "table": {
+  "address": "$9702",
+  "end": "$982E",
+  "recordLength": 12,
+  "slots": 25,
+  "groups": [
+   {
+    "name": "immortal",
+    "address": "$9702",
+    "firstSlot": 0,
+    "count": 12,
+    "note": "nesmrteln\u00e9 entity a Sabreman \u2013 jedin\u00e1 skupina, kterou hra p\u0159i startu kop\u00edruje hotovou z $AC77"
+   },
+   {
+    "name": "nastie",
+    "address": "$9792",
+    "firstSlot": 12,
+    "count": 6,
+    "note": "zv\u00ed\u0159ata, kter\u00e1 se dosazuj\u00ed za b\u011bhu podle obrazovky (M5)"
+   },
+   {
+    "name": "orchid",
+    "address": "$97DA",
+    "firstSlot": 18,
+    "count": 1,
+    "note": "orchidej t\u00e9 obrazovky, na kter\u00e9 Sabreman je"
+   },
+   {
+    "name": "object",
+    "address": "$97E6",
+    "firstSlot": 19,
+    "count": 2,
+    "note": "dva p\u0159edm\u011bty t\u00e9 obrazovky"
+   },
+   {
+    "name": "amulet",
+    "address": "$97FE",
+    "firstSlot": 21,
+    "count": 4,
+    "note": "\u010dty\u0159i kusy amuletu \u2013 ty le\u017e\u00ed ve sv\u011bt\u011b celou hru"
+   }
+  ],
+  "note": "$99F0 posouva IX o recordLength a $9A02 porovnava s end, takze slotu je (end-address)/recordLength. Prvni pruchod smyckou obslouzi jen Sabremana ($9A18), ostatni entity az druhy."
+ },
+ "immortal": [
+  {
+   "slot": 0,
+   "sprite": 16,
+   "name": "Sabreman: Left Frame 1",
+   "room": 168,
+   "column": 8,
+   "row": 10,
+   "state": 0,
+   "x": 120,
+   "y": 112,
+   "colour": 71,
+   "dx": 0,
+   "dy": 0,
+   "bytes": "10A800787047000000000000"
+  },
+  {
+   "slot": 1,
+   "sprite": 48,
+   "name": "Rhino: Left Frame 2",
+   "room": 152,
+   "column": 8,
+   "row": 9,
+   "state": 0,
+   "x": 112,
+   "y": 131,
+   "colour": 67,
+   "dx": -48,
+   "dy": 0,
+   "bytes": "309800708343D00000000000"
+  },
+  {
+   "slot": 2,
+   "sprite": 50,
+   "name": "Rhino: Right Frame 2",
+   "room": 7,
+   "column": 7,
+   "row": 0,
+   "state": 0,
+   "x": 112,
+   "y": 63,
+   "colour": 67,
+   "dx": 48,
+   "dy": 0,
+   "bytes": "320700703F43300000000000"
+  },
+  {
+   "slot": 3,
+   "sprite": 48,
+   "name": "Rhino: Left Frame 2",
+   "room": 243,
+   "column": 3,
+   "row": 15,
+   "state": 0,
+   "x": 112,
+   "y": 131,
+   "colour": 67,
+   "dx": -48,
+   "dy": 0,
+   "bytes": "30F300708343D00000000000"
+  },
+  {
+   "slot": 4,
+   "sprite": 50,
+   "name": "Rhino: Right Frame 2",
+   "room": 152,
+   "column": 8,
+   "row": 9,
+   "state": 0,
+   "x": 112,
+   "y": 63,
+   "colour": 67,
+   "dx": 48,
+   "dy": 0,
+   "bytes": "329800703F43300000000000"
+  },
+  {
+   "slot": 5,
+   "sprite": 60,
+   "name": "Tribesman: Left Frame 4",
+   "room": 167,
+   "column": 7,
+   "row": 10,
+   "state": 0,
+   "x": 80,
+   "y": 80,
+   "colour": 66,
+   "dx": 2,
+   "dy": 2,
+   "bytes": "3CA700505042020200000000"
+  },
+  {
+   "slot": 6,
+   "sprite": 60,
+   "name": "Tribesman: Left Frame 4",
+   "room": 68,
+   "column": 4,
+   "row": 4,
+   "state": 0,
+   "x": 80,
+   "y": 80,
+   "colour": 67,
+   "dx": 2,
+   "dy": -2,
+   "bytes": "3C440050504302FE00000000"
+  },
+  {
+   "slot": 7,
+   "sprite": 60,
+   "name": "Tribesman: Left Frame 4",
+   "room": 226,
+   "column": 2,
+   "row": 14,
+   "state": 0,
+   "x": 48,
+   "y": 120,
+   "colour": 69,
+   "dx": -3,
+   "dy": -3,
+   "bytes": "3CE200307845FDFD00000000"
+  },
+  {
+   "slot": 8,
+   "sprite": 0,
+   "name": "None",
+   "room": 0,
+   "column": 0,
+   "row": 0,
+   "state": 0,
+   "x": 0,
+   "y": 0,
+   "colour": 0,
+   "dx": 0,
+   "dy": 0,
+   "bytes": "000000000000000000000000"
+  },
+  {
+   "slot": 9,
+   "sprite": 80,
+   "name": "Wulf: Left Frame 1",
+   "room": 246,
+   "column": 6,
+   "row": 15,
+   "state": 0,
+   "x": 112,
+   "y": 63,
+   "colour": 69,
+   "dx": -64,
+   "dy": 0,
+   "bytes": "50F600703F45C00000000000"
+  },
+  {
+   "slot": 10,
+   "sprite": 160,
+   "name": "Hippo: Left Frame 1",
+   "room": 131,
+   "column": 3,
+   "row": 8,
+   "state": 0,
+   "x": 120,
+   "y": 135,
+   "colour": 70,
+   "dx": -32,
+   "dy": 0,
+   "bytes": "A08300788746E00000000000"
+  },
+  {
+   "slot": 11,
+   "sprite": 148,
+   "name": "The Guardian: Frame 1",
+   "room": 136,
+   "column": 8,
+   "row": 8,
+   "state": 0,
+   "x": 112,
+   "y": 135,
+   "colour": 69,
+   "dx": 0,
+   "dy": 0,
+   "bytes": "948800708745000000000000"
+  }
+ ],
+ "immortalNote": "12 zaznamu, ktere $AC6B kopiruje z $AC77 na $9702 pri kazdem startu hrace. Slot 0 je Sabreman; zbytek jsou entity, ktere ve svete lezi celou hru a nedaji se zabit \u2013 nosorozci, tri domorodci, Sabre Wulf, hroch a straz brany na obrazovce $88. Jejich chovani je M5, tady je jen rozmisteni.",
+ "orchid": {
+  "typeTable": "$A7F8",
+  "positionTable": "$D6A6",
+  "colourTable": "$A6FD",
+  "types": [
+   [
+    0,
+    2
+   ],
+   [
+    15,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    15,
+    6
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    15,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    15,
+    6
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    15,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    15,
+    6
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    15,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    15,
+    6
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    15,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    15,
+    6
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    15,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    15,
+    6
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    15,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    15,
+    6
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    15,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    15,
+    6
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    15,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    15,
+    6
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    15,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    15,
+    6
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    15,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    15,
+    6
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    15,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    15,
+    6
+   ]
+  ],
+  "positions": [
+   [
+    56,
+    63
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    80,
+    119
+   ],
+   [
+    48,
+    127
+   ],
+   [
+    80,
+    127
+   ],
+   [
+    168,
+    127
+   ],
+   [
+    216,
+    127
+   ],
+   [
+    48,
+    71
+   ],
+   [
+    120,
+    95
+   ],
+   [
+    88,
+    63
+   ],
+   [
+    120,
+    127
+   ],
+   [
+    176,
+    127
+   ],
+   [
+    128,
+    127
+   ],
+   [
+    104,
+    127
+   ],
+   [
+    56,
+    63
+   ],
+   [
+    128,
+    127
+   ],
+   [
+    192,
+    127
+   ],
+   [
+    192,
+    127
+   ],
+   [
+    120,
+    95
+   ],
+   [
+    120,
+    95
+   ],
+   [
+    200,
+    63
+   ],
+   [
+    32,
+    63
+   ],
+   [
+    72,
+    63
+   ],
+   [
+    216,
+    127
+   ],
+   [
+    176,
+    127
+   ],
+   [
+    120,
+    63
+   ],
+   [
+    32,
+    127
+   ],
+   [
+    128,
+    127
+   ],
+   [
+    72,
+    63
+   ],
+   [
+    192,
+    127
+   ],
+   [
+    32,
+    127
+   ],
+   [
+    184,
+    63
+   ],
+   [
+    200,
+    127
+   ],
+   [
+    96,
+    127
+   ],
+   [
+    112,
+    127
+   ],
+   [
+    16,
+    127
+   ],
+   [
+    144,
+    63
+   ],
+   [
+    216,
+    127
+   ],
+   [
+    88,
+    79
+   ],
+   [
+    152,
+    127
+   ],
+   [
+    64,
+    127
+   ],
+   [
+    160,
+    127
+   ],
+   [
+    192,
+    127
+   ],
+   [
+    200,
+    127
+   ],
+   [
+    72,
+    63
+   ],
+   [
+    80,
+    127
+   ],
+   [
+    120,
+    63
+   ],
+   [
+    64,
+    63
+   ]
+  ],
+  "colours": [
+   66,
+   67,
+   69,
+   70,
+   67,
+   69,
+   70,
+   66,
+   69,
+   70,
+   66,
+   67,
+   71,
+   71,
+   71,
+   71
+  ],
+  "spawn": [
+   {
+    "template": "$00",
+    "sprite": 72,
+    "state": 0,
+    "x": 56,
+    "y": 63,
+    "colour": 66,
+    "timer": 0
+   },
+   {
+    "template": "$01",
+    "sprite": 79,
+    "state": 8,
+    "x": 0,
+    "y": 0,
+    "colour": 67,
+    "timer": 0
+   },
+   {
+    "template": "$02",
+    "sprite": 72,
+    "state": 0,
+    "x": 80,
+    "y": 119,
+    "colour": 69,
+    "timer": 0
+   },
+   {
+    "template": "$03",
+    "sprite": 79,
+    "state": 8,
+    "x": 48,
+    "y": 127,
+    "colour": 70,
+    "timer": 0
+   },
+   {
+    "template": "$04",
+    "sprite": 72,
+    "state": 0,
+    "x": 80,
+    "y": 127,
+    "colour": 66,
+    "timer": 0
+   },
+   {
+    "template": "$05",
+    "sprite": 79,
+    "state": 8,
+    "x": 168,
+    "y": 127,
+    "colour": 67,
+    "timer": 0
+   },
+   {
+    "template": "$06",
+    "sprite": 72,
+    "state": 0,
+    "x": 216,
+    "y": 127,
+    "colour": 69,
+    "timer": 0
+   },
+   {
+    "template": "$07",
+    "sprite": 79,
+    "state": 8,
+    "x": 48,
+    "y": 71,
+    "colour": 70,
+    "timer": 0
+   },
+   {
+    "template": "$08",
+    "sprite": 72,
+    "state": 0,
+    "x": 120,
+    "y": 95,
+    "colour": 66,
+    "timer": 0
+   },
+   {
+    "template": "$09",
+    "sprite": 79,
+    "state": 8,
+    "x": 88,
+    "y": 63,
+    "colour": 67,
+    "timer": 0
+   },
+   {
+    "template": "$0A",
+    "sprite": 72,
+    "state": 0,
+    "x": 120,
+    "y": 127,
+    "colour": 69,
+    "timer": 0
+   },
+   {
+    "template": "$0B",
+    "sprite": 79,
+    "state": 8,
+    "x": 176,
+    "y": 127,
+    "colour": 70,
+    "timer": 0
+   },
+   {
+    "template": "$0C",
+    "sprite": 72,
+    "state": 0,
+    "x": 128,
+    "y": 127,
+    "colour": 66,
+    "timer": 0
+   },
+   {
+    "template": "$0D",
+    "sprite": 79,
+    "state": 8,
+    "x": 104,
+    "y": 127,
+    "colour": 67,
+    "timer": 0
+   },
+   {
+    "template": "$0E",
+    "sprite": 72,
+    "state": 0,
+    "x": 56,
+    "y": 63,
+    "colour": 69,
+    "timer": 0
+   },
+   {
+    "template": "$0F",
+    "sprite": 79,
+    "state": 8,
+    "x": 128,
+    "y": 127,
+    "colour": 70,
+    "timer": 0
+   },
+   {
+    "template": "$10",
+    "sprite": 72,
+    "state": 0,
+    "x": 192,
+    "y": 127,
+    "colour": 66,
+    "timer": 0
+   },
+   {
+    "template": "$11",
+    "sprite": 79,
+    "state": 8,
+    "x": 192,
+    "y": 127,
+    "colour": 67,
+    "timer": 0
+   },
+   {
+    "template": "$12",
+    "sprite": 72,
+    "state": 0,
+    "x": 120,
+    "y": 95,
+    "colour": 69,
+    "timer": 0
+   },
+   {
+    "template": "$13",
+    "sprite": 79,
+    "state": 8,
+    "x": 120,
+    "y": 95,
+    "colour": 70,
+    "timer": 0
+   },
+   {
+    "template": "$14",
+    "sprite": 72,
+    "state": 0,
+    "x": 200,
+    "y": 63,
+    "colour": 66,
+    "timer": 0
+   },
+   {
+    "template": "$15",
+    "sprite": 79,
+    "state": 8,
+    "x": 32,
+    "y": 63,
+    "colour": 67,
+    "timer": 0
+   },
+   {
+    "template": "$16",
+    "sprite": 72,
+    "state": 0,
+    "x": 72,
+    "y": 63,
+    "colour": 69,
+    "timer": 0
+   },
+   {
+    "template": "$17",
+    "sprite": 79,
+    "state": 8,
+    "x": 216,
+    "y": 127,
+    "colour": 70,
+    "timer": 0
+   },
+   {
+    "template": "$18",
+    "sprite": 72,
+    "state": 0,
+    "x": 176,
+    "y": 127,
+    "colour": 66,
+    "timer": 0
+   },
+   {
+    "template": "$19",
+    "sprite": 79,
+    "state": 8,
+    "x": 120,
+    "y": 63,
+    "colour": 67,
+    "timer": 0
+   },
+   {
+    "template": "$1A",
+    "sprite": 72,
+    "state": 0,
+    "x": 32,
+    "y": 127,
+    "colour": 69,
+    "timer": 0
+   },
+   {
+    "template": "$1B",
+    "sprite": 79,
+    "state": 8,
+    "x": 128,
+    "y": 127,
+    "colour": 70,
+    "timer": 0
+   },
+   {
+    "template": "$1C",
+    "sprite": 72,
+    "state": 0,
+    "x": 72,
+    "y": 63,
+    "colour": 66,
+    "timer": 0
+   },
+   {
+    "template": "$1D",
+    "sprite": 79,
+    "state": 8,
+    "x": 192,
+    "y": 127,
+    "colour": 67,
+    "timer": 0
+   },
+   {
+    "template": "$1E",
+    "sprite": 72,
+    "state": 0,
+    "x": 32,
+    "y": 127,
+    "colour": 69,
+    "timer": 0
+   },
+   {
+    "template": "$1F",
+    "sprite": 79,
+    "state": 8,
+    "x": 184,
+    "y": 63,
+    "colour": 70,
+    "timer": 0
+   },
+   {
+    "template": "$20",
+    "sprite": 72,
+    "state": 0,
+    "x": 200,
+    "y": 127,
+    "colour": 66,
+    "timer": 0
+   },
+   {
+    "template": "$21",
+    "sprite": 79,
+    "state": 8,
+    "x": 96,
+    "y": 127,
+    "colour": 67,
+    "timer": 0
+   },
+   {
+    "template": "$22",
+    "sprite": 72,
+    "state": 0,
+    "x": 112,
+    "y": 127,
+    "colour": 69,
+    "timer": 0
+   },
+   {
+    "template": "$23",
+    "sprite": 79,
+    "state": 8,
+    "x": 16,
+    "y": 127,
+    "colour": 70,
+    "timer": 0
+   },
+   {
+    "template": "$24",
+    "sprite": 72,
+    "state": 0,
+    "x": 144,
+    "y": 63,
+    "colour": 66,
+    "timer": 0
+   },
+   {
+    "template": "$25",
+    "sprite": 79,
+    "state": 8,
+    "x": 216,
+    "y": 127,
+    "colour": 67,
+    "timer": 0
+   },
+   {
+    "template": "$26",
+    "sprite": 72,
+    "state": 0,
+    "x": 88,
+    "y": 79,
+    "colour": 69,
+    "timer": 0
+   },
+   {
+    "template": "$27",
+    "sprite": 79,
+    "state": 8,
+    "x": 152,
+    "y": 127,
+    "colour": 70,
+    "timer": 0
+   },
+   {
+    "template": "$28",
+    "sprite": 72,
+    "state": 0,
+    "x": 64,
+    "y": 127,
+    "colour": 66,
+    "timer": 0
+   },
+   {
+    "template": "$29",
+    "sprite": 79,
+    "state": 8,
+    "x": 160,
+    "y": 127,
+    "colour": 67,
+    "timer": 0
+   },
+   {
+    "template": "$2A",
+    "sprite": 72,
+    "state": 0,
+    "x": 192,
+    "y": 127,
+    "colour": 69,
+    "timer": 0
+   },
+   {
+    "template": "$2B",
+    "sprite": 79,
+    "state": 8,
+    "x": 200,
+    "y": 127,
+    "colour": 70,
+    "timer": 0
+   },
+   {
+    "template": "$2C",
+    "sprite": 72,
+    "state": 0,
+    "x": 72,
+    "y": 63,
+    "colour": 66,
+    "timer": 0
+   },
+   {
+    "template": "$2D",
+    "sprite": 79,
+    "state": 8,
+    "x": 80,
+    "y": 127,
+    "colour": 67,
+    "timer": 0
+   },
+   {
+    "template": "$2E",
+    "sprite": 72,
+    "state": 0,
+    "x": 120,
+    "y": 63,
+    "colour": 69,
+    "timer": 0
+   },
+   {
+    "template": "$2F",
+    "sprite": 79,
+    "state": 8,
+    "x": 64,
+    "y": 63,
+    "colour": 70,
+    "timer": 0
+   }
+  ],
+  "effects": [
+   {
+    "colour": 66,
+    "name": "slow",
+    "note": "strop rychlosti `speedCapSlow` ($20 = 2 px za krok) misto `speedCap` ($30); $AFC5"
+   },
+   {
+    "colour": 67,
+    "name": "reverse",
+    "note": "obracene ovladani: $AF19 udela `XOR $0F` na ctyrech bitech smeru, takze vlevo je vpravo a nahoru dolu"
+   },
+   {
+    "colour": 69,
+    "name": "fast",
+    "note": "strop rychlosti `speedCapFast` ($40 = 4 px za krok); $AFC9"
+   },
+   {
+    "colour": 70,
+    "name": "sit",
+    "note": "\u2605 Sabreman sedne ($43/$47) a nehybe se; obsluha sezeni ($A61B) odpocitava `yellowTime` a pak ho postavi. O zlute orchideji dobove tipy mlci \u2013 tohle je odpoved"
+   },
+   {
+    "colour": 71,
+    "name": "none",
+    "note": "bila: $A75C vynuluje `OrchidEffectTimer`, takze bila orchidej **nedela nic**. Je to i normalni barva Sabremana"
+   }
+  ],
+  "note": "\u2605 Stav orchideje se drzi **na predlohu, ne na obrazovku**: $A7E8 indexuje TableOrchidTypes cislem predlohy z Layout, takze vsech 21 obrazovek predlohy $11 ma jednu orchidej. Dva bajty na predlohu: faze kveten\u00ed, bit \"zavira se\", barva a 12bitovy casovac. $A79F je pri odchodu z obrazovky zapise zpatky, $A763 je pri prichodu rozbali do zaznamu na $97DA.",
+  "bloomNote": "Cyklus ($A680, $A6D4, $A70D): casovac tikaci dolu kazdy krok; na nule se kazdy druhy snimek posune faze. Otevirani jde $48 -> $4F, na $4F se prepne stav a casovac na orchidOpenWait \u2013 jen v tom okne se orchidej da sebrat ($A737 zada sprite $4F). Zavirani jde $4F -> $48 a na $48 se **vybere nova barva** z OrchidColour[FRAMES & 15] a casovac na orchidDormantBase + FRAMES & orchidDormantMask."
+ },
+ "objects": {
+  "mapAddress": "$DDEC",
+  "mapAddress2UP": "$DFEC",
+  "locationTable": "$DC6C",
+  "colourTable": "$A3A7",
+  "slotsPerRoom": 2,
+  "locations": [
+   [
+    [
+     80,
+     63
+    ],
+    [
+     64,
+     127
+    ],
+    [
+     136,
+     127
+    ],
+    [
+     208,
+     127
+    ]
+   ],
+   [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   [
+    [
+     184,
+     63
+    ],
+    [
+     184,
+     127
+    ],
+    [
+     32,
+     127
+    ],
+    [
+     112,
+     135
+    ]
+   ],
+   [
+    [
+     32,
+     63
+    ],
+    [
+     80,
+     127
+    ],
+    [
+     112,
+     63
+    ],
+    [
+     176,
+     127
+    ]
+   ],
+   [
+    [
+     80,
+     39
+    ],
+    [
+     120,
+     127
+    ],
+    [
+     184,
+     127
+    ],
+    [
+     216,
+     63
+    ]
+   ],
+   [
+    [
+     32,
+     95
+    ],
+    [
+     88,
+     87
+    ],
+    [
+     120,
+     119
+    ],
+    [
+     208,
+     103
+    ]
+   ],
+   [
+    [
+     8,
+     127
+    ],
+    [
+     88,
+     63
+    ],
+    [
+     120,
+     127
+    ],
+    [
+     176,
+     63
+    ]
+   ],
+   [
+    [
+     48,
+     127
+    ],
+    [
+     72,
+     103
+    ],
+    [
+     160,
+     63
+    ],
+    [
+     200,
+     95
+    ]
+   ],
+   [
+    [
+     32,
+     103
+    ],
+    [
+     104,
+     63
+    ],
+    [
+     136,
+     127
+    ],
+    [
+     200,
+     87
+    ]
+   ],
+   [
+    [
+     40,
+     127
+    ],
+    [
+     112,
+     127
+    ],
+    [
+     152,
+     63
+    ],
+    [
+     176,
+     127
+    ]
+   ],
+   [
+    [
+     16,
+     111
+    ],
+    [
+     72,
+     63
+    ],
+    [
+     168,
+     119
+    ],
+    [
+     200,
+     119
+    ]
+   ],
+   [
+    [
+     56,
+     127
+    ],
+    [
+     64,
+     63
+    ],
+    [
+     88,
+     119
+    ],
+    [
+     176,
+     63
+    ]
+   ],
+   [
+    [
+     40,
+     63
+    ],
+    [
+     96,
+     127
+    ],
+    [
+     176,
+     127
+    ],
+    [
+     184,
+     63
+    ]
+   ],
+   [
+    [
+     72,
+     127
+    ],
+    [
+     96,
+     63
+    ],
+    [
+     152,
+     127
+    ],
+    [
+     200,
+     63
+    ]
+   ],
+   [
+    [
+     112,
+     127
+    ],
+    [
+     144,
+     63
+    ],
+    [
+     200,
+     63
+    ],
+    [
+     200,
+     127
+    ]
+   ],
+   [
+    [
+     48,
+     79
+    ],
+    [
+     88,
+     127
+    ],
+    [
+     160,
+     63
+    ],
+    [
+     216,
+     127
+    ]
+   ],
+   [
+    [
+     32,
+     63
+    ],
+    [
+     48,
+     127
+    ],
+    [
+     96,
+     71
+    ],
+    [
+     200,
+     71
+    ]
+   ],
+   [
+    [
+     144,
+     135
+    ],
+    [
+     152,
+     63
+    ],
+    [
+     208,
+     63
+    ],
+    [
+     224,
+     127
+    ]
+   ],
+   [
+    [
+     64,
+     135
+    ],
+    [
+     80,
+     79
+    ],
+    [
+     144,
+     63
+    ],
+    [
+     208,
+     87
+    ]
+   ],
+   [
+    [
+     64,
+     71
+    ],
+    [
+     80,
+     127
+    ],
+    [
+     168,
+     63
+    ],
+    [
+     168,
+     127
+    ]
+   ],
+   [
+    [
+     24,
+     127
+    ],
+    [
+     64,
+     63
+    ],
+    [
+     128,
+     63
+    ],
+    [
+     208,
+     127
+    ]
+   ],
+   [
+    [
+     40,
+     127
+    ],
+    [
+     88,
+     63
+    ],
+    [
+     120,
+     127
+    ],
+    [
+     208,
+     127
+    ]
+   ],
+   [
+    [
+     32,
+     63
+    ],
+    [
+     96,
+     103
+    ],
+    [
+     120,
+     95
+    ],
+    [
+     160,
+     63
+    ]
+   ],
+   [
+    [
+     32,
+     63
+    ],
+    [
+     40,
+     127
+    ],
+    [
+     120,
+     127
+    ],
+    [
+     200,
+     63
+    ]
+   ],
+   [
+    [
+     112,
+     127
+    ],
+    [
+     144,
+     127
+    ],
+    [
+     192,
+     63
+    ],
+    [
+     208,
+     127
+    ]
+   ],
+   [
+    [
+     40,
+     95
+    ],
+    [
+     56,
+     127
+    ],
+    [
+     176,
+     127
+    ],
+    [
+     208,
+     111
+    ]
+   ],
+   [
+    [
+     72,
+     127
+    ],
+    [
+     88,
+     63
+    ],
+    [
+     120,
+     127
+    ],
+    [
+     208,
+     63
+    ]
+   ],
+   [
+    [
+     128,
+     63
+    ],
+    [
+     176,
+     127
+    ],
+    [
+     200,
+     127
+    ],
+    [
+     224,
+     63
+    ]
+   ],
+   [
+    [
+     40,
+     127
+    ],
+    [
+     128,
+     79
+    ],
+    [
+     216,
+     63
+    ],
+    [
+     208,
+     127
+    ]
+   ],
+   [
+    [
+     24,
+     63
+    ],
+    [
+     32,
+     127
+    ],
+    [
+     160,
+     127
+    ],
+    [
+     216,
+     127
+    ]
+   ],
+   [
+    [
+     48,
+     63
+    ],
+    [
+     96,
+     63
+    ],
+    [
+     112,
+     127
+    ],
+    [
+     112,
+     167
+    ]
+   ],
+   [
+    [
+     72,
+     63
+    ],
+    [
+     40,
+     127
+    ],
+    [
+     160,
+     63
+    ],
+    [
+     160,
+     135
+    ]
+   ],
+   [
+    [
+     32,
+     127
+    ],
+    [
+     40,
+     63
+    ],
+    [
+     112,
+     135
+    ],
+    [
+     168,
+     135
+    ]
+   ],
+   [
+    [
+     32,
+     135
+    ],
+    [
+     72,
+     63
+    ],
+    [
+     120,
+     127
+    ],
+    [
+     208,
+     127
+    ]
+   ],
+   [
+    [
+     32,
+     63
+    ],
+    [
+     40,
+     127
+    ],
+    [
+     88,
+     127
+    ],
+    [
+     112,
+     151
+    ]
+   ],
+   [
+    [
+     112,
+     135
+    ],
+    [
+     184,
+     63
+    ],
+    [
+     184,
+     119
+    ],
+    [
+     184,
+     135
+    ]
+   ],
+   [
+    [
+     32,
+     63
+    ],
+    [
+     120,
+     63
+    ],
+    [
+     120,
+     127
+    ],
+    [
+     208,
+     127
+    ]
+   ],
+   [
+    [
+     104,
+     87
+    ],
+    [
+     104,
+     127
+    ],
+    [
+     104,
+     63
+    ],
+    [
+     104,
+     151
+    ]
+   ],
+   [
+    [
+     56,
+     127
+    ],
+    [
+     112,
+     127
+    ],
+    [
+     144,
+     63
+    ],
+    [
+     192,
+     127
+    ]
+   ],
+   [
+    [
+     64,
+     95
+    ],
+    [
+     104,
+     63
+    ],
+    [
+     200,
+     127
+    ],
+    [
+     208,
+     63
+    ]
+   ],
+   [
+    [
+     72,
+     63
+    ],
+    [
+     136,
+     127
+    ],
+    [
+     184,
+     63
+    ],
+    [
+     216,
+     127
+    ]
+   ],
+   [
+    [
+     56,
+     63
+    ],
+    [
+     88,
+     127
+    ],
+    [
+     136,
+     127
+    ],
+    [
+     168,
+     151
+    ]
+   ],
+   [
+    [
+     64,
+     63
+    ],
+    [
+     96,
+     127
+    ],
+    [
+     160,
+     127
+    ],
+    [
+     200,
+     63
+    ]
+   ],
+   [
+    [
+     32,
+     119
+    ],
+    [
+     104,
+     63
+    ],
+    [
+     160,
+     127
+    ],
+    [
+     208,
+     63
+    ]
+   ],
+   [
+    [
+     40,
+     63
+    ],
+    [
+     112,
+     119
+    ],
+    [
+     152,
+     119
+    ],
+    [
+     176,
+     63
+    ]
+   ],
+   [
+    [
+     40,
+     63
+    ],
+    [
+     120,
+     127
+    ],
+    [
+     192,
+     127
+    ],
+    [
+     208,
+     79
+    ]
+   ],
+   [
+    [
+     72,
+     63
+    ],
+    [
+     40,
+     127
+    ],
+    [
+     160,
+     63
+    ],
+    [
+     160,
+     135
+    ]
+   ],
+   [
+    [
+     72,
+     135
+    ],
+    [
+     192,
+     63
+    ],
+    [
+     208,
+     79
+    ],
+    [
+     208,
+     135
+    ]
+   ]
+  ],
+  "types": [
+   {
+    "type": 0,
+    "sprite": 128,
+    "name": "Crate",
+    "colour": 66,
+    "handler": "$A312",
+    "extraLife": false
+   },
+   {
+    "type": 1,
+    "sprite": 129,
+    "name": "Ring",
+    "colour": 67,
+    "handler": "$A312",
+    "extraLife": false
+   },
+   {
+    "type": 2,
+    "sprite": 130,
+    "name": "Fruit",
+    "colour": 68,
+    "handler": "$A312",
+    "extraLife": false
+   },
+   {
+    "type": 3,
+    "sprite": 131,
+    "name": "Hat",
+    "colour": 69,
+    "handler": "$A312",
+    "extraLife": false
+   },
+   {
+    "type": 4,
+    "sprite": 132,
+    "name": "Shield",
+    "colour": 70,
+    "handler": "$A312",
+    "extraLife": false
+   },
+   {
+    "type": 5,
+    "sprite": 133,
+    "name": "Life",
+    "colour": 66,
+    "handler": "$A305",
+    "extraLife": true
+   },
+   {
+    "type": 6,
+    "sprite": 134,
+    "name": "Money Bag",
+    "colour": 67,
+    "handler": "$A312",
+    "extraLife": false
+   },
+   {
+    "type": 7,
+    "sprite": 135,
+    "name": "Sword",
+    "colour": 68,
+    "handler": "$A312",
+    "extraLife": false
+   },
+   {
+    "type": 8,
+    "sprite": 136,
+    "name": "Crate",
+    "colour": 69,
+    "handler": "$A312",
+    "extraLife": false
+   },
+   {
+    "type": 9,
+    "sprite": 137,
+    "name": "Ring",
+    "colour": 70,
+    "handler": "$A312",
+    "extraLife": false
+   },
+   {
+    "type": 10,
+    "sprite": 138,
+    "name": "Fruit",
+    "colour": 66,
+    "handler": "$A312",
+    "extraLife": false
+   },
+   {
+    "type": 11,
+    "sprite": 139,
+    "name": "Hat",
+    "colour": 67,
+    "handler": "$A312",
+    "extraLife": false
+   },
+   {
+    "type": 12,
+    "sprite": 140,
+    "name": "Shield",
+    "colour": 68,
+    "handler": "$A312",
+    "extraLife": false
+   },
+   {
+    "type": 13,
+    "sprite": 141,
+    "name": "Shield",
+    "colour": 69,
+    "handler": "$A312",
+    "extraLife": false
+   },
+   {
+    "type": 14,
+    "sprite": 142,
+    "name": "Money Bag",
+    "colour": 70,
+    "handler": "$A312",
+    "extraLife": false
+   },
+   {
+    "type": 15,
+    "sprite": 143,
+    "name": "Sword",
+    "colour": 66,
+    "handler": "$A312",
+    "extraLife": false
+   }
+  ],
+  "note": "Dva bajty mapy na obrazovku, tedy dva predmety. V bajtu jsou dolni ctyri bity druh a horni dva bity ktera ze ctyr pozic predlohy ($A356, $A39C). Nula = zadny predmet. Sebrani vynuluje bajt mapy, takze predmet je sebrany navzdy \u2013 a kazdy hraci ma vlastni mapu ($B248 je prohazuje).",
+  "mapNote": "\u2605 Mapa se **generuje pri startu hrace** ($A2BD) a zdroj \"nahody\" je **ROM Spectra**: DE = ($9693 & $1F)*256 + FRAMES, tedy adresa v $0000-$20FF. Bajt ROM pod objectMapThreshold znamena \"tady predmet je\", druh se vezme z Rand8 a pozice z dolniho bajtu pocitadla smycky. Runtime obraz ROM neobsahuje ($4000-$FFFF), takze tohle je jedine misto M4, ktere remake nema jak zopakovat bajt na bajt \u2013 stejne jako faze seku mecem v M3."
+ },
+ "amulet": {
+  "setTable": "$A29D",
+  "sets": [
+   {
+    "set": 0,
+    "rooms": [
+     67,
+     145,
+     77,
+     203
+    ],
+    "pieces": [
+     {
+      "piece": 0,
+      "sprite": 147,
+      "name": "Amulet: Top Left",
+      "room": 67,
+      "column": 3,
+      "row": 4,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     },
+     {
+      "piece": 1,
+      "sprite": 146,
+      "name": "Amulet: Top Right",
+      "room": 145,
+      "column": 1,
+      "row": 9,
+      "template": "$05",
+      "x": 32,
+      "y": 95,
+      "colour": 70
+     },
+     {
+      "piece": 2,
+      "sprite": 145,
+      "name": "Amulet: Bottom Left",
+      "room": 77,
+      "column": 13,
+      "row": 4,
+      "template": "$08",
+      "x": 32,
+      "y": 103,
+      "colour": 70
+     },
+     {
+      "piece": 3,
+      "sprite": 144,
+      "name": "Amulet: Bottom Right",
+      "room": 203,
+      "column": 11,
+      "row": 12,
+      "template": "$08",
+      "x": 32,
+      "y": 103,
+      "colour": 70
+     }
+    ]
+   },
+   {
+    "set": 1,
+    "rooms": [
+     157,
+     172,
+     45,
+     38
+    ],
+    "pieces": [
+     {
+      "piece": 0,
+      "sprite": 147,
+      "name": "Amulet: Top Left",
+      "room": 157,
+      "column": 13,
+      "row": 9,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     },
+     {
+      "piece": 1,
+      "sprite": 146,
+      "name": "Amulet: Top Right",
+      "room": 172,
+      "column": 12,
+      "row": 10,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     },
+     {
+      "piece": 2,
+      "sprite": 145,
+      "name": "Amulet: Bottom Left",
+      "room": 45,
+      "column": 13,
+      "row": 2,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     },
+     {
+      "piece": 3,
+      "sprite": 144,
+      "name": "Amulet: Bottom Right",
+      "room": 38,
+      "column": 6,
+      "row": 2,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     }
+    ]
+   },
+   {
+    "set": 2,
+    "rooms": [
+     225,
+     115,
+     68,
+     45
+    ],
+    "pieces": [
+     {
+      "piece": 0,
+      "sprite": 147,
+      "name": "Amulet: Top Left",
+      "room": 225,
+      "column": 1,
+      "row": 14,
+      "template": "$08",
+      "x": 32,
+      "y": 103,
+      "colour": 70
+     },
+     {
+      "piece": 1,
+      "sprite": 146,
+      "name": "Amulet: Top Right",
+      "room": 115,
+      "column": 3,
+      "row": 7,
+      "template": "$08",
+      "x": 32,
+      "y": 103,
+      "colour": 70
+     },
+     {
+      "piece": 2,
+      "sprite": 145,
+      "name": "Amulet: Bottom Left",
+      "room": 68,
+      "column": 4,
+      "row": 4,
+      "template": "$08",
+      "x": 32,
+      "y": 103,
+      "colour": 70
+     },
+     {
+      "piece": 3,
+      "sprite": 144,
+      "name": "Amulet: Bottom Right",
+      "room": 45,
+      "column": 13,
+      "row": 2,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     }
+    ]
+   },
+   {
+    "set": 3,
+    "rooms": [
+     53,
+     195,
+     77,
+     169
+    ],
+    "pieces": [
+     {
+      "piece": 0,
+      "sprite": 147,
+      "name": "Amulet: Top Left",
+      "room": 53,
+      "column": 5,
+      "row": 3,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     },
+     {
+      "piece": 1,
+      "sprite": 146,
+      "name": "Amulet: Top Right",
+      "room": 195,
+      "column": 3,
+      "row": 12,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     },
+     {
+      "piece": 2,
+      "sprite": 145,
+      "name": "Amulet: Bottom Left",
+      "room": 77,
+      "column": 13,
+      "row": 4,
+      "template": "$08",
+      "x": 32,
+      "y": 103,
+      "colour": 70
+     },
+     {
+      "piece": 3,
+      "sprite": 144,
+      "name": "Amulet: Bottom Right",
+      "room": 169,
+      "column": 9,
+      "row": 10,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     }
+    ]
+   },
+   {
+    "set": 4,
+    "rooms": [
+     138,
+     77,
+     225,
+     82
+    ],
+    "pieces": [
+     {
+      "piece": 0,
+      "sprite": 147,
+      "name": "Amulet: Top Left",
+      "room": 138,
+      "column": 10,
+      "row": 8,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     },
+     {
+      "piece": 1,
+      "sprite": 146,
+      "name": "Amulet: Top Right",
+      "room": 77,
+      "column": 13,
+      "row": 4,
+      "template": "$08",
+      "x": 32,
+      "y": 103,
+      "colour": 70
+     },
+     {
+      "piece": 2,
+      "sprite": 145,
+      "name": "Amulet: Bottom Left",
+      "room": 225,
+      "column": 1,
+      "row": 14,
+      "template": "$08",
+      "x": 32,
+      "y": 103,
+      "colour": 70
+     },
+     {
+      "piece": 3,
+      "sprite": 144,
+      "name": "Amulet: Bottom Right",
+      "room": 82,
+      "column": 2,
+      "row": 5,
+      "template": "$05",
+      "x": 32,
+      "y": 95,
+      "colour": 70
+     }
+    ]
+   },
+   {
+    "set": 5,
+    "rooms": [
+     67,
+     88,
+     57,
+     231
+    ],
+    "pieces": [
+     {
+      "piece": 0,
+      "sprite": 147,
+      "name": "Amulet: Top Left",
+      "room": 67,
+      "column": 3,
+      "row": 4,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     },
+     {
+      "piece": 1,
+      "sprite": 146,
+      "name": "Amulet: Top Right",
+      "room": 88,
+      "column": 8,
+      "row": 5,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     },
+     {
+      "piece": 2,
+      "sprite": 145,
+      "name": "Amulet: Bottom Left",
+      "room": 57,
+      "column": 9,
+      "row": 3,
+      "template": "$19",
+      "x": 40,
+      "y": 95,
+      "colour": 70
+     },
+     {
+      "piece": 3,
+      "sprite": 144,
+      "name": "Amulet: Bottom Right",
+      "room": 231,
+      "column": 7,
+      "row": 14,
+      "template": "$19",
+      "x": 40,
+      "y": 95,
+      "colour": 70
+     }
+    ]
+   },
+   {
+    "set": 6,
+    "rooms": [
+     89,
+     167,
+     226,
+     145
+    ],
+    "pieces": [
+     {
+      "piece": 0,
+      "sprite": 147,
+      "name": "Amulet: Top Left",
+      "room": 89,
+      "column": 9,
+      "row": 5,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     },
+     {
+      "piece": 1,
+      "sprite": 146,
+      "name": "Amulet: Top Right",
+      "room": 167,
+      "column": 7,
+      "row": 10,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     },
+     {
+      "piece": 2,
+      "sprite": 145,
+      "name": "Amulet: Bottom Left",
+      "room": 226,
+      "column": 2,
+      "row": 14,
+      "template": "$19",
+      "x": 40,
+      "y": 95,
+      "colour": 70
+     },
+     {
+      "piece": 3,
+      "sprite": 144,
+      "name": "Amulet: Bottom Right",
+      "room": 145,
+      "column": 1,
+      "row": 9,
+      "template": "$05",
+      "x": 32,
+      "y": 95,
+      "colour": 70
+     }
+    ]
+   },
+   {
+    "set": 7,
+    "rooms": [
+     38,
+     53,
+     203,
+     163
+    ],
+    "pieces": [
+     {
+      "piece": 0,
+      "sprite": 147,
+      "name": "Amulet: Top Left",
+      "room": 38,
+      "column": 6,
+      "row": 2,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     },
+     {
+      "piece": 1,
+      "sprite": 146,
+      "name": "Amulet: Top Right",
+      "room": 53,
+      "column": 5,
+      "row": 3,
+      "template": "$12",
+      "x": 64,
+      "y": 135,
+      "colour": 70
+     },
+     {
+      "piece": 2,
+      "sprite": 145,
+      "name": "Amulet: Bottom Left",
+      "room": 203,
+      "column": 11,
+      "row": 12,
+      "template": "$08",
+      "x": 32,
+      "y": 103,
+      "colour": 70
+     },
+     {
+      "piece": 3,
+      "sprite": 144,
+      "name": "Amulet: Bottom Right",
+      "room": 163,
+      "column": 3,
+      "row": 10,
+      "template": "$19",
+      "x": 40,
+      "y": 95,
+      "colour": 70
+     }
+    ]
+   }
+  ],
+  "flashColours": [
+   69,
+   70,
+   71,
+   68
+  ],
+  "bitsAddress": "$970D",
+  "note": "\u2605 Rozmisteni amuletu **neni nahodne mistem, jen volbou sady**: $A25C vezme Rand8 & 7 a tim vybere jednu z osmi hotovych sad po ctyrech obrazovkach ($A29D). Pozice v obrazovce je pak dana predlohou \u2013 slot 0 tabulky ObjectLocation. Sebrani nastavi bit v +$0B Sabremanova zaznamu a k tomu bit 7, ktery znamena \"ukaz sloku basne\" ($A18C -> $A207, M6).",
+  "pointNote": "\u2605 Domorodci ukazuji k zakopanemu kusu: $9D41 projde ctyri kusy a hlasi \"v primce\", kdyz je entita ve tremze sloupci sveta a jeji x se od x kusu lisi o mene nez pointRange, nebo v temze radku a y. $ABB6 pak domorodce nakresli **zlute** a pipne tonem, jehoz vyska je ta vzdalenost ($BF3D)."
+ },
+ "visited": {
+  "address": "$96BF",
+  "bytes": 32,
+  "bits": 8,
+  "total": 260,
+  "percent": [
+   0,
+   0,
+   0,
+   1,
+   1,
+   1,
+   2,
+   2,
+   3,
+   3,
+   3,
+   4,
+   4,
+   5,
+   5,
+   5,
+   6,
+   6,
+   6,
+   7,
+   7,
+   8,
+   8,
+   8,
+   9,
+   9,
+   10,
+   10,
+   10,
+   11,
+   11,
+   11,
+   12,
+   12,
+   13,
+   13,
+   13,
+   14,
+   14,
+   15,
+   15,
+   15,
+   16,
+   16,
+   16,
+   17,
+   17,
+   18,
+   18,
+   18,
+   19,
+   19,
+   20,
+   20,
+   20,
+   21,
+   21,
+   21,
+   22,
+   22,
+   23,
+   23,
+   23,
+   24,
+   24,
+   25,
+   25,
+   25,
+   26,
+   26,
+   26,
+   27,
+   27,
+   28,
+   28,
+   28,
+   29,
+   29,
+   30,
+   30,
+   30,
+   31,
+   31,
+   31,
+   32,
+   32,
+   33,
+   33,
+   33,
+   34,
+   34,
+   35,
+   35,
+   35,
+   36,
+   36,
+   36,
+   37,
+   37,
+   38,
+   38,
+   38,
+   39,
+   39,
+   40,
+   40,
+   40,
+   41,
+   41,
+   41,
+   42,
+   42,
+   43,
+   43,
+   43,
+   44,
+   44,
+   45,
+   45,
+   45,
+   46,
+   46,
+   46,
+   47,
+   47,
+   48,
+   48,
+   48,
+   49,
+   49,
+   50,
+   50,
+   50,
+   51,
+   51,
+   51,
+   52,
+   52,
+   53,
+   53,
+   53,
+   54,
+   54,
+   55,
+   55,
+   55,
+   56,
+   56,
+   56,
+   57,
+   57,
+   58,
+   58,
+   58,
+   59,
+   59,
+   60,
+   60,
+   60,
+   61,
+   61,
+   61,
+   62,
+   62,
+   63,
+   63,
+   63,
+   64,
+   64,
+   65,
+   65,
+   65,
+   66,
+   66,
+   66,
+   67,
+   67,
+   68,
+   68,
+   68,
+   69,
+   69,
+   70,
+   70,
+   70,
+   71,
+   71,
+   71,
+   72,
+   72,
+   73,
+   73,
+   73,
+   74,
+   74,
+   75,
+   75,
+   75,
+   76,
+   76,
+   76,
+   77,
+   77,
+   78,
+   78,
+   78,
+   79,
+   79,
+   80,
+   80,
+   80,
+   81,
+   81,
+   81,
+   82,
+   82,
+   83,
+   83,
+   83,
+   84,
+   84,
+   85,
+   85,
+   85,
+   86,
+   86,
+   86,
+   87,
+   87,
+   88,
+   88,
+   88,
+   89,
+   89,
+   90,
+   90,
+   90,
+   91,
+   91,
+   91,
+   92,
+   92,
+   93,
+   93,
+   93,
+   94,
+   94,
+   95,
+   95,
+   95,
+   96,
+   96,
+   96,
+   97,
+   97,
+   98,
+   98,
+   98,
+   99,
+   99,
+   100
+  ],
+  "note": "$9D23 VisitRoom: bajt = radek*2 + sloupec>>3, bit = sloupec & 7 (rutina si prepisuje vlastni instrukci SET). Vola se z $B148, tedy pri kazdem prechodu obrazovky, ktery udela Sabreman.",
+  "percentNote": "$9CC6 PrintRoomsVisited: secte 256 bitu VisitedRooms **a ctyri bity amuletu**, takze celek je 260. Procento nepocita delenim: 260-krat pricte percentStep do 16 bitu a kazdy prenos je jedno procento (BCD), nakonec pricte percentRound. \"percent\" je ta tabulka predpocitana, aby ji remake nemusel pocitat stejnou smyckou."
+ },
+ "values": {
+  "recordLength": 12,
+  "entityTableEnd": 38958,
+  "entityFirstPassEnd": 38670,
+  "nastieData": 38802,
+  "orchidData": 38874,
+  "objectData": 38886,
+  "objectData2": 38898,
+  "amuletData": 38910,
+  "orchidTypeTable": 43000,
+  "orchidPositionTable": 54950,
+  "orchidColourTable": 42749,
+  "orchidSpriteMask": 7,
+  "orchidSpriteBase": 72,
+  "orchidStateMask": 8,
+  "orchidColourMask": 7,
+  "orchidColourBase": 64,
+  "orchidTimerLowMask": 248,
+  "orchidTimerHighMask": 15,
+  "orchidPhaseEvery": 1,
+  "orchidPhaseMask": 7,
+  "orchidColourIndexMask": 15,
+  "orchidStateToggle": 8,
+  "orchidDormantMask": 63,
+  "orchidDormantBase": 128,
+  "orchidOpenWait": 16,
+  "orchidPickHeight": 15,
+  "orchidPickWidth": 15,
+  "orchidEffectTime": 192,
+  "orchidHarmless": 71,
+  "effectTickEvery": 1,
+  "effectEndColour": 71,
+  "effectFlashBelow": 47,
+  "effectFlashMask": 15,
+  "effectFlashHalf": 8,
+  "effectBeepMask": 7,
+  "colourSlow": 66,
+  "colourFast": 69,
+  "colourReverse": 67,
+  "reverseMask": 15,
+  "colourYellow": 70,
+  "yellowPoseMask": 4,
+  "yellowPoseBase": 67,
+  "yellowTime": 96,
+  "standUpMask": 7,
+  "standUpBase": 16,
+  "colourNormal": 71,
+  "colourImmune": 71,
+  "hitFirstSprite": 16,
+  "hitSpriteCount": 32,
+  "hitSwordFrom": 16,
+  "hitReachDown": 15,
+  "hitReachRight": 12,
+  "hitReachRightSword": 28,
+  "objectMap": 56812,
+  "objectLocationTable": 56428,
+  "objectTypeMask": 15,
+  "objectSpriteBase": 128,
+  "objectSlotMask": 6,
+  "objectColourTable": 41895,
+  "objectPickHeight": 12,
+  "objectPickWidth": 12,
+  "objectScore": 336,
+  "objectMapDest": 56812,
+  "objectMapSeedMask": 31,
+  "objectMapCount": 512,
+  "objectMapThreshold": 128,
+  "objectMapTypeMask": 15,
+  "objectMapSlotMask": 192,
+  "objectMapCopy": 57324,
+  "lifeMax": 9,
+  "lifePickHeight": 12,
+  "lifePickWidth": 12,
+  "amuletSetMask": 7,
+  "amuletSetTable": 41629,
+  "amuletPieces": 4,
+  "amuletSpriteBase": 143,
+  "amuletLocationTable": 56428,
+  "amuletColour": 70,
+  "amuletFlashEvery": 1,
+  "amuletFlashMask": 3,
+  "amuletFlashBase": 68,
+  "amuletPickHeight": 12,
+  "amuletPickWidth": 12,
+  "amuletBitsAddress": 38669,
+  "amuletPoemBit": 128,
+  "amuletFirstSprite": 144,
+  "amuletScore": 29952,
+  "pointStride": 11,
+  "pointPieces": 4,
+  "pointColumnMask": 15,
+  "pointRowMask": 240,
+  "pointRange": 16,
+  "pointRangeRow": 16,
+  "pointColour": 70,
+  "visitedRooms": 38591,
+  "visitedByteMask": 31,
+  "visitedBitMask": 56,
+  "percentBits": 2080,
+  "percentAmuletBits": 4,
+  "percentStep": 25206,
+  "percentRound": 40,
+  "percentPosition": 18680,
+  "objectScoreDecimal": 150,
+  "amuletScoreDecimal": 7500
+ },
+ "source": {
+  "recordLength": {
+   "address": "$99F0",
+   "note": "LD DE,nn \u2014 o kolik se `IX` posune na dal\u0161\u00ed entitu, tedy d\u00e9lka z\u00e1znamu"
+  },
+  "entityTableEnd": {
+   "address": "$99FE",
+   "note": "LD DE,nn \u2014 adresa, na kter\u00e9 tabulka entit kon\u010d\u00ed ($99FE/$9A02 `SBC HL,DE`)"
+  },
+  "entityFirstPassEnd": {
+   "address": "$9A18",
+   "note": "LD DE,nn \u2014 konec prvn\u00edho pr\u016fchodu smy\u010dkou: v n\u011bm se obslou\u017e\u00ed **jen** Sabreman, ostatn\u00ed entity a\u017e v druh\u00e9m (\u00a714)"
+  },
+  "nastieData": {
+   "address": "$9A54",
+   "note": "LD IX,nn \u2014 za\u010d\u00e1tek `NastieData`, tedy zv\u00ed\u0159at, kter\u00e1 se dosazuj\u00ed za b\u011bhu (M5)"
+  },
+  "orchidData": {
+   "address": "$A766",
+   "note": "LD DE,nn \u2014 z\u00e1znam, do kter\u00e9ho se orchidej nov\u00e9 obrazovky spawnuje"
+  },
+  "objectData": {
+   "address": "$A33B",
+   "note": "LD DE,nn \u2014 z\u00e1znam prvn\u00edho ze dvou p\u0159edm\u011bt\u016f obrazovky"
+  },
+  "objectData2": {
+   "address": "$A34A",
+   "note": "LD DE,nn \u2014 a druh\u00e9ho ($A34A), tedy o `recordLength` d\u00e1l"
+  },
+  "amuletData": {
+   "address": "$A255",
+   "note": "LD IX,nn \u2014 prvn\u00ed ze \u010dty\u0159 kus\u016f amuletu"
+  },
+  "orchidTypeTable": {
+   "address": "$A7F4",
+   "note": "LD BC,nn \u2014 `TableOrchidTypes` ($A7E8 `HandlerOrchidType`), index je **p\u0159edloha**, dva bajty na p\u0159edlohu"
+  },
+  "orchidPositionTable": {
+   "address": "$A7E2",
+   "note": "LD BC,nn \u2014 `TableOrchidPositions` ($A7D4 `HandlerOrchidPosition`), x a y na p\u0159edlohu"
+  },
+  "orchidColourTable": {
+   "address": "$A6F3",
+   "note": "LD BC,nn \u2014 `OrchidColour` ($A6EB), 16 atribut\u016f, index `FRAMES` & $0F"
+  },
+  "orchidSpriteMask": {
+   "address": "$A770",
+   "note": "AND n \u2014 z prvn\u00edho bajtu stavu se vezme f\u00e1ze kveten\u00ed"
+  },
+  "orchidSpriteBase": {
+   "address": "$A772",
+   "note": "OR n \u2014 a p\u0159id\u00e1 se z\u00e1klad sprite ID orchideje"
+  },
+  "orchidStateMask": {
+   "address": "$A77C",
+   "note": "AND n \u2014 bit \u201ezav\u00edr\u00e1 se\" jde do `+2` z\u00e1znamu"
+  },
+  "orchidColourMask": {
+   "address": "$A78B",
+   "note": "AND n \u2014 z druh\u00e9ho bajtu stavu se vezme barva"
+  },
+  "orchidColourBase": {
+   "address": "$A78D",
+   "note": "OR n \u2014 a p\u0159id\u00e1 se `BRIGHT` (atribut orchideje)"
+  },
+  "orchidTimerLowMask": {
+   "address": "$A792",
+   "note": "AND n \u2014 zbytek druh\u00e9ho bajtu je doln\u00ed bajt \u010dasova\u010de kveten\u00ed"
+  },
+  "orchidTimerHighMask": {
+   "address": "$A79B",
+   "note": "AND n \u2014 horn\u00ed p\u016flbajt prvn\u00edho bajtu je horn\u00ed bajt \u010dasova\u010de"
+  },
+  "orchidPhaseEvery": {
+   "address": "$A6D7",
+   "note": "AND n \u2014 f\u00e1ze kveten\u00ed se posune, kdy\u017e je `$9693` d\u011bliteln\u00e9 n+1"
+  },
+  "orchidPhaseMask": {
+   "address": "$A6E7",
+   "note": "AND n \u2014 kter\u00e9 bity sprite ID jsou f\u00e1ze kveten\u00ed"
+  },
+  "orchidColourIndexMask": {
+   "address": "$A6EE",
+   "note": "AND n \u2014 index do `OrchidColour`: `FRAMES` ($5C78) & n"
+  },
+  "orchidStateToggle": {
+   "address": "$A71D",
+   "note": "XOR n \u2014 p\u0159epnut\u00ed mezi \u201eotev\u00edr\u00e1 se\" a \u201ezav\u00edr\u00e1 se\""
+  },
+  "orchidDormantMask": {
+   "address": "$A727",
+   "note": "AND n \u2014 jak dlouho orchidej sp\u00ed: `FRAMES` & n \u2026"
+  },
+  "orchidDormantBase": {
+   "address": "$A729",
+   "note": "ADD A,n \u2014 \u2026plus n; horn\u00ed bajt \u010dasova\u010de z\u016fst\u00e1v\u00e1 nula"
+  },
+  "orchidOpenWait": {
+   "address": "$A731",
+   "note": "LD HL,nn \u2014 jak dlouho z\u016fstane rozkvetl\u00e1 (a jen tehdy se d\u00e1 sebrat)"
+  },
+  "orchidPickHeight": {
+   "address": "$A73E",
+   "note": "LD BC,nn \u2014 `B`: svisl\u00fd dosah kontaktu s orchidej\u00ed ($AB01)"
+  },
+  "orchidPickWidth": {
+   "address": "$A73F",
+   "note": "LD BC,nn \u2014 `C`: a vodorovn\u00fd"
+  },
+  "orchidEffectTime": {
+   "address": "$A745",
+   "note": "LD A,n \u2192 `OrchidEffectTimer` ($96B0) \u2014 na tolik se \u00fa\u010dinek nastav\u00ed"
+  },
+  "orchidHarmless": {
+   "address": "$A757",
+   "note": "CP n \u2014 s touhle barvou se \u00fa\u010dinek hned vynuluje: **b\u00edl\u00e1 orchidej ned\u011bl\u00e1 nic**"
+  },
+  "effectTickEvery": {
+   "address": "$AE7D",
+   "note": "AND n \u2014 `OrchidEffectTimer` se ub\u00edr\u00e1, kdy\u017e je `FRAMES` d\u011bliteln\u00e9 n+1"
+  },
+  "effectEndColour": {
+   "address": "$AE8A",
+   "note": "LD (IX+$05),n \u2014 barva Sabremana, a\u017e \u00fa\u010dinek dojde (b\u00edl\u00e1 = norm\u00e1ln\u00ed stav)"
+  },
+  "effectFlashBelow": {
+   "address": "$AF84",
+   "note": "CP n \u2014 pod touhle hodnotou \u010dasova\u010de Sabreman **blik\u00e1** (varov\u00e1n\u00ed, \u017ee kon\u010d\u00ed)"
+  },
+  "effectFlashMask": {
+   "address": "$AF89",
+   "note": "AND n \u2014 f\u00e1ze blik\u00e1n\u00ed z doln\u00edch bit\u016f \u010dasova\u010de"
+  },
+  "effectFlashHalf": {
+   "address": "$AF8B",
+   "note": "CP n \u2014 v prvn\u00ed polovin\u011b f\u00e1ze se kresl\u00ed b\u00edl\u00fd, v druh\u00e9 barevn\u00fd"
+  },
+  "effectBeepMask": {
+   "address": "$AF8F",
+   "note": "AND n \u2014 a p\u0159i ka\u017ed\u00e9m n+1 se p\u00edpne ($BEC6)"
+  },
+  "colourSlow": {
+   "address": "$AFC5",
+   "note": "CP n \u2014 \u010derven\u00e1: strop rychlosti je `speedCapSlow` ($AFC1)"
+  },
+  "colourFast": {
+   "address": "$AFC9",
+   "note": "CP n \u2014 modrozelen\u00e1: strop je `speedCapFast`"
+  },
+  "colourReverse": {
+   "address": "$AF14",
+   "note": "CP n \u2014 purpurov\u00e1: **obr\u00e1cen\u00e9 ovl\u00e1d\u00e1n\u00ed** ($AF11)"
+  },
+  "reverseMask": {
+   "address": "$AF19",
+   "note": "XOR n \u2014 a takhle se obrac\u00ed: \u010dty\u0159i bity sm\u011bru nar\u00e1z"
+  },
+  "colourYellow": {
+   "address": "$AEF8",
+   "note": "CP n \u2014 \u017elut\u00e1: Sabreman **sedne a neh\u00fdbe se** ($AE8F)"
+  },
+  "yellowPoseMask": {
+   "address": "$AE92",
+   "note": "AND n \u2014 ze sprite ID z\u016fstane jen bit \u201e\u010delem vpravo\""
+  },
+  "yellowPoseBase": {
+   "address": "$AE94",
+   "note": "OR n \u2014 a z\u00e1klad p\u00f3zy sed\u00edc\u00edho Sabremana ($43 vlevo, $47 vpravo)"
+  },
+  "yellowTime": {
+   "address": "$AE99",
+   "note": "LD A,n \u2192 `$96B0` \u2014 jak dlouho sed\u00ed; nastavuje se **znovu p\u0159i ka\u017ed\u00e9m kroku**, tak\u017ee odpo\u010det za\u010dne a\u017e sprite p\u0159ejde na obsluhu sezen\u00ed ($A61B)"
+  },
+  "standUpMask": {
+   "address": "$A626",
+   "note": "AND n \u2014 ze sprite ID sed\u00edc\u00edho z\u016fstane f\u00e1ze"
+  },
+  "standUpBase": {
+   "address": "$A628",
+   "note": "OR n \u2014 a p\u0159id\u00e1 se z\u00e1klad ch\u016fze; Sabreman vstane"
+  },
+  "colourNormal": {
+   "address": "$AF58",
+   "note": "CP n \u2014 **me\u010d se d\u00e1 tasit jen v b\u00edl\u00e9m stavu**: pod \u00fa\u010dinkem orchideje ne"
+  },
+  "colourImmune": {
+   "address": "$AB39",
+   "note": "SUB n \u2014 a naopak: kontakt s entitou zab\u00edj\u00ed **jen b\u00edl\u00e9ho** Sabremana ($AB36), tak\u017ee pod \u00fa\u010dinkem orchideje je nedotknuteln\u00fd"
+  },
+  "hitFirstSprite": {
+   "address": "$AB09",
+   "note": "SUB n \u2014 kontakt se testuje jen pro sprite ID od n v\u00fd\u0161\u2026"
+  },
+  "hitSpriteCount": {
+   "address": "$AB0B",
+   "note": "CP n \u2014 \u2026a nejv\u00fd\u0161 o tolik d\u00e1l, tedy jen pro Sabremana ($10\u2013$2F)"
+  },
+  "hitSwordFrom": {
+   "address": "$AB11",
+   "note": "CP n \u2014 od t\u00e9hle hodnoty (u\u017e po ode\u010dten\u00ed) plat\u00ed dosah s tasen\u00fdm me\u010dem"
+  },
+  "hitReachDown": {
+   "address": "$AB0E",
+   "note": "LD HL,nn \u2014 `H`: dosah dol\u016f, tedy kdy\u017e je Sabreman **pod** entitou"
+  },
+  "hitReachRight": {
+   "address": "$AB0F",
+   "note": "LD HL,nn \u2014 `L`: dosah vpravo, tedy kdy\u017e je **vlevo** od entity"
+  },
+  "hitReachRightSword": {
+   "address": "$AB16",
+   "note": "LD HL,nn \u2014 `L`: a tot\u00e9\u017e s tasen\u00fdm me\u010dem ($AB15), skoro trojn\u00e1sobek"
+  },
+  "objectMap": {
+   "address": "$A3A2",
+   "note": "LD BC,nn \u2014 mapa p\u0159edm\u011bt\u016f, **dva bajty na obrazovku** ($A39C `ADD HL,HL`)"
+  },
+  "objectLocationTable": {
+   "address": "$A37C",
+   "note": "LD DE,nn \u2014 `ObjectLocation`: **\u010dty\u0159i pozice na p\u0159edlohu**"
+  },
+  "objectTypeMask": {
+   "address": "$A358",
+   "note": "AND n \u2014 doln\u00ed bity bajtu mapy jsou druh p\u0159edm\u011btu"
+  },
+  "objectSpriteBase": {
+   "address": "$A35A",
+   "note": "ADD A,n \u2014 a p\u0159id\u00e1 se z\u00e1klad sprite ID p\u0159edm\u011bt\u016f"
+  },
+  "objectSlotMask": {
+   "address": "$A376",
+   "note": "AND n \u2014 horn\u00ed dva bity bajtu mapy vyberou jednu ze \u010dty\u0159 pozic (`RLCA` 3x je posune na bity 1-2, tedy krok po dvou bajtech)"
+  },
+  "objectColourTable": {
+   "address": "$A38E",
+   "note": "LD HL,nn \u2014 barva p\u0159edm\u011btu podle druhu, 16 atribut\u016f"
+  },
+  "objectPickHeight": {
+   "address": "$A312",
+   "note": "LD BC,nn \u2014 `B`: svisl\u00fd dosah sebr\u00e1n\u00ed p\u0159edm\u011btu"
+  },
+  "objectPickWidth": {
+   "address": "$A313",
+   "note": "LD BC,nn \u2014 `C`: a vodorovn\u00fd"
+  },
+  "objectScore": {
+   "address": "$A332",
+   "note": "LD BC,nn \u2192 `AddPointsToScore` ($B5A9) \u2014 **BCD**, tedy body za p\u0159edm\u011bt; je to jedno \u010d\u00edslo pro v\u0161echny druhy"
+  },
+  "objectMapDest": {
+   "address": "$A2BD",
+   "note": "LD HL,nn \u2014 kam se mapa p\u0159edm\u011bt\u016f generuje (a `$B248` ji pak um\u00ed prohodit mezi dv\u011bma hr\u00e1\u010di)"
+  },
+  "objectMapSeedMask": {
+   "address": "$A2C7",
+   "note": "AND n \u2014 horn\u00ed bajt zdroje: `$9693` (po\u010d\u00edtadlo sn\u00edmk\u016f) & n, tedy **$0000-$1FFF: ROM Spectra**"
+  },
+  "objectMapCount": {
+   "address": "$A2CA",
+   "note": "LD BC,nn \u2014 kolik bajt\u016f mapy se vygeneruje (2 x 256 obrazovek)"
+  },
+  "objectMapThreshold": {
+   "address": "$A2CF",
+   "note": "CP n \u2014 bajt zdroje pod n znamen\u00e1 \u201ena t\u00e9hle obrazovce p\u0159edm\u011bt je\""
+  },
+  "objectMapTypeMask": {
+   "address": "$A2E6",
+   "note": "AND n \u2014 druh p\u0159edm\u011btu z `Rand8` ($9695)"
+  },
+  "objectMapSlotMask": {
+   "address": "$A2E0",
+   "note": "AND n \u2014 a pozice z doln\u00edho bajtu po\u010d\u00edtadla smy\u010dky (`RRCA` 2x)"
+  },
+  "objectMapCopy": {
+   "address": "$B24B",
+   "note": "LD DE,nn \u2014 mapa druh\u00e9ho hr\u00e1\u010de ($B235 `ChangePlayer` ob\u011b prohod\u00ed)"
+  },
+  "lifeMax": {
+   "address": "$A2FB",
+   "note": "CP n \u2014 **strop \u017eivot\u016f**: `RET NC` nad n\u00edm \u017eivot nep\u0159id\u00e1 (uzav\u0159en\u00e1 ot\u00e1zka ZADANI \u00a77)"
+  },
+  "lifePickHeight": {
+   "address": "$A305",
+   "note": "LD BC,nn \u2014 `B`: dosah sebr\u00e1n\u00ed p\u0159edm\u011btu \u201e\u017eivot\""
+  },
+  "lifePickWidth": {
+   "address": "$A306",
+   "note": "LD BC,nn \u2014 `C`: a vodorovn\u00fd"
+  },
+  "amuletSetMask": {
+   "address": "$A25C",
+   "note": "AND n \u2014 `Rand8` & n vybere jednu z hotov\u00fdch sad rozm\u00edst\u011bn\u00ed"
+  },
+  "amuletSetTable": {
+   "address": "$A263",
+   "note": "LD BC,nn \u2014 `Initialisation_Amulet`: sady po \u010dty\u0159ech obrazovk\u00e1ch"
+  },
+  "amuletPieces": {
+   "address": "$A268",
+   "note": "LD B,n \u2014 kolik kus\u016f amuletu se rozm\u00edst\u00ed"
+  },
+  "amuletSpriteBase": {
+   "address": "$A26C",
+   "note": "ADD A,n \u2014 sprite ID kusu je n + \u010d\u00edslo kusu, tedy $93 \u2026 $90"
+  },
+  "amuletLocationTable": {
+   "address": "$A283",
+   "note": "LD BC,nn \u2014 pozice v obrazovce se bere z **`ObjectLocation`, slot 0**"
+  },
+  "amuletColour": {
+   "address": "$A290",
+   "note": "LD (IX+$05),n \u2014 atribut kusu amuletu p\u0159i polo\u017een\u00ed"
+  },
+  "amuletFlashEvery": {
+   "address": "$A1B8",
+   "note": "AND n \u2014 barva se m\u011bn\u00ed, kdy\u017e je `$9693` d\u011bliteln\u00e9 n+1"
+  },
+  "amuletFlashMask": {
+   "address": "$A1C0",
+   "note": "AND n \u2014 barva cykl\u00ed p\u0159es n+1 hodnot"
+  },
+  "amuletFlashBase": {
+   "address": "$A1C2",
+   "note": "OR n \u2014 a za\u010d\u00edn\u00e1 tady ($44 zelen\u00e1 \u2026 $47 b\u00edl\u00e1)"
+  },
+  "amuletPickHeight": {
+   "address": "$A1B2",
+   "note": "LD BC,nn \u2014 `B`: svisl\u00fd dosah sebr\u00e1n\u00ed kusu amuletu"
+  },
+  "amuletPickWidth": {
+   "address": "$A1B3",
+   "note": "LD BC,nn \u2014 `C`: a vodorovn\u00fd"
+  },
+  "amuletBitsAddress": {
+   "address": "$A1CD",
+   "note": "LD A,(nn) \u2014 kde se dr\u017e\u00ed, kter\u00e9 kusy amuletu u\u017e hr\u00e1\u010d m\u00e1; je to **`+$0B` Sabremanova z\u00e1znamu** ($9702+11)"
+  },
+  "amuletPoemBit": {
+   "address": "$A1D0",
+   "note": "OR n \u2014 a bit 7 t\u00e9ho\u017e bajtu znamen\u00e1 \u201euka\u017e sloku b\u00e1sn\u011b\" ($A18C, M6)"
+  },
+  "amuletFirstSprite": {
+   "address": "$A1D6",
+   "note": "SUB n \u2014 sprite ID prvn\u00edho kusu; rozd\u00edl vyb\u00edr\u00e1 bit v `amuletBits`"
+  },
+  "amuletScore": {
+   "address": "$A1ED",
+   "note": "LD BC,nn \u2192 `AddPointsToScore` \u2014 **BCD**, body za kus amuletu"
+  },
+  "pointStride": {
+   "address": "$9D41",
+   "note": "LD DE,nn \u2014 o kolik se posunout na dal\u0161\u00ed kus amuletu (11 + `INC HL`)"
+  },
+  "pointPieces": {
+   "address": "$9D47",
+   "note": "LD B,n \u2014 kolik kus\u016f se zkou\u0161\u00ed"
+  },
+  "pointColumnMask": {
+   "address": "$9D4F",
+   "note": "AND n \u2014 sloupec obrazovky z \u010d\u00edsla obrazovky"
+  },
+  "pointRowMask": {
+   "address": "$9D5B",
+   "note": "AND n \u2014 a \u0159\u00e1dek"
+  },
+  "pointRange": {
+   "address": "$9D78",
+   "note": "CP n \u2014 domorodec \u201eukazuje\", kdy\u017e je v t\u00e9m\u017ee sloupci sv\u011bta a jeho x se od x kusu li\u0161\u00ed o m\u00e9n\u011b ne\u017e n (a obdobn\u011b po \u0159\u00e1dc\u00edch, `$9D8C`)"
+  },
+  "pointRangeRow": {
+   "address": "$9D8C",
+   "note": "CP n \u2014 tot\u00e9\u017e pro \u0159\u00e1dek a y"
+  },
+  "pointColour": {
+   "address": "$ABCE",
+   "note": "LD (IX+$05),n \u2014 a takhle se p\u0159itom nakresl\u00ed: **ze\u017eloutne** ($ABB6)"
+  },
+  "visitedRooms": {
+   "address": "$9D3A",
+   "note": "LD BC,nn \u2014 `VisitedRooms`, jeden bit na obrazovku"
+  },
+  "visitedByteMask": {
+   "address": "$9D2A",
+   "note": "AND n \u2014 index bajtu je `obrazovka >> 3` & n, tedy `\u0159\u00e1dek*2 + sloupec>>3`"
+  },
+  "visitedBitMask": {
+   "address": "$9D33",
+   "note": "AND n \u2014 a bit je `sloupec & 7`; `$9D37` si t\u00edm **p\u0159ep\u00ed\u0161e vlastn\u00ed instrukci** `SET 0,(HL)` na `SET n,(HL)`"
+  },
+  "percentBits": {
+   "address": "$9CC9",
+   "note": "LD BC,nn \u2014 `B`: bit\u016f v bajtu, `C`: kolik bajt\u016f `VisitedRooms` m\u00e1"
+  },
+  "percentAmuletBits": {
+   "address": "$9CDF",
+   "note": "LD B,n \u2014 \u2605 a k obrazovk\u00e1m se p\u0159i\u010dtou **kusy amuletu**, tak\u017ee do procenta vstupuj\u00ed taky"
+  },
+  "percentStep": {
+   "address": "$9CE7",
+   "note": "LD BC,nn \u2014 100/260 v pevn\u00e9 \u0159\u00e1dov\u00e9 \u010d\u00e1rce: ka\u017ed\u00fd p\u0159enos p\u0159es 16 bit\u016f znamen\u00e1 jedno procento"
+  },
+  "percentRound": {
+   "address": "$9CFC",
+   "note": "LD BC,nn \u2014 a nakonec se p\u0159i\u010dte tohle, aby 260 dalo p\u0159esn\u011b 100"
+  },
+  "percentPosition": {
+   "address": "$9D0E",
+   "note": "LD HL,nn \u2014 kam se procento tiskne (adresa bitmapy obrazovky)"
+  },
+  "objectScoreDecimal": {
+   "address": "$A332",
+   "note": "LD BC,nn \u2192 `AddPointsToScore` ($B5A9) \u2014 **BCD**, tedy body za p\u0159edm\u011bt; je to jedno \u010d\u00edslo pro v\u0161echny druhy"
+  },
+  "amuletScoreDecimal": {
+   "address": "$A1ED",
+   "note": "LD BC,nn \u2192 `AddPointsToScore` \u2014 **BCD**, body za kus amuletu"
+  }
+ }
+}

@@ -1,0 +1,131 @@
+{
+  "note": "M1: konstanty změřené na originálu. Nic tady není odhad – co se nedalo přečíst z runtime obrazu ani odměřit na běhu, v souboru není. Zdroje jsou u jednotlivých položek (tools/mkglobal.py, sources/docs/disasm_notes.md).",
+  "frameRate": 50.08,
+  "frameRateNote": "3,5 MHz / 69 888 T-stavů na snímek; herní logika visí na přerušení z ULA (sources/docs/hw_notes.md)",
+  "lives": 4,
+  "livesCounter": 5,
+  "livesNote": "★ ActivePlayer_Lives ($96BD) se při startu nastaví na 5 a první Sabreman jeden odebere, takže panel ukazuje 4. Strop 9 (panel má na životy jedinou číslici) je pořád nepotvrzený – dobové tipy ho tvrdí, změřený není.",
+  "players": [
+    1,
+    2
+  ],
+  "playersNote": "★ volba 1UP/2UP je v originálu (GameOptions, $9692: 0 = 1 hráč, 1 = 2 hráči, 2/4/6 = joysticky) a panel je na dva hráče postavený vždycky",
+  "gameDelayTimer": {
+    "address": "$96B5",
+    "frames": 128,
+    "onePlayer": "$80",
+    "twoPlayers": "$80",
+    "note": "★ prodleva, po kterou po startu kola a po smrti neběží ovládání ani kontakt – a je stejná pro jednoho i pro dva hráče. $B1C4 je jediné místo, které $96B5 nastavuje; $FF, které komentář veřejné disassembly přisuzuje dvěma hráčům, se v programu nenastavuje nikde (M5)."
+  },
+  "initRoom": "room000",
+  "world": {
+    "columns": 16,
+    "rows": 16,
+    "roomsCount": 256,
+    "templatesCount": 48,
+    "templatesUsed": 45,
+    "sceneryPieces": 41,
+    "roomWidth": 256,
+    "roomHeight": 176,
+    "note": "Layout ($6066) je 16 × 16 bajtů, RoomTable ($6166) 48 předloh, použitých 45; VisitedRooms ($96BF) je 256 bitů. Mapa přechodů a formát předlohy je M2."
+  },
+  "panel": {
+    "rows": 2,
+    "attrRow0": 71,
+    "attrRow1": 70,
+    "label1UP": {
+      "row": 0,
+      "col": 2,
+      "attr": 69
+    },
+    "lives": {
+      "row": 0,
+      "col": 8,
+      "digits": 1,
+      "attr": 71
+    },
+    "lifeIcon": {
+      "row": 0,
+      "col": 9,
+      "attr": 71,
+      "note": "UDG_Life, osm bajtů na $B814"
+    },
+    "labelHI": {
+      "row": 0,
+      "col": 15,
+      "attr": 87
+    },
+    "label2UP": {
+      "row": 0,
+      "col": 27,
+      "attr": 69
+    },
+    "score1UP": {
+      "row": 1,
+      "col": 1,
+      "digits": 6,
+      "attr": 70
+    },
+    "scoreHI": {
+      "row": 1,
+      "col": 13,
+      "digits": 6,
+      "attr": 70
+    },
+    "score2UP": {
+      "row": 1,
+      "col": 25,
+      "digits": 6,
+      "attr": 70
+    },
+    "note": "skóre je tři bajty BCD na hráče ($9698, $969B) a tiskne se na šest číslic; celé řádky se obarví jedním průchodem v GameInitialisation ($996F, $997C)"
+  },
+  "hallOfFame": {
+    "address": "$B304",
+    "places": 6,
+    "nameLength": 3,
+    "title": "ULTIMATE HALL OF FAME",
+    "defaults": [
+      {
+        "name": "ULT",
+        "score": 102275
+      },
+      {
+        "name": "ACG",
+        "score": 55150
+      },
+      {
+        "name": "CTJ",
+        "score": 37895
+      },
+      {
+        "name": "TDJ",
+        "score": 24320
+      },
+      {
+        "name": "JSL",
+        "score": 12775
+      },
+      {
+        "name": "CLW",
+        "score": 8250
+      }
+    ],
+    "menuFrames": 823,
+    "hallOfFameFrames": 802,
+    "note": "★ síň slávy je v originálu, ne přídavek remaku: šest míst, jméno tři znaky, skóre tři bajty BCD. Menu se na ni překlápí samo (CounterHallOfFame, $96B8) – odměřený cyklus je 823 snímků menu a 802 snímků síně slávy, tedy ~16 s na obrazovku."
+  },
+  "hiScore": 102275,
+  "borderColor": 0,
+  "border": {
+    "colour": 0,
+    "pauseColours": [
+      1,
+      3
+    ],
+    "pauseStep": 4,
+    "pauseFrames": 32,
+    "note": "★ M6 uzavřel otevřenou otázku ZADANI §7: border je celou hru černý ($9963) a hýbe se **jedinkrát**, v pauze. $AC40 přičte $04 k počítadlu na každý snímek a bit 7 z něj udělá barvu, takže se okraj střídá modrá (1) / purpurová (3) po 32 snímcích; $AC67 ho po odpauzování vrátí na černou. Jinde v programu žádný další zápis do portu $FE s barvou není – zvuk a hudba border jen srážejí na černou."
+  },
+  "borderColorNote": "★ GameInitialisation ($9963) dělá XOR A / OUT ($FE),A, takže border je celou hru černý; jediné, co ho hne, je pauza – viz border.pauseColours"
+}

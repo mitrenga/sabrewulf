@@ -1,0 +1,2064 @@
+{
+  "note": "M2: sprity z runtime obrazu \u2013 SpritesTable ($BF84), 196 ID a 153 r\u016fzn\u00fdch sn\u00edmk\u016f. \u0160\u00ed\u0159ka je v bajtech, v\u00fd\u0161ka v pixelech, pixely bez masky a bez atribut\u016f; barvu sprite nenese. Jm\u00e9na jsou z ve\u0159ejn\u00e9 disassembly, ne zm\u011b\u0159en\u00e1. P\u00f3zy ch\u016fze a me\u010de se rozeberou v M3, entity v M4/M5 (tools/dumpsprites.py).",
+  "source": "sabrewulf-run.bin",
+  "tableAddress": "$BF84",
+  "ids": 196,
+  "frames": 153,
+  "framesContiguous": 148,
+  "namesFrom": "sources/asm/pobtastic-skoolkit/sabrewulf.ref (#SPRITENAME) \u2013 zdroj z druh\u00e9 ruky",
+  "sprites": [
+    {
+      "id": "$00",
+      "frame": "$C10C",
+      "name": "None"
+    },
+    {
+      "id": "$01",
+      "frame": "$D822",
+      "name": "Appearing: Frame 1"
+    },
+    {
+      "id": "$02",
+      "frame": "$D84E",
+      "name": "Appearing: Frame 2"
+    },
+    {
+      "id": "$03",
+      "frame": "$D889",
+      "name": "Appearing: Frame 3"
+    },
+    {
+      "id": "$04",
+      "frame": "$D8D0",
+      "name": "Appearing: Frame 4"
+    },
+    {
+      "id": "$05",
+      "frame": "$D917",
+      "name": "Appearing: Frame 5"
+    },
+    {
+      "id": "$06",
+      "frame": "$D95E",
+      "name": "Appearing: Frame 6"
+    },
+    {
+      "id": "$07",
+      "frame": "$C10C",
+      "name": "None"
+    },
+    {
+      "id": "$08",
+      "frame": "$D747",
+      "name": "Disappearing: Frame 2"
+    },
+    {
+      "id": "$09",
+      "frame": "$D78E",
+      "name": "Disappearing: Frame 3"
+    },
+    {
+      "id": "$0A",
+      "frame": "$D7D8",
+      "name": "Disappearing: Frame 4"
+    },
+    {
+      "id": "$0B",
+      "frame": "$D78E",
+      "name": "Disappearing: Frame 3"
+    },
+    {
+      "id": "$0C",
+      "frame": "$D747",
+      "name": "Disappearing: Frame 2"
+    },
+    {
+      "id": "$0D",
+      "frame": "$D706",
+      "name": "Disappearing: Frame 1"
+    },
+    {
+      "id": "$0E",
+      "frame": "$C10C",
+      "name": "None"
+    },
+    {
+      "id": "$0F",
+      "frame": "$C10C",
+      "name": "None"
+    },
+    {
+      "id": "$10",
+      "frame": "$C514",
+      "name": "Sabreman: Left Frame 1"
+    },
+    {
+      "id": "$11",
+      "frame": "$C540",
+      "name": "Sabreman: Left Frame 2"
+    },
+    {
+      "id": "$12",
+      "frame": "$C56E",
+      "name": "Sabreman: Left Frame 3"
+    },
+    {
+      "id": "$13",
+      "frame": "$C540",
+      "name": "Sabreman: Left Frame 4"
+    },
+    {
+      "id": "$14",
+      "frame": "$C720",
+      "name": "Sabreman: Right Frame 1"
+    },
+    {
+      "id": "$15",
+      "frame": "$C74C",
+      "name": "Sabreman: Right Frame 2"
+    },
+    {
+      "id": "$16",
+      "frame": "$C77A",
+      "name": "Sabreman: Right Frame 3"
+    },
+    {
+      "id": "$17",
+      "frame": "$C74C",
+      "name": "Sabreman: Right Frame 4"
+    },
+    {
+      "id": "$18",
+      "frame": "$C40C",
+      "name": "Sabreman: Up Frame 1"
+    },
+    {
+      "id": "$19",
+      "frame": "$C438",
+      "name": "Sabreman: Up Frame 2"
+    },
+    {
+      "id": "$1A",
+      "frame": "$C464",
+      "name": "Sabreman: Up Frame 3"
+    },
+    {
+      "id": "$1B",
+      "frame": "$C438",
+      "name": "Sabreman: Up Frame 4"
+    },
+    {
+      "id": "$1C",
+      "frame": "$C490",
+      "name": "Sabreman: Down Frame 1"
+    },
+    {
+      "id": "$1D",
+      "frame": "$C4BC",
+      "name": "Sabreman: Down Frame 2"
+    },
+    {
+      "id": "$1E",
+      "frame": "$C4E8",
+      "name": "Sabreman: Down Frame 3"
+    },
+    {
+      "id": "$1F",
+      "frame": "$C4BC",
+      "name": "Sabreman: Down Frame 4"
+    },
+    {
+      "id": "$20",
+      "frame": "$C59A",
+      "name": "Sabreman: Left Fighting Frame 1"
+    },
+    {
+      "id": "$21",
+      "frame": "$C5DB",
+      "name": "Sabreman: Left Fighting Frame 2"
+    },
+    {
+      "id": "$22",
+      "frame": "$C61C",
+      "name": "Sabreman: Left Fighting Frame 3"
+    },
+    {
+      "id": "$23",
+      "frame": "$C65D",
+      "name": "Sabreman: Left Fighting Frame 4"
+    },
+    {
+      "id": "$24",
+      "frame": "$C69E",
+      "name": "Sabreman: Left Fighting Frame 5"
+    },
+    {
+      "id": "$25",
+      "frame": "$C65D",
+      "name": "Sabreman: Left Fighting Frame 4"
+    },
+    {
+      "id": "$26",
+      "frame": "$C6DF",
+      "name": "Sabreman: Left Fighting Frame 6"
+    },
+    {
+      "id": "$27",
+      "frame": "$C5DB",
+      "name": "Sabreman: Left Fighting Frame 2"
+    },
+    {
+      "id": "$28",
+      "frame": "$C7A6",
+      "name": "Sabreman: Right Fighting Frame 1"
+    },
+    {
+      "id": "$29",
+      "frame": "$C7E7",
+      "name": "Sabreman: Right Fighting Frame 2"
+    },
+    {
+      "id": "$2A",
+      "frame": "$C828",
+      "name": "Sabreman: Right Fighting Frame 3"
+    },
+    {
+      "id": "$2B",
+      "frame": "$C869",
+      "name": "Sabreman: Right Fighting Frame 4"
+    },
+    {
+      "id": "$2C",
+      "frame": "$C8AA",
+      "name": "Sabreman: Right Fighting Frame 5"
+    },
+    {
+      "id": "$2D",
+      "frame": "$C869",
+      "name": "Sabreman: Right Fighting Frame 4"
+    },
+    {
+      "id": "$2E",
+      "frame": "$C8EB",
+      "name": "Sabreman: Right Fighting Frame 6"
+    },
+    {
+      "id": "$2F",
+      "frame": "$C7E7",
+      "name": "Sabreman: Right Fighting Frame 2"
+    },
+    {
+      "id": "$30",
+      "frame": "$C97A",
+      "name": "Rhino: Left Frame 2"
+    },
+    {
+      "id": "$31",
+      "frame": "$C92C",
+      "name": "Rhino: Left Frame 1"
+    },
+    {
+      "id": "$32",
+      "frame": "$CA16",
+      "name": "Rhino: Right Frame 2"
+    },
+    {
+      "id": "$33",
+      "frame": "$C9C8",
+      "name": "Rhino: Right Frame 1"
+    },
+    {
+      "id": "$34",
+      "frame": "$E8FC",
+      "name": "Fire: Frame 1"
+    },
+    {
+      "id": "$35",
+      "frame": "$E92A",
+      "name": "Fire: Frame 2"
+    },
+    {
+      "id": "$36",
+      "frame": "$E958",
+      "name": "Fire: Frame 3"
+    },
+    {
+      "id": "$37",
+      "frame": "$E988",
+      "name": "Fire: Frame 4"
+    },
+    {
+      "id": "$38",
+      "frame": "$CBDE",
+      "name": "Tribesman: Left Frame 1"
+    },
+    {
+      "id": "$39",
+      "frame": "$CC0E",
+      "name": "Tribesman: Left Frame 2"
+    },
+    {
+      "id": "$3A",
+      "frame": "$CC3E",
+      "name": "Tribesman: Left Frame 3"
+    },
+    {
+      "id": "$3B",
+      "frame": "$CC0E",
+      "name": "Tribesman: Left Frame 2"
+    },
+    {
+      "id": "$3C",
+      "frame": "$CC6E",
+      "name": "Tribesman: Left Frame 4"
+    },
+    {
+      "id": "$3D",
+      "frame": "$CC9E",
+      "name": "Tribesman: Right Frame 1"
+    },
+    {
+      "id": "$3E",
+      "frame": "$CCCE",
+      "name": "Tribesman: Right Frame 2"
+    },
+    {
+      "id": "$3F",
+      "frame": "$CC9E",
+      "name": "Tribesman: Right Frame 1"
+    },
+    {
+      "id": "$40",
+      "frame": "$D282",
+      "name": "Sabreman: Flying Left"
+    },
+    {
+      "id": "$41",
+      "frame": "$D2B0",
+      "name": "Sabreman: Sitting Left"
+    },
+    {
+      "id": "$42",
+      "frame": "$D2D6",
+      "name": "Sabreman: Dead Left"
+    },
+    {
+      "id": "$43",
+      "frame": "$D2B0",
+      "name": "Sabreman: Sitting Left"
+    },
+    {
+      "id": "$44",
+      "frame": "$D2FC",
+      "name": "Sabreman: Flying Right"
+    },
+    {
+      "id": "$45",
+      "frame": "$D32A",
+      "name": "Sabreman: Sitting Right"
+    },
+    {
+      "id": "$46",
+      "frame": "$D350",
+      "name": "Sabreman: Dead Right"
+    },
+    {
+      "id": "$47",
+      "frame": "$D32A",
+      "name": "Sabreman: Sitting Right"
+    },
+    {
+      "id": "$48",
+      "frame": "$D376",
+      "name": "Orchid: Frame 1"
+    },
+    {
+      "id": "$49",
+      "frame": "$D37E",
+      "name": "Orchid: Frame 2"
+    },
+    {
+      "id": "$4A",
+      "frame": "$D386",
+      "name": "Orchid: Frame 3"
+    },
+    {
+      "id": "$4B",
+      "frame": "$D392",
+      "name": "Orchid: Frame 4"
+    },
+    {
+      "id": "$4C",
+      "frame": "$D3A0",
+      "name": "Orchid: Frame 5"
+    },
+    {
+      "id": "$4D",
+      "frame": "$D3B2",
+      "name": "Orchid: Frame 6"
+    },
+    {
+      "id": "$4E",
+      "frame": "$D3CA",
+      "name": "Orchid: Frame 7"
+    },
+    {
+      "id": "$4F",
+      "frame": "$D3E6",
+      "name": "Orchid: Frame 8"
+    },
+    {
+      "id": "$50",
+      "frame": "$CF06",
+      "name": "Wulf: Left Frame 1"
+    },
+    {
+      "id": "$51",
+      "frame": "$CF64",
+      "name": "Wulf: Left Frame 2"
+    },
+    {
+      "id": "$52",
+      "frame": "$CFC2",
+      "name": "Wulf: Left Frame 3"
+    },
+    {
+      "id": "$53",
+      "frame": "$CF64",
+      "name": "Wulf: Left Frame 2"
+    },
+    {
+      "id": "$54",
+      "frame": "$D020",
+      "name": "Wulf: Right Frame 1"
+    },
+    {
+      "id": "$55",
+      "frame": "$D07E",
+      "name": "Wulf: Right Frame 2"
+    },
+    {
+      "id": "$56",
+      "frame": "$D0DC",
+      "name": "Wulf: Right Frame 3"
+    },
+    {
+      "id": "$57",
+      "frame": "$D07E",
+      "name": "Wulf: Right Frame 2"
+    },
+    {
+      "id": "$58",
+      "frame": "$D13A",
+      "name": "Wulf: Pounce Left Frame 1"
+    },
+    {
+      "id": "$59",
+      "frame": "$D1BE",
+      "name": "Wulf: Pounce Left Frame 2"
+    },
+    {
+      "id": "$5A",
+      "frame": "$C10C",
+      "name": "None"
+    },
+    {
+      "id": "$5B",
+      "frame": "$C10C",
+      "name": "None"
+    },
+    {
+      "id": "$5C",
+      "frame": "$D17C",
+      "name": "Wulf: Pounce Right Frame 1"
+    },
+    {
+      "id": "$5D",
+      "frame": "$D220",
+      "name": "Wulf: Pounce Right Frame 2"
+    },
+    {
+      "id": "$5E",
+      "frame": "$C10C",
+      "name": "None"
+    },
+    {
+      "id": "$5F",
+      "frame": "$C10C",
+      "name": "None"
+    },
+    {
+      "id": "$60",
+      "frame": "$CCFE",
+      "name": "Spider: Left Frame 1"
+    },
+    {
+      "id": "$61",
+      "frame": "$CD3F",
+      "name": "Spider: Left Frame 2"
+    },
+    {
+      "id": "$62",
+      "frame": "$CD83",
+      "name": "Spider: Right Frame 1"
+    },
+    {
+      "id": "$63",
+      "frame": "$CDC4",
+      "name": "Spider: Right Frame 2"
+    },
+    {
+      "id": "$64",
+      "frame": "$CE08",
+      "name": "Scorpion: Left Frame 1"
+    },
+    {
+      "id": "$65",
+      "frame": "$CE49",
+      "name": "Scorpion: Left Frame 2"
+    },
+    {
+      "id": "$66",
+      "frame": "$CE87",
+      "name": "Scorpion: Right Frame 1"
+    },
+    {
+      "id": "$67",
+      "frame": "$CEC8",
+      "name": "Scorpion: Right Frame 2"
+    },
+    {
+      "id": "$68",
+      "frame": "$C38C",
+      "name": "Bat: Left Frame 1"
+    },
+    {
+      "id": "$69",
+      "frame": "$C3B0",
+      "name": "Bat: Left Frame 2"
+    },
+    {
+      "id": "$6A",
+      "frame": "$C3CC",
+      "name": "Bat: Right Frame 1"
+    },
+    {
+      "id": "$6B",
+      "frame": "$C3F0",
+      "name": "Bat: Right Frame 2"
+    },
+    {
+      "id": "$6C",
+      "frame": "$D418",
+      "name": "Parrot: Left Frame 1"
+    },
+    {
+      "id": "$6D",
+      "frame": "$D440",
+      "name": "Parrot: Left Frame 2"
+    },
+    {
+      "id": "$6E",
+      "frame": "$D468",
+      "name": "Parrot: Right Frame 1"
+    },
+    {
+      "id": "$6F",
+      "frame": "$D490",
+      "name": "Parrot: Right Frame 2"
+    },
+    {
+      "id": "$70",
+      "frame": "$D4B8",
+      "name": "Monkey: Left Frame 1"
+    },
+    {
+      "id": "$71",
+      "frame": "$D4E4",
+      "name": "Monkey: Left Frame 2"
+    },
+    {
+      "id": "$72",
+      "frame": "$D50E",
+      "name": "Monkey: Right Frame 1"
+    },
+    {
+      "id": "$73",
+      "frame": "$D53A",
+      "name": "Monkey: Right Frame 2"
+    },
+    {
+      "id": "$74",
+      "frame": "$D564",
+      "name": "Lizard: Left Frame 1"
+    },
+    {
+      "id": "$75",
+      "frame": "$D58D",
+      "name": "Lizard: Left Frame 2"
+    },
+    {
+      "id": "$76",
+      "frame": "$D5B9",
+      "name": "Lizard: Right Frame 1"
+    },
+    {
+      "id": "$77",
+      "frame": "$D5E5",
+      "name": "Lizard: Right Frame 2"
+    },
+    {
+      "id": "$78",
+      "frame": "$D60E",
+      "name": "Snake: Left Frame 1"
+    },
+    {
+      "id": "$79",
+      "frame": "$D637",
+      "name": "Snake: Left Frame 2"
+    },
+    {
+      "id": "$7A",
+      "frame": "$D65A",
+      "name": "Snake: Right Frame 1"
+    },
+    {
+      "id": "$7B",
+      "frame": "$D67D",
+      "name": "Snake: Right Frame 2"
+    },
+    {
+      "id": "$7C",
+      "frame": "$C10C",
+      "name": "None"
+    },
+    {
+      "id": "$7D",
+      "frame": "$C10C",
+      "name": "None"
+    },
+    {
+      "id": "$7E",
+      "frame": "$C10C",
+      "name": "None"
+    },
+    {
+      "id": "$7F",
+      "frame": "$C10C",
+      "name": "None"
+    },
+    {
+      "id": "$80",
+      "frame": "$D999",
+      "name": "Crate"
+    },
+    {
+      "id": "$81",
+      "frame": "$D9BB",
+      "name": "Ring"
+    },
+    {
+      "id": "$82",
+      "frame": "$D9DD",
+      "name": "Fruit"
+    },
+    {
+      "id": "$83",
+      "frame": "$D9FF",
+      "name": "Hat"
+    },
+    {
+      "id": "$84",
+      "frame": "$DA21",
+      "name": "Shield"
+    },
+    {
+      "id": "$85",
+      "frame": "$DA43",
+      "name": "Life"
+    },
+    {
+      "id": "$86",
+      "frame": "$DA65",
+      "name": "Money Bag"
+    },
+    {
+      "id": "$87",
+      "frame": "$DA87",
+      "name": "Sword"
+    },
+    {
+      "id": "$88",
+      "frame": "$D999",
+      "name": "Crate"
+    },
+    {
+      "id": "$89",
+      "frame": "$D9BB",
+      "name": "Ring"
+    },
+    {
+      "id": "$8A",
+      "frame": "$D9DD",
+      "name": "Fruit"
+    },
+    {
+      "id": "$8B",
+      "frame": "$D9FF",
+      "name": "Hat"
+    },
+    {
+      "id": "$8C",
+      "frame": "$DA21",
+      "name": "Shield"
+    },
+    {
+      "id": "$8D",
+      "frame": "$DA21",
+      "name": "Shield"
+    },
+    {
+      "id": "$8E",
+      "frame": "$DA65",
+      "name": "Money Bag"
+    },
+    {
+      "id": "$8F",
+      "frame": "$DA87",
+      "name": "Sword"
+    },
+    {
+      "id": "$90",
+      "frame": "$E7D6",
+      "name": "Amulet: Bottom Right"
+    },
+    {
+      "id": "$91",
+      "frame": "$E7B4",
+      "name": "Amulet: Bottom Left"
+    },
+    {
+      "id": "$92",
+      "frame": "$E792",
+      "name": "Amulet: Top Right"
+    },
+    {
+      "id": "$93",
+      "frame": "$E770",
+      "name": "Amulet: Top Left"
+    },
+    {
+      "id": "$94",
+      "frame": "$E7F8",
+      "name": "The Guardian: Frame 1"
+    },
+    {
+      "id": "$95",
+      "frame": "$E87A",
+      "name": "The Guardian: Frame 2"
+    },
+    {
+      "id": "$96",
+      "frame": "$C10C",
+      "name": "None"
+    },
+    {
+      "id": "$97",
+      "frame": "$C10C",
+      "name": "None"
+    },
+    {
+      "id": "$98",
+      "frame": "$E9B8",
+      "name": "Rat: Left Frame 1"
+    },
+    {
+      "id": "$99",
+      "frame": "$E9D5",
+      "name": "Rat: Left Frame 2"
+    },
+    {
+      "id": "$9A",
+      "frame": "$E9F2",
+      "name": "Rat: Right Frame 1"
+    },
+    {
+      "id": "$9B",
+      "frame": "$EA0F",
+      "name": "Rat: Right Frame 2"
+    },
+    {
+      "id": "$9C",
+      "frame": "$EA2C",
+      "name": "Bird: Left Frame 1"
+    },
+    {
+      "id": "$9D",
+      "frame": "$EA64",
+      "name": "Bird: Left Frame 2"
+    },
+    {
+      "id": "$9E",
+      "frame": "$EAA8",
+      "name": "Bird: Right Frame 1"
+    },
+    {
+      "id": "$9F",
+      "frame": "$EAE0",
+      "name": "Bird: Right Frame 2"
+    },
+    {
+      "id": "$A0",
+      "frame": "$CAAE",
+      "name": "Hippo: Left Frame 1"
+    },
+    {
+      "id": "$A1",
+      "frame": "$CAF8",
+      "name": "Hippo: Left Frame 2"
+    },
+    {
+      "id": "$A2",
+      "frame": "$CB46",
+      "name": "Hippo: Right Frame 1"
+    },
+    {
+      "id": "$A3",
+      "frame": "$CB90",
+      "name": "Hippo: Right Frame 2"
+    },
+    {
+      "id": "$A4",
+      "frame": "$CA64",
+      "name": "Hippo: Sleeping"
+    },
+    {
+      "id": "$A5",
+      "frame": "$CA64",
+      "name": "Hippo: Sleeping"
+    },
+    {
+      "id": "$A6",
+      "frame": "$CA64",
+      "name": "Hippo: Sleeping"
+    },
+    {
+      "id": "$A7",
+      "frame": "$CA64",
+      "name": "Hippo: Sleeping"
+    },
+    {
+      "id": "$A8",
+      "frame": "$DB4C",
+      "name": "Warthog: Left Frame 1"
+    },
+    {
+      "id": "$A9",
+      "frame": "$DC22",
+      "name": "Warthog: Left Frame 2"
+    },
+    {
+      "id": "$AA",
+      "frame": "$DB92",
+      "name": "Warthog: Right Frame 1"
+    },
+    {
+      "id": "$AB",
+      "frame": "$DBDC",
+      "name": "Warthog: Right Frame 2"
+    },
+    {
+      "id": "$AC",
+      "frame": "$DB0B",
+      "name": "Warthog: Sleeping"
+    },
+    {
+      "id": "$AD",
+      "frame": "$DB0B",
+      "name": "Warthog: Sleeping"
+    },
+    {
+      "id": "$AE",
+      "frame": "$DB0B",
+      "name": "Warthog: Sleeping"
+    },
+    {
+      "id": "$AF",
+      "frame": "$DB0B",
+      "name": "Warthog: Sleeping"
+    },
+    {
+      "id": "$B0",
+      "frame": "$EBA4",
+      "name": "Frog: Left Frame 1"
+    },
+    {
+      "id": "$B1",
+      "frame": "$EBCA",
+      "name": "Frog: Left Frame 2"
+    },
+    {
+      "id": "$B2",
+      "frame": "$EBEA",
+      "name": "Frog: Right Frame 1"
+    },
+    {
+      "id": "$B3",
+      "frame": "$EC10",
+      "name": "Frog: Right Frame 2"
+    },
+    {
+      "id": "$B4",
+      "frame": "$EB24",
+      "name": "Mosquito: Left Frame 1"
+    },
+    {
+      "id": "$B5",
+      "frame": "$EB46",
+      "name": "Mosquito: Left Frame 2"
+    },
+    {
+      "id": "$B6",
+      "frame": "$EB64",
+      "name": "Mosquito: Right Frame 1"
+    },
+    {
+      "id": "$B7",
+      "frame": "$EB86",
+      "name": "Mosquito: Right Frame 2"
+    },
+    {
+      "id": "$B8",
+      "frame": "$C270",
+      "name": "Skunk: Left Frame 1"
+    },
+    {
+      "id": "$B9",
+      "frame": "$C2B1",
+      "name": "Skunk: Left Frame 2"
+    },
+    {
+      "id": "$BA",
+      "frame": "$C2F2",
+      "name": "Skunk: Right Frame 1"
+    },
+    {
+      "id": "$BB",
+      "frame": "$C333",
+      "name": "Skunk: Right Frame 2"
+    },
+    {
+      "id": "$BC",
+      "frame": "$C1E8",
+      "name": "Flea: Left Frame 1"
+    },
+    {
+      "id": "$BD",
+      "frame": "$C206",
+      "name": "Flea: Left Frame 2"
+    },
+    {
+      "id": "$BE",
+      "frame": "$C22C",
+      "name": "Flea: Right Frame 1"
+    },
+    {
+      "id": "$BF",
+      "frame": "$C24A",
+      "name": "Flea: Right Frame 2"
+    },
+    {
+      "id": "$C0",
+      "frame": "$C10E",
+      "name": "Earwig: Left Frame 1"
+    },
+    {
+      "id": "$C1",
+      "frame": "$C146",
+      "name": "Earwig: Left Frame 2"
+    },
+    {
+      "id": "$C2",
+      "frame": "$C17B",
+      "name": "Earwig: Right Frame 1"
+    },
+    {
+      "id": "$C3",
+      "frame": "$C1B3",
+      "name": "Earwig: Right Frame 2"
+    }
+  ],
+  "frameData": [
+    {
+      "address": "$C10C",
+      "width": 0,
+      "widthPixels": 0,
+      "height": 0,
+      "bitmap": ""
+    },
+    {
+      "address": "$C10E",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 18,
+      "bitmap": "AhAAA2AABYAABTwAAsAAAYAAM4+O27/Zf/+wfeew2rjZM4+OAYAAAkAABT4ABYAABGAAAhAA"
+    },
+    {
+      "address": "$C146",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 17,
+      "bitmap": "AAAAAAQAADgAPEAAAo8AAfAAM4+OW7/Zf/+wfeewWrjZM4+OAeAAAp8APEAAADgAAAQA"
+    },
+    {
+      "address": "$C17B",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 18,
+      "bitmap": "AAhAAAYgAAGgADygAANAAAGAcfHMm/vbDf/+Dee+mx1bcfHMAAGAAAJAAHygAAGgAAYgAAhA"
+    },
+    {
+      "address": "$C1B3",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 17,
+      "bitmap": "AAAAACAAABwAAAI8APFAAA+AcfHMm/3aDf/+Dee+mx1acfHMAAeAAPkgAAI8ABwAACAA"
+    },
+    {
+      "address": "$C1E8",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 14,
+      "bitmap": "AAAdwAafCz8KHhTuF5wweL7w3eDz4E+ATgA4AA=="
+    },
+    {
+      "address": "$C206",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 18,
+      "bitmap": "AAAAAAAgAiACQASACZ8TPxZ+M94xPD943PDj4P/gT4BOADgA"
+    },
+    {
+      "address": "$C22C",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 14,
+      "bitmap": "AAADuPlg/LB4UHcoOegeDA99B7sHzwHyAHIAHA=="
+    },
+    {
+      "address": "$C24A",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 18,
+      "bitmap": "AAAAAAQABEACQAEg+ZD8yH5oe8w8jB78DzsHxwf/AfIAcgAc"
+    },
+    {
+      "address": "$C270",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "AAAAAXwAAQ5wAx6IA7nkf3cyZ37yN71yD/oyBYQyAPgyAABkAABkAADIAACQAAGgAAEgAAFAAAGkAADYAABw"
+    },
+    {
+      "address": "$C2B1",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "AAAAAx4ABgZwAx6IB73kf7syZ77yN91yD/oyBYQyAPgyAABkAABkAADIAACQAAGgAAEgAAFAAAGkAADYAABw"
+    },
+    {
+      "address": "$C2F2",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "AAAAAD6ADnCAEXjAJ53ATO7+T37mTr3sTF/wTCGgTB8AJgAAJgAAEwAACQAABYAABIAAAoAAJYAAGwAADgAA"
+    },
+    {
+      "address": "$C333",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "AAAAAHgwB2BgEXjAJ73gTN3+T33mTrvsTF/wTCGgTB8AJgAAJgAAEwAACQAABYAABIAAAoAAJYAAGwAADgAA"
+    },
+    {
+      "address": "$C38C",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 17,
+      "bitmap": "AACAAMAQ8DDwYmjmbvwt+DfwH4AvcHfwHT4xwAD8AH4AHw=="
+    },
+    {
+      "address": "$C3B0",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 13,
+      "bitmap": "AYAHAA8QDjAeYh3mG/wP+B/gL593/h38AHA="
+    },
+    {
+      "address": "$C3CC",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 17,
+      "bitmap": "AAAAAQgDDA9GD2cWP3YftA/sAfgO9A/ufLgDjD8AfgD4AA=="
+    },
+    {
+      "address": "$C3F0",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 13,
+      "bitmap": "AYAA4AjwDHBGeGe4P9gf8Af4+fR/7j+4Dgw="
+    },
+    {
+      "address": "$C40C",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 21,
+      "bitmap": "DwAHcAB4BhgP4A/AADAPuBfcN+w//BgYB+Af+DgcZ+Zb2hvYDbAGYAPA"
+    },
+    {
+      "address": "$C438",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 21,
+      "bitmap": "DnAGYAAADnAH4AfgIAQn5DfsN+w//BgYB+Af+DgcZ+ZbuhvYDbAGYAPA"
+    },
+    {
+      "address": "$C464",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 21,
+      "bitmap": "APAO4B4AGGAH8APwDAAd8DvoN+w//BgYB+Af+DgcZ+Zb2hvYDbAGYAPA"
+    },
+    {
+      "address": "$C490",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 21,
+      "bitmap": "DwAHOAA+Hk4L8AXwDggd9Dv0O/wYGAfgD/AVqBZoYAY//BvYG9gNsAPA"
+    },
+    {
+      "address": "$C4BC",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 21,
+      "bitmap": "HngOcAAADnAH4CfkMAw37D/8P/wYGAfgD/AVqBZoYAY//BvYG9gNsAPA"
+    },
+    {
+      "address": "$C4E8",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 21,
+      "bitmap": "APAc4HwAcngP0A+gEHAvuC/cP9wYGAfgD/AVqBZoYAY//BvYG9gNsAPA"
+    },
+    {
+      "address": "$C514",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 21,
+      "bitmap": "DnAeOBAIB3AC5Af0AQQAdAY0ByQCLgAEB+AfzBs4BMgDKAzoOugHMAPg"
+    },
+    {
+      "address": "$C540",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 22,
+      "bitmap": "B4ADgAGAAAADwAPkBnQARAc0BzQGNAJuAAQH4B/MGzgEyAMoDOg66AcwA+A="
+    },
+    {
+      "address": "$C56E",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 21,
+      "bitmap": "DnAeOBAIB3ADpAf0ACQPNA+EBxQCLgAEB+AfzBs4BMgDKAzoOugHMAPg"
+    },
+    {
+      "address": "$C59A",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "gHh4QBjgIDBAEA2ADj/ADB+ACwAIA5+YAd+4AL/QAH/gAAAAAA/AAD+YADZwAAmQAAZQABnQAHXQAA5gAAfA"
+    },
+    {
+      "address": "$C5DB",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "AA8HAAMOAAYEAAmwAAf4AAPwAAABAAD7AAH7ATv9/3f+AQAAAAH4AAfzAAbOAAEyAADKAAM6AA7aAAHMAAD4"
+    },
+    {
+      "address": "$C61C",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "AF54AEZgAEwQAINgAI/wAIfgAwAAAIfgAwfsAe/2AF/7AAABAAfgAB/MABs4AATIAAMoAAzoADroAAcwAAPg"
+    },
+    {
+      "address": "$C65D",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "AHjwABxgAAww8INgD4/wAUfgAWAAAGfkADfsAC/2AB/6AAAAAAfgAB/MABs4AATIAAMoAAzoADroAAcwAAPg"
+    },
+    {
+      "address": "$C69E",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "AeB4AHDgADBAAA2AAD/AAB+AAAAgAB+wAd+YAb/YA3/gCgAABB+ACn8wEGzgIBMgQAyggDOgAOugABzAAA+A"
+    },
+    {
+      "address": "$C6DF",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "ADwPAA4cAAYIAAGwAAf4AAPwAAADAAfjAHfuAO/0Ad/4AYAAAAPwA4/mAQ2cAQJkAQGUAQZ0AR10AQOYAQHw"
+    },
+    {
+      "address": "$C720",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 21,
+      "bitmap": "DnAceBAIDuAnQC/gIIAuACxgJOB0QCAAB+Az+BzYEyAUwBcwF1wM4AfA"
+    },
+    {
+      "address": "$C74C",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 22,
+      "bitmap": "AeABwAGAAAADwCfALmAiACzgLOAsYHZAIAAH4DP4HNgTIBQgFzAXXAzgB8A="
+    },
+    {
+      "address": "$C77A",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 21,
+      "bitmap": "DnAceBAIDuAlwC/gJAAs8CHwIeB0QCAAB+Az+BzYEyAUwBcwF1wM4AfA"
+    },
+    {
+      "address": "$C7A6",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "Hh4BBxgCAgwEAbAIA/xwAfgwAQDQGfnAHfuAC/0AB/4AAAAAA/AAGfwADmwACZAACmAAC5gAC64ABnAAA+AA"
+    },
+    {
+      "address": "$C7E7",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "8DwAOHAAEGAADYAAH+AAD8AAwAAAx+AAd+4AL/cAH/2AAAGA/8AAZ/HAObCAJkCAKYCALmCALriAGcCAD4CA"
+    },
+    {
+      "address": "$C828",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "HjoABmIACDIABsEAD/EAB+EAAADAB+EAN+DAb/eA3/oAgAAAB+AAM/gAHNgAEyAAFMAAFzAAF1wADOAAB8AA"
+    },
+    {
+      "address": "$C869",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "Dx4ABjgADDAABsEPD/HwB+KAAAaAJ+YAN+wAb/QAX/gAAAAAB+AAM/gAHNgAEyAAFMAAFzAAF6wADOAAB8AA"
+    },
+    {
+      "address": "$C8AA",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "HgeABw4AAgwAAbAAA/wAAfgABAAADfgAGfuAG/2AB/7AAABQAfggDf5QBzYIBMgEBTACBcwBBdcAAzgAAfAA"
+    },
+    {
+      "address": "$C8EB",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "4PAAcMAAIGAAH+AAH+AAD8AAgAAA3wAA34AAv9yAf+7/AACAH4AAz+AAc2AATIAAUwAAU8AAXXAAM4AAHwAA"
+    },
+    {
+      "address": "$C92C",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 19,
+      "bitmap": "AIAADAHAAA4D4AAfA/AAPwD9+H4Afv78AD7++gAfff4AD/3/H9/+/wf///87////P////g5///4ef//8ffg/+GBwA+DAMAAAgAAAAA=="
+    },
+    {
+      "address": "$C97A",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 19,
+      "bitmap": "AAMBgAADg8AAB+fAAA/D4AAfvfAAH374AB9/fAAff3wf339+B////jv///4////+Dn///h5///59///8YHf/+MAz//CAAP/AAAA/AA=="
+    },
+    {
+      "address": "$C9C8",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 19,
+      "bitmap": "MAABAHAAA4D4AAfA/AAPwH4fvwA/f34AX398AH+++AD/v/AA/3/7+P///+D////cf////H///nA///54H/wfvgfADgYAAAwDAAAAAQ=="
+    },
+    {
+      "address": "$CA16",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 19,
+      "bitmap": "AYDAAAPBwAAD5+AAB8PwAA+9+AAffvgAPv74AD7++AB+/vv4f///4H///9x////8f//+cH///ng///++H//uBg//zAMD/wABAPwAAA=="
+    },
+    {
+      "address": "$CA64",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 24,
+      "bitmap": "AAOAAAPsAD3eDw4vn3Oxv3/e/u/M/r/w/v88/3l+/5v9/+/b/7bn/7b//7n//3//f3//fv//f//+P//+H//8D//4B//gAf8A"
+    },
+    {
+      "address": "$CAAE",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 18,
+      "bitmap": "AgAAHAcAADwPgAB+H8AA/w/z4fwH+/v4A/v79AH99+wA//f+f3/7/x////7v///+/////Nn///x5///4B/D/8AHgD8AA4AAA"
+    },
+    {
+      "address": "$CAF8",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 19,
+      "bitmap": "ABwHAAA+D4AAf5+AAP8fwAD+D+AA/PfwAP33+AD9+fh/ff78H////e////3////+2f///Hn///wH///4Aff/8ADn/+AAA/+AAAD+AA=="
+    },
+    {
+      "address": "$CB46",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 18,
+      "bitmap": "OAAAQDwAAOB+AAHw/wAD8D+Hz/Af39/gL9/fwDfvv4B/7/8A/9/+/n////h////3P////z///5sf//+eD/8P4APwB4AAAAcA"
+    },
+    {
+      "address": "$CB90",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 19,
+      "bitmap": "AOA4AAHwfAAB+f4AA/j/AAfwfwAP7z8AH++/AB+fvwA/f77+v///+L////d/////P///mz///54f///gD//vgAf/5wAB/8AAAH8AAA=="
+    },
+    {
+      "address": "$CBDE",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 23,
+      "bitmap": "B4ADCAYIDfANsAWAgcjD3Ie+V75Xol9jN2snfyAAE2AQIBKgCHwL4AiwBIgEgA=="
+    },
+    {
+      "address": "$CC0E",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 23,
+      "bitmap": "BcAAQALABYAFgAbIgpzDvoeiV2Nfa1drN38nACBgE2AQIBKgCHwL4AiwBIgEgA=="
+    },
+    {
+      "address": "$CC3E",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 23,
+      "bitmap": "B4ADEAYQDfAMsIcAw4iD1Ee+V6JfYzdrJ2snfxAAE2AQIAqgCHwI4ASwBIgAgA=="
+    },
+    {
+      "address": "$CC6E",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 23,
+      "bitmap": "AeAQwBBgD7ANsAGgE4E7w33hRerG+tbq1uz+5AAEBsgECAVIPhAH0A0QESABIA=="
+    },
+    {
+      "address": "$CC9E",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 23,
+      "bitmap": "A6ACAANAAaABoBNgORR9w0XhxurW+tbq/uwA5AYEBsgECAVIPhAH0A0QESABIA=="
+    },
+    {
+      "address": "$CCCE",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 23,
+      "bitmap": "AeAIwAhgD7ANMADhEcMbwX3iRerG+tzs3OT+5AAIBsgECAVQPhAHEA0gESABAA=="
+    },
+    {
+      "address": "$CCFE",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "ADAAADDAADDAADjAABjAABjDPxzDeZzHednGZ/eOZ/4cP4j8Dm/w8e8Af4D4AF/8GNP8DZn8B2x8AmYYAGPw"
+    },
+    {
+      "address": "$CD3F",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 22,
+      "bitmap": "AAMAAAMAAAMAAAMwAAM0AAM0PxhkeZhsedjsZ9fcZ984P4jgTm+AYe4AJwD4Pl/8HNP8Bxn8AGx8AGYYAGPwAGAA"
+    },
+    {
+      "address": "$CD83",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "AAwAAwwAAwwAAxwAAxgAwxgAwzj84zieY5uece/mOH/mPxH8D/ZwAPePHwH+P/oAP8sYP5mwPjbgGGZADzYA"
+    },
+    {
+      "address": "$CDC4",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 22,
+      "bitmap": "ADAAADAAADAADDAALDAALDAAJhj8NhmeNxueK+vmHPvmBxHsAfZyAHeGHwDkOvp8P8s4P5jgPjYAGGYAD8YAAAYA"
+    },
+    {
+      "address": "$CE08",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "AAgAAAgABgQgE4QkHsQoC+nIJ97wE7+ADP/gQ/+4IT9wHy7sAOA8AAAcAAAcAAAAAAOcAADMAAHoAAHwAADg"
+    },
+    {
+      "address": "$CE49",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 20,
+      "bitmap": "AAIAAAJABgJAE4JIHsJIC+2QR9rgI7+AHP/gI3+4H79wBC7sA8A8AAAcAAAAAAOcAAC8AAHsAAHwAADg"
+    },
+    {
+      "address": "$CE87",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "ABAAABAABCBgJCHIFCN4E5fQD3vkAf3IB/8wHf/CDvyEN3T4PAcAOAAAOAAAAAAAOcAAMwAAF4AAD4AABwAA"
+    },
+    {
+      "address": "$CEC8",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 20,
+      "bitmap": "AEAAAkAAAkBgEkHIEkN4CbfQB1viAf3EB/84Hf7EDv34N3QgPAPAOAAAAAAAOcAAOwAAF4AAD4AABwAA"
+    },
+    {
+      "address": "$CF06",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 23,
+      "bitmap": "DANgwAwDcMAGAZhhAgccYQMODmUDzAd1AdwPdwC8HscAej4eAHvfvgL73/wDj1/4N3GneFv/qbB9u9/gf5f/wCdqPwAHegAAH6gAAA8gAAADAAAAAwAAAAEAAAA="
+    },
+    {
+      "address": "$CF64",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 23,
+      "bitmap": "AGAMAABgDgAAMAMBADABgQAwAMUAcADlAHADxwB4B5cAeA+eADJvPAK77/wD+7f4N493+Ftxp3Dt/6mgf/vfwCdX/4AHaj8AH/oAAA+oAAADIAAAAwAAAAEAAAA="
+    },
+    {
+      "address": "$CFC2",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 23,
+      "bitmap": "DANgwAwDcMAGAZhhAgccYQMODmUDzAX1AeQL9wD4B4cAOm+eALvvvAL7v/wDj3/4N3GneFv/qbDtu9/gf5f/wCdqPwAHegAAH6gAAA8gAAADAAAAAwAAAAEAAAA="
+    },
+    {
+      "address": "$D020",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 23,
+      "bitmap": "AwbAMAMOwDCGGYBghjjgQKZwcMCu4DPA7vA7gON4PQB4fF4APf3eAD/930Af+vHAHuWO7AuV/9oH+923A//p/gD8VuQAAF7gAAAV+AAABPAAAADAAAAAwAAAAIA="
+    },
+    {
+      "address": "$D07E",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 23,
+      "bitmap": "ADAGAAAHBgCAwAwAgYAMAKMADACnAA4A48AOAOngHgB58B4APPZcAD/33UAf7d/AH+7xzg7ljtoFlf+3A/nf/gH/6uQA/FbgAABf+AAAFfAAAATAAAAAwAAAAIA="
+    },
+    {
+      "address": "$D0DC",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 23,
+      "bitmap": "AwbAMAMOwDCGGYBghjjgQKZwcMCvoDPA79AngOHgHwB59lwAPffdAD/930Af/vHAHuWO7A2V/9oH+923A//p/gD8VuQAAF7gAAAV+AAABPAAAADAAAAAwAAAAIA="
+    },
+    {
+      "address": "$D13A",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 16,
+      "bitmap": "B+B+BQP7D4UAPcHrf83h5o/248b5/veN+f937Q/nt/YB+bPyAWZ79gC3/f8AlX5/AAG//wAAD/4AAAP8AAAA8A=="
+    },
+    {
+      "address": "$D17C",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 16,
+      "bitmap": "oH4H4KHw38DXg7wAZ4ez/mPHb/Gx73+ft+7/n2/t5/BP3Z+Ab95mgP+/7QD+f6kA//2AAH/wAAA/wAAADwAAAA=="
+    },
+    {
+      "address": "$D1BE",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 24,
+      "bitmap": "AAAAwwAAAYcAAAGOAAABnQAAARkAAAn3AAAX8gAAHzvAAB+uwADv+nAB7/wOBv/wdj7/wHn+/wAf5vYADhdOAAD3/AAB/pgAB/3QAH/7eACP9MAA+d+gAPnhAAAHuAAA"
+    },
+    {
+      "address": "$D220",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 24,
+      "bitmap": "wwAAAOGAAABxgAAAuYAAAJiAAADvkAAAT+gAANP0AAB19AADX/cAAz/3gA4P/2BwA/98bgD/f54Ab2f4AHLocAA/7wAAGX+AAAu/4AAe3/4AAy/xAAX7nwAAh58AAB3g"
+    },
+    {
+      "address": "$D282",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 22,
+      "bitmap": "AAAAADAAPAB5yGPoAdQBNAH6DjoP3xPqHGAA9gPuA9oPuA1rAt0BngPiBnw="
+    },
+    {
+      "address": "$D2B0",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 18,
+      "bitmap": "78Dv5M50hkQHNAc0BjQCbgAEB+AfzBs4BMgDKAzoOugHMAPg"
+    },
+    {
+      "address": "$D2D6",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 12,
+      "bitmap": "YAEAeXH4A3iEx4q+BgNaBmNaB3umAXOuAANUAAGYAAGIAAAI"
+    },
+    {
+      "address": "$D2FC",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 22,
+      "bitmap": "AAAAAAAMADwTnhfGK4AsgF+AXHD78FfIBjhvAHfAW8Dt8Nawu0B5gEfAPmA="
+    },
+    {
+      "address": "$D32A",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 18,
+      "bitmap": "A/cn9y5zImEs4CzgLGB2QCAAB+Az+BzYEyAUwBcwF1wM4AfA"
+    },
+    {
+      "address": "$D350",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 12,
+      "bitmap": "AIAGH46eIR7PfVHjWsBgWsZgZd7gdc6AKsAAGYAAEYAAEAAA"
+    },
+    {
+      "address": "$D376",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 3,
+      "bitmap": "AYAB4AKA"
+    },
+    {
+      "address": "$D37E",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 3,
+      "bitmap": "AYABwAaw"
+    },
+    {
+      "address": "$D386",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 5,
+      "bitmap": "AYABwALgDLgAgA=="
+    },
+    {
+      "address": "$D392",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 6,
+      "bitmap": "AYAHwA1wHbgZnAEA"
+    },
+    {
+      "address": "$D3A0",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 8,
+      "bitmap": "AeAD4A+gHbg5nAOAAwABgA=="
+    },
+    {
+      "address": "$D3B2",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 11,
+      "bitmap": "AaAFoA2wPbh7vHMeAwYDAAPAAeAA4A=="
+    },
+    {
+      "address": "$D3CA",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 13,
+      "bitmap": "DaAdsD24fbx7vvce5g8GAwcAAuAB+AH4APA="
+    },
+    {
+      "address": "$D3E6",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 16,
+      "bitmap": "AaAADbAAPbwAfb4A+78A9x8A7gd4DADEDmGaB8ehAz+PH/+RD//PB5/hB2D4A3Ac"
+    },
+    {
+      "address": "$D418",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 19,
+      "bitmap": "H5DvuHA8B/AOfAw7DHAOOAcu9/H3ePSsdKI3cATwB7AFmASIAIA="
+    },
+    {
+      "address": "$D440",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 19,
+      "bitmap": "DZA9uPA8R/APPA4bDzAPOAcu9/H3ePSsdKI3cATwB7AFmASAAIA="
+    },
+    {
+      "address": "$D468",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 19,
+      "bitmap": "Cfgd9zwOD+A+cNwwDjAccHTgj+8e7zUvRS4O/A8gDeAZoBEgAQA="
+    },
+    {
+      "address": "$D490",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 19,
+      "bitmap": "CbAdvDwPD+I88NhwDHAccHTgj+8e7zUvRS4O7A8gDeAZoBEgAQA="
+    },
+    {
+      "address": "$D4B8",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 21,
+      "bitmap": "AeADwAPAA2gPXH2+/b/ht32OO74DvAe4D3AO4H/AH4D/AEcAJwAeAAwA"
+    },
+    {
+      "address": "$D4E4",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 20,
+      "bitmap": "ewDz4MDgcNw7vh33Lvf3Tju++7xruAtwDuB/wB+A/wBnACcAHgAMAA=="
+    },
+    {
+      "address": "$D50E",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 21,
+      "bitmap": "B4ADwATAFsA68H3e/b/th3G+fdw9wB3gDvAHcAP+AfgA/wDiAOQAeAAA"
+    },
+    {
+      "address": "$D53A",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 20,
+      "bitmap": "AN4HzwcDOw593P6473Ry733fPd8d1g7QB3AD/gH4AP8A5gDkAPgAMA=="
+    },
+    {
+      "address": "$D564",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 13,
+      "bitmap": "AcB4AeDwAeDwAP/gf3//D///9//8f//4z//YT/7IP+5AAGQAACAA"
+    },
+    {
+      "address": "$D58D",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 14,
+      "bitmap": "AAAAADGAADuAAHvAfnHDf3/v///+T//+z//8f//4P//YAH7IAG5AACQA"
+    },
+    {
+      "address": "$D5B9",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 14,
+      "bitmap": "AAAAARwAAdwAA94Aw45+9/7+f///f//yP//zH//zG//8E34AAnYAACQA"
+    },
+    {
+      "address": "$D5E5",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 13,
+      "bitmap": "HgOADweADweAB/8A//7+///wP//vH//+G//zE3/yAnf8ACYAAAQA"
+    },
+    {
+      "address": "$D60E",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 13,
+      "bitmap": "AHgPAf8+A//8A8fwA4AAA4AAAcAAAeAAAOAAAHAAA/AAB3AAAeAA"
+    },
+    {
+      "address": "$D637",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 11,
+      "bitmap": "APgHA/8+B//8B8fwDwAAHgAA3AAA/gAAbgAAPgAAHAAA"
+    },
+    {
+      "address": "$D65A",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 11,
+      "bitmap": "8B8AfP/AP//gD+PwAADwAAB4AAA7AAB/AAB2AAB8AAA4"
+    },
+    {
+      "address": "$D67D",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 13,
+      "bitmap": "8B4AfP+AP//AD+PAAAHAAAHAAAOAAAeAAAcAAA4AAA/AAA7gAAeA"
+    },
+    {
+      "address": "$D706",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "AAAAAAAAAAAAAAAAAAAAAAAAAB8AAD+AA7/AB/PAB+2AB+7gA93wAb/4A8/4B/f4B9bQB/HgA7vwAHfgAAPA"
+    },
+    {
+      "address": "$D747",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 23,
+      "bitmap": "AAAAAAAAAPgAA/zwA/34A//4Af/8H+v8P/f8f3f8f4L8P8H4P+LwH4fgD2f4H+/8P/f8P//8H//8Dff4A/zwAeDAAMAA"
+    },
+    {
+      "address": "$D78E",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 24,
+      "bitmap": "AAAAB+PAD/fwH//4H//8D//8B9/8P//4f8H2/4D//AA//gA/fwD/PwD/HwB+PwA+fgDk/HP8///8f//+f//+P/n8HfD4AOAA"
+    },
+    {
+      "address": "$D7D8",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 24,
+      "bitmap": "A48AB9+AD/9wD//4N//8f9/8/438+ADY/AA+fAB/HAB/eAB/8AAf+AB//AB+XABwPAA4eAD8fgH8Px38G374B//gB/fwA+fw"
+    },
+    {
+      "address": "$D822",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 14,
+      "bitmap": "ADAABDBwBzPwB8/AAfMADnwAA58AAAfeP/nuP/ZwAAcgBz4AAjYAADAA"
+    },
+    {
+      "address": "$D84E",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 19,
+      "bitmap": "AGAAAGAAAGAAEGAAOHAYPDB8HjH4Dz/gBzeAe7pgcdhgDuhgD3DABnzAAHjAAGDAAGHAAGGAAGAA"
+    },
+    {
+      "address": "$D889",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 23,
+      "bitmap": "AYAAAYAAAYAMAcAeAMA8YMB4cODwYGHguGPA2GOAHQ9ADd7ADrzABrDABw7AAwTAA7DAATDAADDAADDAADAAADAAADAA"
+    },
+    {
+      "address": "$D8D0",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 23,
+      "bitmap": "AAgBABgHABwHAAwOEA4cOAYcHAQ4bgBwdwBwM4TgMc3AMO3AOHeAGDtgGB1wGA44HAQcDBgODBgEDBgAABgAABgAABgA"
+    },
+    {
+      "address": "$D917",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 23,
+      "bitmap": "ADwAAD8AAA+AAAMYGYAYGYAYGYAYGYAYMYAYMYAYMYAYYYAYYY8YYY/YwYHbwYwbwYwYwYwAAAYAAAYAAAYAAAMAAAMA"
+    },
+    {
+      "address": "$D95E",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 19,
+      "bitmap": "APCAAP8ABA/wBwDwDiAADnA4HOA7HcA9O4AuO2AudmB3dDDj6DHD4BuBwBsAAAwAAAwAAAYAAAYA"
+    },
+    {
+      "address": "$D999",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 16,
+      "bitmap": "AMAA4A3QD6jdqP06XN3a7sd3n7vv3XfvO/wd8A7ABwA="
+    },
+    {
+      "address": "$D9BB",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 16,
+      "bitmap": "B8Af8Dx4MBxgDmAGYAcAA3AD/gOeB2cGdw47fBt4BgA="
+    },
+    {
+      "address": "$D9DD",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 16,
+      "bitmap": "B7AfvD/uf/Z//v/3//f/9//vf+5/1j+4HnwHsgDSAAw="
+    },
+    {
+      "address": "$D9FF",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 16,
+      "bitmap": "YwBjMEAwHxA/w2HjXnI7ujvcNuY11hM2EHYv7BOYAAA="
+    },
+    {
+      "address": "$DA21",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 16,
+      "bitmap": "F/ggGFgi8CE3w8rt9bH3UfeR9/Fr3Twr+9V72jfsF+g="
+    },
+    {
+      "address": "$DA43",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 16,
+      "bitmap": "CfAO8ALAAsACwBrYHtgd+Bv4Gfgc+A7wAsACwAJAAYA="
+    },
+    {
+      "address": "$DA65",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 16,
+      "bitmap": "4f//fmw8a1xvXG9cbjxtfG18PBw7fB/4AAED3gbgBKA="
+    },
+    {
+      "address": "$DA87",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 16,
+      "bitmap": "wADgAHYALAAaADcAL4AHgAPAAOAAcAA4ABgABAACAAE="
+    },
+    {
+      "address": "$DB0B",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 21,
+      "bitmap": "AZAAAWMAD68AH/eGDvOJH9uJOcv0fyf4/+/8v+/8sM/+r1f+n1f+/zv+f/x+///8f//8P//4H//wD//AAf4A"
+    },
+    {
+      "address": "$DB4C",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 17,
+      "bitmap": "A2AAzAOwAGwBiABsAeQAbgD4AB4wfYD8fj3z/B+d9/h/3ff43//3+Jj/9/gJf/v/C3/9/QT///kD///6B///8A+Ph8A="
+    },
+    {
+      "address": "$DB92",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 18,
+      "bitmap": "AN2wAAG5sAADcdgAAODoAAFgcAwBcfB+APe5+AP7u/4H+7v7D/u/OT/7/pBP9/7QT+//IC///8AP///AB///4AP/8fAA/4AA"
+    },
+    {
+      "address": "$DBDC",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 17,
+      "bitmap": "MwAGwDYADcA2ABGAdgAngHgAHwA/Ab4MP8+8fh/vufgf77v+H+//+x/v/xn/3/6Qv7/+0J///yBf///AD///4APh8fA="
+    },
+    {
+      "address": "$DC22",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 18,
+      "bitmap": "AA27AAANnYAAG47AABcHADAOYIB+D46AH53vAH/d38Df3d/gnPzf8Al/3/wLf+/yBP/38gP///QD///wB///4A+P/8AAAf4A"
+    },
+    {
+      "address": "$E770",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 16,
+      "bitmap": "Z/8z+TH5GB8YLxg3GXgY4BgADA8P/wPxAAEAAgACAAE="
+    },
+    {
+      "address": "$E792",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 16,
+      "bitmap": "/+P/Nv+M/wzyDPwM/gz/zD+MAAzgDPAcv/hf4EAAgAA="
+    },
+    {
+      "address": "$E7B4",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 16,
+      "bitmap": "AAAAAA//P/9wAGAYwGTA5sC3wD/Ij8iHzMvf+dg6Or8="
+    },
+    {
+      "address": "$E7D6",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 16,
+      "bitmap": "AAA4APwO7/8H8wADAAMSI5pj3uP+w//L/fvz80/zv+M="
+    },
+    {
+      "address": "$E7F8",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 32,
+      "bitmap": "B+JAAAPiR+AABCfAAGgQAABr1gAAV+oAAFfqAAAv9AAAX/oAAEfiAACAAQAAh+EAAQ/wgArc+lAK+39QBfW/oARp3iAIEeAQEBZgCBAuMAhgIfAGYEH4BkBGeALgRngHQIL8AkCC/AJAgfwCAJ0cAAC5jAAAgfwAAOH8AAAf4AA="
+    },
+    {
+      "address": "$E87A",
+      "width": 4,
+      "widthPixels": 32,
+      "height": 32,
+      "bitmap": "AAJH4AfiR8AD5CAAAAgWAABr1gAAV+oAAFfqAAAv9AAAX/oAAEfiAACAAQAAh+EAAQ/wgApfO1AK/t9QBf2voAR7liAIB4gQEAZkCBAMdAhgD4QGYB+CBkAeYgLgHmIHQD9BAkA/QQJAP4ECADi5AAAxnQAAP4EAAD+HAAAH+AA="
+    },
+    {
+      "address": "$E8FC",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 22,
+      "bitmap": "AYAH4A7wHJg5jHGM086XZj42OhMyMzI7In4KdhtucTxZvBz0CHQIYAjgA2A="
+    },
+    {
+      "address": "$E92A",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 22,
+      "bitmap": "BQAYvDPmZtvOzZxmOCIwY2B5bD1uN34zeyNbYitiPUIdwAXkMPYQMhgaCAA="
+    },
+    {
+      "address": "$E958",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 23,
+      "bitmap": "HQA7gHfAbmBMMFiQF8g+bHg8YR7hnviOnJ6+PrY2Y2JhYmFpQehD5APGB4wOCA=="
+    },
+    {
+      "address": "$E988",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 23,
+      "bitmap": "AQABgAJcBCYEkgmKE8wiZmYzQllBwUmNXJd2k3YyN3IzchPiEeAVyAGIAxACIA=="
+    },
+    {
+      "address": "$E9B8",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 9,
+      "bitmap": "AHAAAZg+Az3w5nvA/3+AT3+AL78AHMYACDwA"
+    },
+    {
+      "address": "$E9D5",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 9,
+      "bitmap": "MB4AGAMADN9+577w/73AT7+AL98AHO4ACDwA"
+    },
+    {
+      "address": "$E9F2",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 9,
+      "bitmap": "AA4AfBmAD7zAA95nAf7/Af7yAP30AGM4ADwQ"
+    },
+    {
+      "address": "$EA0F",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 9,
+      "bitmap": "AHgMAMAYfvswD33nA73/Af3yAPv0AHc4ADwQ"
+    },
+    {
+      "address": "$EA2C",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 18,
+      "bitmap": "AAOAAANAAKtgALrgA5fAAZeAAN8AAH8AAP8AAP6AAP3gAPvgCfvQNfewNzd42zf3fOPPAAD8"
+    },
+    {
+      "address": "$EA64",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 22,
+      "bitmap": "AAOAAANAAKtgALrgA5fAAZeAAN8AAH8AAP8AAP6AAP2AAPuAAfuABfeABzYAAzeAAO4AAA+AAe/AAMYAAYPgAQDw"
+    },
+    {
+      "address": "$EAA8",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 18,
+      "bitmap": "AcAAAsAABtUAB10AA+nAAemAAPsAAP4AAP8AAX8AB78AB98AC9+QDe+sHuzs7+zb88c+PwAA"
+    },
+    {
+      "address": "$EAE0",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 22,
+      "bitmap": "AcAAAsAABtUAB10AA+nAAemAAPsAAP4AAP8AAX8AAb8AAd8AAd+AAe+gAGzgAezAAHcAAfAAA/eAAGMAB8GADwCA"
+    },
+    {
+      "address": "$EB24",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 16,
+      "bitmap": "AgwiPEROSPqR8qPko8yX+HfgCwB14PoYcQYAwQAxAA8="
+    },
+    {
+      "address": "$EB46",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 14,
+      "bitmap": "EAMiDyR/SPmQ/qHmo4SXCHcwCsB0APsAcAAAAA=="
+    },
+    {
+      "address": "$EB64",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 16,
+      "bitmap": "MAQzRH4iXxJPiSfFM8Uf6QfuANAHrhhfYI6DAIwA8AA="
+    },
+    {
+      "address": "$EB86",
+      "width": 2,
+      "widthPixels": 16,
+      "height": 14,
+      "bitmap": "wAjgRPwk/hKfCX+FZ8Uh6RDuDFADLgDfAA4AAA=="
+    },
+    {
+      "address": "$EBA4",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 12,
+      "bitmap": "AAABAAADMAEO/AP7fn/+D7v4A/+ABn8AH/wAOfgAGeAABgAA"
+    },
+    {
+      "address": "$EBCA",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 10,
+      "bitmap": "B8/gA4HYAbs4ANbwAe/wB+DgH/+AHP4ADMAAAwAA"
+    },
+    {
+      "address": "$EBEA",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 12,
+      "bitmap": "gAAAwAAAcIAMv8A/f+9+H93wAf/AAP5gAD/4AB+cAAeYAABg"
+    },
+    {
+      "address": "$EC10",
+      "width": 3,
+      "widthPixels": 24,
+      "height": 10,
+      "bitmap": "B/PgG4HAHN2AD2sAD/eABwfgAf/4AH84AAMwAADA"
+    }
+  ]
+}

@@ -1,0 +1,2839 @@
+{
+ "note": "Nepratele Sabre Wulfa, jak je pocita original: obsluha kazde entity je JumpTable[sprite ID] ($9B3E), takze rozdeleni na znicitelne a nezniciteline neni odhad. 166 zkontrolovanych instrukci a koncu tabulek. Replika je app/worldMonsters.js, overeni tools/tracemonsters.py + tools/matchmonsters.js.",
+ "jumpTable": {
+  "address": "$9B3E",
+  "end": "$9CC6",
+  "entries": 196,
+  "note": "index je sprite ID; tabulka konci presne na PrintRoomsVisited ($9CC6)",
+  "ranges": [
+   {
+    "role": "none",
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "first": 0,
+    "last": 0,
+    "note": "RET \u2013 sprite ID, kter\u00e9 hra nepou\u017e\u00edv\u00e1"
+   },
+   {
+    "role": "materialise",
+    "handler": "$A3C5",
+    "name": "Materialise",
+    "first": 1,
+    "last": 5,
+    "note": "zhmot\u0148ov\u00e1n\u00ed nov\u00e9ho zv\u00ed\u0159ete: sprite ID o jedna d\u00e1l ka\u017ed\u00fd pr\u016fchod"
+   },
+   {
+    "role": "materialiseDone",
+    "handler": "$A3E0",
+    "name": "MaterialiseDone",
+    "first": 6,
+    "last": 6,
+    "note": "posledn\u00ed sn\u00edmek zhmotn\u011bn\u00ed vybere druh zv\u00ed\u0159ete ze `SpriteReference`"
+   },
+   {
+    "role": "none",
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "first": 7,
+    "last": 7,
+    "note": "RET \u2013 sprite ID, kter\u00e9 hra nepou\u017e\u00edv\u00e1"
+   },
+   {
+    "role": "explosion",
+    "handler": "$A42A",
+    "name": "Explosion",
+    "first": 8,
+    "last": 12,
+    "note": "v\u00fdbuch: sprite ID o jedna d\u00e1l ka\u017ed\u00fd pr\u016fchod"
+   },
+   {
+    "role": "explosionEnd",
+    "handler": "$A43B",
+    "name": "ExplosionEnd",
+    "first": 13,
+    "last": 13,
+    "note": "posledn\u00ed sn\u00edmek v\u00fdbuchu uvoln\u00ed slot"
+   },
+   {
+    "role": "none",
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "first": 14,
+    "last": 15,
+    "note": "RET \u2013 sprite ID, kter\u00e9 hra nepou\u017e\u00edv\u00e1"
+   },
+   {
+    "role": "player",
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "first": 16,
+    "last": 31,
+    "note": "Sabreman, dokud b\u011b\u017e\u00ed `GameDelayTimer` (M3)"
+   },
+   {
+    "role": "player",
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "first": 32,
+    "last": 47,
+    "note": "Sabreman s tasen\u00fdm me\u010dem (M3)"
+   },
+   {
+    "role": "rhino",
+    "handler": "$AD07",
+    "name": "Rhino",
+    "first": 48,
+    "last": 51,
+    "note": "\u2605 nosoro\u017eec: chod\u00ed po sv\u011bt\u011b, **ned\u00e1 se zab\u00edt, jen zahnat** \u2013 a to rychleji, ne\u017e chodil",
+    "kind": "immortal",
+    "label": "nosoro\u017eec"
+   },
+   {
+    "role": "fireball",
+    "handler": "$9D91",
+    "name": "Fireball",
+    "first": 52,
+    "last": 55,
+    "note": "\u2605 ohniv\u00e1 koule: objev\u00ed se tomu, kdo stoj\u00ed v m\u00edstnosti, dr\u017e\u00ed se ho a po 256 pr\u016fchodech sama vybuchne",
+    "kind": "immortal",
+    "label": "ohniv\u00e1 koule"
+   },
+   {
+    "role": "native",
+    "handler": "$AB74",
+    "name": "Native",
+    "first": 56,
+    "last": 63,
+    "note": "\u2605 domorodec: ned\u00e1 se zab\u00edt, jen zahnat, a **ze\u017eloutne a p\u00edpne, kdy\u017e je v p\u0159\u00edmce se zakopan\u00fdm kusem amuletu** (M4)",
+    "kind": "immortal",
+    "label": "domorodec"
+   },
+   {
+    "role": "player",
+    "handler": "$A9BE",
+    "name": "PlayerDeathFlight",
+    "first": 64,
+    "last": 64,
+    "note": "Sabreman odlet\u00ed po smrti (M3)"
+   },
+   {
+    "role": "player",
+    "handler": "$AA0D",
+    "name": "PlayerDeathWait",
+    "first": 65,
+    "last": 66,
+    "note": "a sed\u00ed, ne\u017e ho hra postav\u00ed zp\u00e1tky (M3)"
+   },
+   {
+    "role": "player",
+    "handler": "$A61B",
+    "name": "PlayerStandUp",
+    "first": 67,
+    "last": 67,
+    "note": "vst\u00e1v\u00e1n\u00ed po \u017elut\u00e9 orchideji (M4)"
+   },
+   {
+    "role": "player",
+    "handler": "$A9BE",
+    "name": "PlayerDeathFlight",
+    "first": 68,
+    "last": 68,
+    "note": "Sabreman odlet\u00ed po smrti (M3)"
+   },
+   {
+    "role": "player",
+    "handler": "$AA0D",
+    "name": "PlayerDeathWait",
+    "first": 69,
+    "last": 70,
+    "note": "a sed\u00ed, ne\u017e ho hra postav\u00ed zp\u00e1tky (M3)"
+   },
+   {
+    "role": "player",
+    "handler": "$A61B",
+    "name": "PlayerStandUp",
+    "first": 71,
+    "last": 71,
+    "note": "vst\u00e1v\u00e1n\u00ed po \u017elut\u00e9 orchideji (M4)"
+   },
+   {
+    "role": "orchid",
+    "handler": "$A680",
+    "name": "Orchid",
+    "first": 72,
+    "last": 79,
+    "note": "orchidej (M4)"
+   },
+   {
+    "role": "wulf",
+    "handler": "$A858",
+    "name": "SabreWulf",
+    "first": 80,
+    "last": 87,
+    "note": "\u2605 Sabre Wulf: stoj\u00ed, dokud nen\u00ed Sabreman v t\u00e9m\u017ee **\u0159\u00e1dku sv\u011bta**, pak se rozjede p\u0159\u00edmo na n\u011bj; zab\u00edj\u00ed dotekem, me\u010dem se d\u00e1 odehnat a **po ka\u017ed\u00e9m odehn\u00e1n\u00ed je rychlej\u0161\u00ed**",
+    "kind": "immortal",
+    "label": "Sabre Wulf"
+   },
+   {
+    "role": "wulfWard",
+    "handler": "$A8F5",
+    "name": "SabreWulfWard",
+    "first": 88,
+    "last": 88,
+    "note": "odehnan\u00fd Sabre Wulf couv\u00e1, dokud na n\u011bj Sabreman m\u00ed\u0159\u00ed me\u010dem",
+    "kind": "immortal",
+    "label": "Sabre Wulf odehnan\u00fd"
+   },
+   {
+    "role": "wulfReturn",
+    "handler": "$A964",
+    "name": "SabreWulfReturn",
+    "first": 89,
+    "last": 89,
+    "note": "a pak se vrac\u00ed \u2013 s vy\u0161\u0161\u00ed rychlost\u00ed, ne\u017e m\u011bl",
+    "kind": "immortal",
+    "label": "Sabre Wulf na n\u00e1vratu"
+   },
+   {
+    "role": "none",
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "first": 90,
+    "last": 91,
+    "note": "RET \u2013 sprite ID, kter\u00e9 hra nepou\u017e\u00edv\u00e1"
+   },
+   {
+    "role": "wulfWard",
+    "handler": "$A8F5",
+    "name": "SabreWulfWard",
+    "first": 92,
+    "last": 92,
+    "note": "odehnan\u00fd Sabre Wulf couv\u00e1, dokud na n\u011bj Sabreman m\u00ed\u0159\u00ed me\u010dem",
+    "kind": "immortal",
+    "label": "Sabre Wulf odehnan\u00fd"
+   },
+   {
+    "role": "wulfReturn",
+    "handler": "$A964",
+    "name": "SabreWulfReturn",
+    "first": 93,
+    "last": 93,
+    "note": "a pak se vrac\u00ed \u2013 s vy\u0161\u0161\u00ed rychlost\u00ed, ne\u017e m\u011bl",
+    "kind": "immortal",
+    "label": "Sabre Wulf na n\u00e1vratu"
+   },
+   {
+    "role": "none",
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "first": 94,
+    "last": 95,
+    "note": "RET \u2013 sprite ID, kter\u00e9 hra nepou\u017e\u00edv\u00e1"
+   },
+   {
+    "role": "nastie",
+    "handler": "$A54F",
+    "name": "Nastie",
+    "first": 96,
+    "last": 103,
+    "note": "zv\u00ed\u0159e, kter\u00e9 si chod\u00ed po obrazovce a **d\u00e1 se zab\u00edt**",
+    "kind": "destructable",
+    "label": "zv\u00ed\u0159e"
+   },
+   {
+    "role": "chaser",
+    "handler": "$A4D7",
+    "name": "NastieChaser",
+    "first": 104,
+    "last": 107,
+    "note": "\u2605 zv\u00ed\u0159e, kter\u00e9 Sabremana **nah\u00e1n\u00ed**: ka\u017ed\u00fd pr\u016fchod p\u0159id\u00e1 k rychlosti jeho sm\u011brem; taky se d\u00e1 zab\u00edt",
+    "kind": "destructable",
+    "label": "zv\u00ed\u0159e, kter\u00e9 nah\u00e1n\u00ed"
+   },
+   {
+    "role": "nastie",
+    "handler": "$A54F",
+    "name": "Nastie",
+    "first": 108,
+    "last": 115,
+    "note": "zv\u00ed\u0159e, kter\u00e9 si chod\u00ed po obrazovce a **d\u00e1 se zab\u00edt**",
+    "kind": "destructable",
+    "label": "zv\u00ed\u0159e"
+   },
+   {
+    "role": "chaser",
+    "handler": "$A4D7",
+    "name": "NastieChaser",
+    "first": 116,
+    "last": 123,
+    "note": "\u2605 zv\u00ed\u0159e, kter\u00e9 Sabremana **nah\u00e1n\u00ed**: ka\u017ed\u00fd pr\u016fchod p\u0159id\u00e1 k rychlosti jeho sm\u011brem; taky se d\u00e1 zab\u00edt",
+    "kind": "destructable",
+    "label": "zv\u00ed\u0159e, kter\u00e9 nah\u00e1n\u00ed"
+   },
+   {
+    "role": "none",
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "first": 124,
+    "last": 127,
+    "note": "RET \u2013 sprite ID, kter\u00e9 hra nepou\u017e\u00edv\u00e1"
+   },
+   {
+    "role": "object",
+    "handler": "$A312",
+    "name": "Object",
+    "first": 128,
+    "last": 132,
+    "note": "p\u0159edm\u011bt (M4)"
+   },
+   {
+    "role": "life",
+    "handler": "$A305",
+    "name": "ObjectLife",
+    "first": 133,
+    "last": 133,
+    "note": "p\u0159edm\u011bt \u201e\u017eivot\" (M4)"
+   },
+   {
+    "role": "object",
+    "handler": "$A312",
+    "name": "Object",
+    "first": 134,
+    "last": 143,
+    "note": "p\u0159edm\u011bt (M4)"
+   },
+   {
+    "role": "amulet",
+    "handler": "$A1AB",
+    "name": "AmuletPiece",
+    "first": 144,
+    "last": 147,
+    "note": "kus amuletu (M4)"
+   },
+   {
+    "role": "keeper",
+    "handler": "$9F16",
+    "name": "Keeper",
+    "first": 148,
+    "last": 149,
+    "note": "\u2605 str\u00e1\u017ece br\u00e1ny: bez amuletu zab\u00edj\u00ed dotekem, se v\u0161emi \u010dty\u0159mi kusy **ustoup\u00ed na kraj obrazovky a pust\u00ed**",
+    "kind": "immortal",
+    "label": "str\u00e1\u017ece br\u00e1ny"
+   },
+   {
+    "role": "none",
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "first": 150,
+    "last": 151,
+    "note": "RET \u2013 sprite ID, kter\u00e9 hra nepou\u017e\u00edv\u00e1"
+   },
+   {
+    "role": "nastie",
+    "handler": "$A54F",
+    "name": "Nastie",
+    "first": 152,
+    "last": 159,
+    "note": "zv\u00ed\u0159e, kter\u00e9 si chod\u00ed po obrazovce a **d\u00e1 se zab\u00edt**",
+    "kind": "destructable",
+    "label": "zv\u00ed\u0159e"
+   },
+   {
+    "role": "hippo",
+    "handler": "$9E72",
+    "name": "Hippo",
+    "first": 160,
+    "last": 163,
+    "note": "\u2605 hroch: ned\u00e1 se zab\u00edt, jen zahnat a na chv\u00edli omr\u00e1\u010dit",
+    "kind": "immortal",
+    "label": "hroch"
+   },
+   {
+    "role": "hippoRoam",
+    "handler": "$9EB3",
+    "name": "HippoRoam",
+    "first": 164,
+    "last": 167,
+    "note": "a kdy\u017e ho zastav\u00ed kulisa, odst\u011bhuje se za Sabremanem na jinou obrazovku ($A630)",
+    "kind": "immortal",
+    "label": "hroch na cest\u011b"
+   },
+   {
+    "role": "hippo",
+    "handler": "$9E72",
+    "name": "Hippo",
+    "first": 168,
+    "last": 171,
+    "note": "\u2605 hroch: ned\u00e1 se zab\u00edt, jen zahnat a na chv\u00edli omr\u00e1\u010dit",
+    "kind": "immortal",
+    "label": "hroch"
+   },
+   {
+    "role": "hippoRoam",
+    "handler": "$9EB3",
+    "name": "HippoRoam",
+    "first": 172,
+    "last": 175,
+    "note": "a kdy\u017e ho zastav\u00ed kulisa, odst\u011bhuje se za Sabremanem na jinou obrazovku ($A630)",
+    "kind": "immortal",
+    "label": "hroch na cest\u011b"
+   },
+   {
+    "role": "nastie",
+    "handler": "$A54F",
+    "name": "Nastie",
+    "first": 176,
+    "last": 195,
+    "note": "zv\u00ed\u0159e, kter\u00e9 si chod\u00ed po obrazovce a **d\u00e1 se zab\u00edt**",
+    "kind": "destructable",
+    "label": "zv\u00ed\u0159e"
+   }
+  ],
+  "handlers": [
+   {
+    "sprite": 0,
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "role": "none",
+    "spriteName": "None"
+   },
+   {
+    "sprite": 1,
+    "handler": "$A3C5",
+    "name": "Materialise",
+    "role": "materialise",
+    "spriteName": "Appearing: Frame 1"
+   },
+   {
+    "sprite": 2,
+    "handler": "$A3C5",
+    "name": "Materialise",
+    "role": "materialise",
+    "spriteName": "Appearing: Frame 2"
+   },
+   {
+    "sprite": 3,
+    "handler": "$A3C5",
+    "name": "Materialise",
+    "role": "materialise",
+    "spriteName": "Appearing: Frame 3"
+   },
+   {
+    "sprite": 4,
+    "handler": "$A3C5",
+    "name": "Materialise",
+    "role": "materialise",
+    "spriteName": "Appearing: Frame 4"
+   },
+   {
+    "sprite": 5,
+    "handler": "$A3C5",
+    "name": "Materialise",
+    "role": "materialise",
+    "spriteName": "Appearing: Frame 5"
+   },
+   {
+    "sprite": 6,
+    "handler": "$A3E0",
+    "name": "MaterialiseDone",
+    "role": "materialiseDone",
+    "spriteName": "Appearing: Frame 6"
+   },
+   {
+    "sprite": 7,
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "role": "none",
+    "spriteName": "None"
+   },
+   {
+    "sprite": 8,
+    "handler": "$A42A",
+    "name": "Explosion",
+    "role": "explosion",
+    "spriteName": "Disappearing: Frame 2"
+   },
+   {
+    "sprite": 9,
+    "handler": "$A42A",
+    "name": "Explosion",
+    "role": "explosion",
+    "spriteName": "Disappearing: Frame 3"
+   },
+   {
+    "sprite": 10,
+    "handler": "$A42A",
+    "name": "Explosion",
+    "role": "explosion",
+    "spriteName": "Disappearing: Frame 4"
+   },
+   {
+    "sprite": 11,
+    "handler": "$A42A",
+    "name": "Explosion",
+    "role": "explosion",
+    "spriteName": "Disappearing: Frame 3"
+   },
+   {
+    "sprite": 12,
+    "handler": "$A42A",
+    "name": "Explosion",
+    "role": "explosion",
+    "spriteName": "Disappearing: Frame 2"
+   },
+   {
+    "sprite": 13,
+    "handler": "$A43B",
+    "name": "ExplosionEnd",
+    "role": "explosionEnd",
+    "spriteName": "Disappearing: Frame 1"
+   },
+   {
+    "sprite": 14,
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "role": "none",
+    "spriteName": "None"
+   },
+   {
+    "sprite": 15,
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "role": "none",
+    "spriteName": "None"
+   },
+   {
+    "sprite": 16,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Left Frame 1"
+   },
+   {
+    "sprite": 17,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Left Frame 2"
+   },
+   {
+    "sprite": 18,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Left Frame 3"
+   },
+   {
+    "sprite": 19,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Left Frame 4"
+   },
+   {
+    "sprite": 20,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Right Frame 1"
+   },
+   {
+    "sprite": 21,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Right Frame 2"
+   },
+   {
+    "sprite": 22,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Right Frame 3"
+   },
+   {
+    "sprite": 23,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Right Frame 4"
+   },
+   {
+    "sprite": 24,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Up Frame 1"
+   },
+   {
+    "sprite": 25,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Up Frame 2"
+   },
+   {
+    "sprite": 26,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Up Frame 3"
+   },
+   {
+    "sprite": 27,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Up Frame 4"
+   },
+   {
+    "sprite": 28,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Down Frame 1"
+   },
+   {
+    "sprite": 29,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Down Frame 2"
+   },
+   {
+    "sprite": 30,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Down Frame 3"
+   },
+   {
+    "sprite": 31,
+    "handler": "$AECF",
+    "name": "PlayerDelay",
+    "role": "player",
+    "spriteName": "Sabreman: Down Frame 4"
+   },
+   {
+    "sprite": 32,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Left Fighting Frame 1"
+   },
+   {
+    "sprite": 33,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Left Fighting Frame 2"
+   },
+   {
+    "sprite": 34,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Left Fighting Frame 3"
+   },
+   {
+    "sprite": 35,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Left Fighting Frame 4"
+   },
+   {
+    "sprite": 36,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Left Fighting Frame 5"
+   },
+   {
+    "sprite": 37,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Left Fighting Frame 4"
+   },
+   {
+    "sprite": 38,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Left Fighting Frame 6"
+   },
+   {
+    "sprite": 39,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Left Fighting Frame 2"
+   },
+   {
+    "sprite": 40,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Right Fighting Frame 1"
+   },
+   {
+    "sprite": 41,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Right Fighting Frame 2"
+   },
+   {
+    "sprite": 42,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Right Fighting Frame 3"
+   },
+   {
+    "sprite": 43,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Right Fighting Frame 4"
+   },
+   {
+    "sprite": 44,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Right Fighting Frame 5"
+   },
+   {
+    "sprite": 45,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Right Fighting Frame 4"
+   },
+   {
+    "sprite": 46,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Right Fighting Frame 6"
+   },
+   {
+    "sprite": 47,
+    "handler": "$ADD0",
+    "name": "PlayerMovement",
+    "role": "player",
+    "spriteName": "Sabreman: Right Fighting Frame 2"
+   },
+   {
+    "sprite": 48,
+    "handler": "$AD07",
+    "name": "Rhino",
+    "role": "rhino",
+    "spriteName": "Rhino: Left Frame 2"
+   },
+   {
+    "sprite": 49,
+    "handler": "$AD07",
+    "name": "Rhino",
+    "role": "rhino",
+    "spriteName": "Rhino: Left Frame 1"
+   },
+   {
+    "sprite": 50,
+    "handler": "$AD07",
+    "name": "Rhino",
+    "role": "rhino",
+    "spriteName": "Rhino: Right Frame 2"
+   },
+   {
+    "sprite": 51,
+    "handler": "$AD07",
+    "name": "Rhino",
+    "role": "rhino",
+    "spriteName": "Rhino: Right Frame 1"
+   },
+   {
+    "sprite": 52,
+    "handler": "$9D91",
+    "name": "Fireball",
+    "role": "fireball",
+    "spriteName": "Fire: Frame 1"
+   },
+   {
+    "sprite": 53,
+    "handler": "$9D91",
+    "name": "Fireball",
+    "role": "fireball",
+    "spriteName": "Fire: Frame 2"
+   },
+   {
+    "sprite": 54,
+    "handler": "$9D91",
+    "name": "Fireball",
+    "role": "fireball",
+    "spriteName": "Fire: Frame 3"
+   },
+   {
+    "sprite": 55,
+    "handler": "$9D91",
+    "name": "Fireball",
+    "role": "fireball",
+    "spriteName": "Fire: Frame 4"
+   },
+   {
+    "sprite": 56,
+    "handler": "$AB74",
+    "name": "Native",
+    "role": "native",
+    "spriteName": "Tribesman: Left Frame 1"
+   },
+   {
+    "sprite": 57,
+    "handler": "$AB74",
+    "name": "Native",
+    "role": "native",
+    "spriteName": "Tribesman: Left Frame 2"
+   },
+   {
+    "sprite": 58,
+    "handler": "$AB74",
+    "name": "Native",
+    "role": "native",
+    "spriteName": "Tribesman: Left Frame 3"
+   },
+   {
+    "sprite": 59,
+    "handler": "$AB74",
+    "name": "Native",
+    "role": "native",
+    "spriteName": "Tribesman: Left Frame 2"
+   },
+   {
+    "sprite": 60,
+    "handler": "$AB74",
+    "name": "Native",
+    "role": "native",
+    "spriteName": "Tribesman: Left Frame 4"
+   },
+   {
+    "sprite": 61,
+    "handler": "$AB74",
+    "name": "Native",
+    "role": "native",
+    "spriteName": "Tribesman: Right Frame 1"
+   },
+   {
+    "sprite": 62,
+    "handler": "$AB74",
+    "name": "Native",
+    "role": "native",
+    "spriteName": "Tribesman: Right Frame 2"
+   },
+   {
+    "sprite": 63,
+    "handler": "$AB74",
+    "name": "Native",
+    "role": "native",
+    "spriteName": "Tribesman: Right Frame 1"
+   },
+   {
+    "sprite": 64,
+    "handler": "$A9BE",
+    "name": "PlayerDeathFlight",
+    "role": "player",
+    "spriteName": "Sabreman: Flying Left"
+   },
+   {
+    "sprite": 65,
+    "handler": "$AA0D",
+    "name": "PlayerDeathWait",
+    "role": "player",
+    "spriteName": "Sabreman: Sitting Left"
+   },
+   {
+    "sprite": 66,
+    "handler": "$AA0D",
+    "name": "PlayerDeathWait",
+    "role": "player",
+    "spriteName": "Sabreman: Dead Left"
+   },
+   {
+    "sprite": 67,
+    "handler": "$A61B",
+    "name": "PlayerStandUp",
+    "role": "player",
+    "spriteName": "Sabreman: Sitting Left"
+   },
+   {
+    "sprite": 68,
+    "handler": "$A9BE",
+    "name": "PlayerDeathFlight",
+    "role": "player",
+    "spriteName": "Sabreman: Flying Right"
+   },
+   {
+    "sprite": 69,
+    "handler": "$AA0D",
+    "name": "PlayerDeathWait",
+    "role": "player",
+    "spriteName": "Sabreman: Sitting Right"
+   },
+   {
+    "sprite": 70,
+    "handler": "$AA0D",
+    "name": "PlayerDeathWait",
+    "role": "player",
+    "spriteName": "Sabreman: Dead Right"
+   },
+   {
+    "sprite": 71,
+    "handler": "$A61B",
+    "name": "PlayerStandUp",
+    "role": "player",
+    "spriteName": "Sabreman: Sitting Right"
+   },
+   {
+    "sprite": 72,
+    "handler": "$A680",
+    "name": "Orchid",
+    "role": "orchid",
+    "spriteName": "Orchid: Frame 1"
+   },
+   {
+    "sprite": 73,
+    "handler": "$A680",
+    "name": "Orchid",
+    "role": "orchid",
+    "spriteName": "Orchid: Frame 2"
+   },
+   {
+    "sprite": 74,
+    "handler": "$A680",
+    "name": "Orchid",
+    "role": "orchid",
+    "spriteName": "Orchid: Frame 3"
+   },
+   {
+    "sprite": 75,
+    "handler": "$A680",
+    "name": "Orchid",
+    "role": "orchid",
+    "spriteName": "Orchid: Frame 4"
+   },
+   {
+    "sprite": 76,
+    "handler": "$A680",
+    "name": "Orchid",
+    "role": "orchid",
+    "spriteName": "Orchid: Frame 5"
+   },
+   {
+    "sprite": 77,
+    "handler": "$A680",
+    "name": "Orchid",
+    "role": "orchid",
+    "spriteName": "Orchid: Frame 6"
+   },
+   {
+    "sprite": 78,
+    "handler": "$A680",
+    "name": "Orchid",
+    "role": "orchid",
+    "spriteName": "Orchid: Frame 7"
+   },
+   {
+    "sprite": 79,
+    "handler": "$A680",
+    "name": "Orchid",
+    "role": "orchid",
+    "spriteName": "Orchid: Frame 8"
+   },
+   {
+    "sprite": 80,
+    "handler": "$A858",
+    "name": "SabreWulf",
+    "role": "wulf",
+    "spriteName": "Wulf: Left Frame 1"
+   },
+   {
+    "sprite": 81,
+    "handler": "$A858",
+    "name": "SabreWulf",
+    "role": "wulf",
+    "spriteName": "Wulf: Left Frame 2"
+   },
+   {
+    "sprite": 82,
+    "handler": "$A858",
+    "name": "SabreWulf",
+    "role": "wulf",
+    "spriteName": "Wulf: Left Frame 3"
+   },
+   {
+    "sprite": 83,
+    "handler": "$A858",
+    "name": "SabreWulf",
+    "role": "wulf",
+    "spriteName": "Wulf: Left Frame 2"
+   },
+   {
+    "sprite": 84,
+    "handler": "$A858",
+    "name": "SabreWulf",
+    "role": "wulf",
+    "spriteName": "Wulf: Right Frame 1"
+   },
+   {
+    "sprite": 85,
+    "handler": "$A858",
+    "name": "SabreWulf",
+    "role": "wulf",
+    "spriteName": "Wulf: Right Frame 2"
+   },
+   {
+    "sprite": 86,
+    "handler": "$A858",
+    "name": "SabreWulf",
+    "role": "wulf",
+    "spriteName": "Wulf: Right Frame 3"
+   },
+   {
+    "sprite": 87,
+    "handler": "$A858",
+    "name": "SabreWulf",
+    "role": "wulf",
+    "spriteName": "Wulf: Right Frame 2"
+   },
+   {
+    "sprite": 88,
+    "handler": "$A8F5",
+    "name": "SabreWulfWard",
+    "role": "wulfWard",
+    "spriteName": "Wulf: Pounce Left Frame 1"
+   },
+   {
+    "sprite": 89,
+    "handler": "$A964",
+    "name": "SabreWulfReturn",
+    "role": "wulfReturn",
+    "spriteName": "Wulf: Pounce Left Frame 2"
+   },
+   {
+    "sprite": 90,
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "role": "none",
+    "spriteName": "None"
+   },
+   {
+    "sprite": 91,
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "role": "none",
+    "spriteName": "None"
+   },
+   {
+    "sprite": 92,
+    "handler": "$A8F5",
+    "name": "SabreWulfWard",
+    "role": "wulfWard",
+    "spriteName": "Wulf: Pounce Right Frame 1"
+   },
+   {
+    "sprite": 93,
+    "handler": "$A964",
+    "name": "SabreWulfReturn",
+    "role": "wulfReturn",
+    "spriteName": "Wulf: Pounce Right Frame 2"
+   },
+   {
+    "sprite": 94,
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "role": "none",
+    "spriteName": "None"
+   },
+   {
+    "sprite": 95,
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "role": "none",
+    "spriteName": "None"
+   },
+   {
+    "sprite": 96,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Spider: Left Frame 1"
+   },
+   {
+    "sprite": 97,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Spider: Left Frame 2"
+   },
+   {
+    "sprite": 98,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Spider: Right Frame 1"
+   },
+   {
+    "sprite": 99,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Spider: Right Frame 2"
+   },
+   {
+    "sprite": 100,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Scorpion: Left Frame 1"
+   },
+   {
+    "sprite": 101,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Scorpion: Left Frame 2"
+   },
+   {
+    "sprite": 102,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Scorpion: Right Frame 1"
+   },
+   {
+    "sprite": 103,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Scorpion: Right Frame 2"
+   },
+   {
+    "sprite": 104,
+    "handler": "$A4D7",
+    "name": "NastieChaser",
+    "role": "chaser",
+    "spriteName": "Bat: Left Frame 1"
+   },
+   {
+    "sprite": 105,
+    "handler": "$A4D7",
+    "name": "NastieChaser",
+    "role": "chaser",
+    "spriteName": "Bat: Left Frame 2"
+   },
+   {
+    "sprite": 106,
+    "handler": "$A4D7",
+    "name": "NastieChaser",
+    "role": "chaser",
+    "spriteName": "Bat: Right Frame 1"
+   },
+   {
+    "sprite": 107,
+    "handler": "$A4D7",
+    "name": "NastieChaser",
+    "role": "chaser",
+    "spriteName": "Bat: Right Frame 2"
+   },
+   {
+    "sprite": 108,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Parrot: Left Frame 1"
+   },
+   {
+    "sprite": 109,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Parrot: Left Frame 2"
+   },
+   {
+    "sprite": 110,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Parrot: Right Frame 1"
+   },
+   {
+    "sprite": 111,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Parrot: Right Frame 2"
+   },
+   {
+    "sprite": 112,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Monkey: Left Frame 1"
+   },
+   {
+    "sprite": 113,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Monkey: Left Frame 2"
+   },
+   {
+    "sprite": 114,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Monkey: Right Frame 1"
+   },
+   {
+    "sprite": 115,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Monkey: Right Frame 2"
+   },
+   {
+    "sprite": 116,
+    "handler": "$A4D7",
+    "name": "NastieChaser",
+    "role": "chaser",
+    "spriteName": "Lizard: Left Frame 1"
+   },
+   {
+    "sprite": 117,
+    "handler": "$A4D7",
+    "name": "NastieChaser",
+    "role": "chaser",
+    "spriteName": "Lizard: Left Frame 2"
+   },
+   {
+    "sprite": 118,
+    "handler": "$A4D7",
+    "name": "NastieChaser",
+    "role": "chaser",
+    "spriteName": "Lizard: Right Frame 1"
+   },
+   {
+    "sprite": 119,
+    "handler": "$A4D7",
+    "name": "NastieChaser",
+    "role": "chaser",
+    "spriteName": "Lizard: Right Frame 2"
+   },
+   {
+    "sprite": 120,
+    "handler": "$A4D7",
+    "name": "NastieChaser",
+    "role": "chaser",
+    "spriteName": "Snake: Left Frame 1"
+   },
+   {
+    "sprite": 121,
+    "handler": "$A4D7",
+    "name": "NastieChaser",
+    "role": "chaser",
+    "spriteName": "Snake: Left Frame 2"
+   },
+   {
+    "sprite": 122,
+    "handler": "$A4D7",
+    "name": "NastieChaser",
+    "role": "chaser",
+    "spriteName": "Snake: Right Frame 1"
+   },
+   {
+    "sprite": 123,
+    "handler": "$A4D7",
+    "name": "NastieChaser",
+    "role": "chaser",
+    "spriteName": "Snake: Right Frame 2"
+   },
+   {
+    "sprite": 124,
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "role": "none",
+    "spriteName": "None"
+   },
+   {
+    "sprite": 125,
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "role": "none",
+    "spriteName": "None"
+   },
+   {
+    "sprite": 126,
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "role": "none",
+    "spriteName": "None"
+   },
+   {
+    "sprite": 127,
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "role": "none",
+    "spriteName": "None"
+   },
+   {
+    "sprite": 128,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Crate"
+   },
+   {
+    "sprite": 129,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Ring"
+   },
+   {
+    "sprite": 130,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Fruit"
+   },
+   {
+    "sprite": 131,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Hat"
+   },
+   {
+    "sprite": 132,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Shield"
+   },
+   {
+    "sprite": 133,
+    "handler": "$A305",
+    "name": "ObjectLife",
+    "role": "life",
+    "spriteName": "Life"
+   },
+   {
+    "sprite": 134,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Money Bag"
+   },
+   {
+    "sprite": 135,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Sword"
+   },
+   {
+    "sprite": 136,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Crate"
+   },
+   {
+    "sprite": 137,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Ring"
+   },
+   {
+    "sprite": 138,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Fruit"
+   },
+   {
+    "sprite": 139,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Hat"
+   },
+   {
+    "sprite": 140,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Shield"
+   },
+   {
+    "sprite": 141,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Shield"
+   },
+   {
+    "sprite": 142,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Money Bag"
+   },
+   {
+    "sprite": 143,
+    "handler": "$A312",
+    "name": "Object",
+    "role": "object",
+    "spriteName": "Sword"
+   },
+   {
+    "sprite": 144,
+    "handler": "$A1AB",
+    "name": "AmuletPiece",
+    "role": "amulet",
+    "spriteName": "Amulet: Bottom Right"
+   },
+   {
+    "sprite": 145,
+    "handler": "$A1AB",
+    "name": "AmuletPiece",
+    "role": "amulet",
+    "spriteName": "Amulet: Bottom Left"
+   },
+   {
+    "sprite": 146,
+    "handler": "$A1AB",
+    "name": "AmuletPiece",
+    "role": "amulet",
+    "spriteName": "Amulet: Top Right"
+   },
+   {
+    "sprite": 147,
+    "handler": "$A1AB",
+    "name": "AmuletPiece",
+    "role": "amulet",
+    "spriteName": "Amulet: Top Left"
+   },
+   {
+    "sprite": 148,
+    "handler": "$9F16",
+    "name": "Keeper",
+    "role": "keeper",
+    "spriteName": "The Guardian: Frame 1"
+   },
+   {
+    "sprite": 149,
+    "handler": "$9F16",
+    "name": "Keeper",
+    "role": "keeper",
+    "spriteName": "The Guardian: Frame 2"
+   },
+   {
+    "sprite": 150,
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "role": "none",
+    "spriteName": "None"
+   },
+   {
+    "sprite": 151,
+    "handler": "$ADBD",
+    "name": "Nothing",
+    "role": "none",
+    "spriteName": "None"
+   },
+   {
+    "sprite": 152,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Rat: Left Frame 1"
+   },
+   {
+    "sprite": 153,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Rat: Left Frame 2"
+   },
+   {
+    "sprite": 154,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Rat: Right Frame 1"
+   },
+   {
+    "sprite": 155,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Rat: Right Frame 2"
+   },
+   {
+    "sprite": 156,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Bird: Left Frame 1"
+   },
+   {
+    "sprite": 157,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Bird: Left Frame 2"
+   },
+   {
+    "sprite": 158,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Bird: Right Frame 1"
+   },
+   {
+    "sprite": 159,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Bird: Right Frame 2"
+   },
+   {
+    "sprite": 160,
+    "handler": "$9E72",
+    "name": "Hippo",
+    "role": "hippo",
+    "spriteName": "Hippo: Left Frame 1"
+   },
+   {
+    "sprite": 161,
+    "handler": "$9E72",
+    "name": "Hippo",
+    "role": "hippo",
+    "spriteName": "Hippo: Left Frame 2"
+   },
+   {
+    "sprite": 162,
+    "handler": "$9E72",
+    "name": "Hippo",
+    "role": "hippo",
+    "spriteName": "Hippo: Right Frame 1"
+   },
+   {
+    "sprite": 163,
+    "handler": "$9E72",
+    "name": "Hippo",
+    "role": "hippo",
+    "spriteName": "Hippo: Right Frame 2"
+   },
+   {
+    "sprite": 164,
+    "handler": "$9EB3",
+    "name": "HippoRoam",
+    "role": "hippoRoam",
+    "spriteName": "Hippo: Sleeping"
+   },
+   {
+    "sprite": 165,
+    "handler": "$9EB3",
+    "name": "HippoRoam",
+    "role": "hippoRoam",
+    "spriteName": "Hippo: Sleeping"
+   },
+   {
+    "sprite": 166,
+    "handler": "$9EB3",
+    "name": "HippoRoam",
+    "role": "hippoRoam",
+    "spriteName": "Hippo: Sleeping"
+   },
+   {
+    "sprite": 167,
+    "handler": "$9EB3",
+    "name": "HippoRoam",
+    "role": "hippoRoam",
+    "spriteName": "Hippo: Sleeping"
+   },
+   {
+    "sprite": 168,
+    "handler": "$9E72",
+    "name": "Hippo",
+    "role": "hippo",
+    "spriteName": "Warthog: Left Frame 1"
+   },
+   {
+    "sprite": 169,
+    "handler": "$9E72",
+    "name": "Hippo",
+    "role": "hippo",
+    "spriteName": "Warthog: Left Frame 2"
+   },
+   {
+    "sprite": 170,
+    "handler": "$9E72",
+    "name": "Hippo",
+    "role": "hippo",
+    "spriteName": "Warthog: Right Frame 1"
+   },
+   {
+    "sprite": 171,
+    "handler": "$9E72",
+    "name": "Hippo",
+    "role": "hippo",
+    "spriteName": "Warthog: Right Frame 2"
+   },
+   {
+    "sprite": 172,
+    "handler": "$9EB3",
+    "name": "HippoRoam",
+    "role": "hippoRoam",
+    "spriteName": "Warthog: Sleeping"
+   },
+   {
+    "sprite": 173,
+    "handler": "$9EB3",
+    "name": "HippoRoam",
+    "role": "hippoRoam",
+    "spriteName": "Warthog: Sleeping"
+   },
+   {
+    "sprite": 174,
+    "handler": "$9EB3",
+    "name": "HippoRoam",
+    "role": "hippoRoam",
+    "spriteName": "Warthog: Sleeping"
+   },
+   {
+    "sprite": 175,
+    "handler": "$9EB3",
+    "name": "HippoRoam",
+    "role": "hippoRoam",
+    "spriteName": "Warthog: Sleeping"
+   },
+   {
+    "sprite": 176,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Frog: Left Frame 1"
+   },
+   {
+    "sprite": 177,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Frog: Left Frame 2"
+   },
+   {
+    "sprite": 178,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Frog: Right Frame 1"
+   },
+   {
+    "sprite": 179,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Frog: Right Frame 2"
+   },
+   {
+    "sprite": 180,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Mosquito: Left Frame 1"
+   },
+   {
+    "sprite": 181,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Mosquito: Left Frame 2"
+   },
+   {
+    "sprite": 182,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Mosquito: Right Frame 1"
+   },
+   {
+    "sprite": 183,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Mosquito: Right Frame 2"
+   },
+   {
+    "sprite": 184,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Skunk: Left Frame 1"
+   },
+   {
+    "sprite": 185,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Skunk: Left Frame 2"
+   },
+   {
+    "sprite": 186,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Skunk: Right Frame 1"
+   },
+   {
+    "sprite": 187,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Skunk: Right Frame 2"
+   },
+   {
+    "sprite": 188,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Flea: Left Frame 1"
+   },
+   {
+    "sprite": 189,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Flea: Left Frame 2"
+   },
+   {
+    "sprite": 190,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Flea: Right Frame 1"
+   },
+   {
+    "sprite": 191,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Flea: Right Frame 2"
+   },
+   {
+    "sprite": 192,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Earwig: Left Frame 1"
+   },
+   {
+    "sprite": 193,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Earwig: Left Frame 2"
+   },
+   {
+    "sprite": 194,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Earwig: Right Frame 1"
+   },
+   {
+    "sprite": 195,
+    "handler": "$A54F",
+    "name": "Nastie",
+    "role": "nastie",
+    "spriteName": "Earwig: Right Frame 2"
+   }
+  ]
+ },
+ "kinds": {
+  "address": "$A41A",
+  "note": "SpriteReference ($A41A): sestnact druhu zvirat. Index se losuje z $9693, ale jen do \"kusy amuletu * 2 + 8\", takze cim vic amuletu hrac ma, tim horsi zvirata chodi.",
+  "list": [
+   {
+    "index": 0,
+    "sprite": 96,
+    "role": "nastie",
+    "handler": "$A54F",
+    "spriteName": "Spider: Left Frame 1",
+    "score": 165
+   },
+   {
+    "index": 1,
+    "sprite": 100,
+    "role": "nastie",
+    "handler": "$A54F",
+    "spriteName": "Scorpion: Left Frame 1",
+    "score": 185
+   },
+   {
+    "index": 2,
+    "sprite": 104,
+    "role": "chaser",
+    "handler": "$A4D7",
+    "spriteName": "Bat: Left Frame 1",
+    "score": 165
+   },
+   {
+    "index": 3,
+    "sprite": 108,
+    "role": "nastie",
+    "handler": "$A54F",
+    "spriteName": "Parrot: Left Frame 1",
+    "score": 185
+   },
+   {
+    "index": 4,
+    "sprite": 112,
+    "role": "nastie",
+    "handler": "$A54F",
+    "spriteName": "Monkey: Left Frame 1",
+    "score": 165
+   },
+   {
+    "index": 5,
+    "sprite": 116,
+    "role": "chaser",
+    "handler": "$A4D7",
+    "spriteName": "Lizard: Left Frame 1",
+    "score": 185
+   },
+   {
+    "index": 6,
+    "sprite": 120,
+    "role": "chaser",
+    "handler": "$A4D7",
+    "spriteName": "Snake: Left Frame 1",
+    "score": 165
+   },
+   {
+    "index": 7,
+    "sprite": 96,
+    "role": "nastie",
+    "handler": "$A54F",
+    "spriteName": "Spider: Left Frame 1",
+    "score": 165
+   },
+   {
+    "index": 8,
+    "sprite": 152,
+    "role": "nastie",
+    "handler": "$A54F",
+    "spriteName": "Rat: Left Frame 1",
+    "score": 165
+   },
+   {
+    "index": 9,
+    "sprite": 156,
+    "role": "nastie",
+    "handler": "$A54F",
+    "spriteName": "Bird: Left Frame 1",
+    "score": 185
+   },
+   {
+    "index": 10,
+    "sprite": 176,
+    "role": "nastie",
+    "handler": "$A54F",
+    "spriteName": "Frog: Left Frame 1",
+    "score": 165
+   },
+   {
+    "index": 11,
+    "sprite": 180,
+    "role": "nastie",
+    "handler": "$A54F",
+    "spriteName": "Mosquito: Left Frame 1",
+    "score": 185
+   },
+   {
+    "index": 12,
+    "sprite": 184,
+    "role": "nastie",
+    "handler": "$A54F",
+    "spriteName": "Skunk: Left Frame 1",
+    "score": 165
+   },
+   {
+    "index": 13,
+    "sprite": 188,
+    "role": "nastie",
+    "handler": "$A54F",
+    "spriteName": "Flea: Left Frame 1",
+    "score": 185
+   },
+   {
+    "index": 14,
+    "sprite": 192,
+    "role": "nastie",
+    "handler": "$A54F",
+    "spriteName": "Earwig: Left Frame 1",
+    "score": 165
+   },
+   {
+    "index": 15,
+    "sprite": 152,
+    "role": "nastie",
+    "handler": "$A54F",
+    "spriteName": "Rat: Left Frame 1",
+    "score": 165
+   }
+  ]
+ },
+ "immortal": [
+  {
+   "slot": 1,
+   "sprite": 48,
+   "room": 152,
+   "column": 8,
+   "row": 9,
+   "role": "rhino",
+   "handler": "$AD07",
+   "label": "nosoro\u017eec",
+   "spriteName": "Rhino: Left Frame 2"
+  },
+  {
+   "slot": 2,
+   "sprite": 50,
+   "room": 7,
+   "column": 7,
+   "row": 0,
+   "role": "rhino",
+   "handler": "$AD07",
+   "label": "nosoro\u017eec",
+   "spriteName": "Rhino: Right Frame 2"
+  },
+  {
+   "slot": 3,
+   "sprite": 48,
+   "room": 243,
+   "column": 3,
+   "row": 15,
+   "role": "rhino",
+   "handler": "$AD07",
+   "label": "nosoro\u017eec",
+   "spriteName": "Rhino: Left Frame 2"
+  },
+  {
+   "slot": 4,
+   "sprite": 50,
+   "room": 152,
+   "column": 8,
+   "row": 9,
+   "role": "rhino",
+   "handler": "$AD07",
+   "label": "nosoro\u017eec",
+   "spriteName": "Rhino: Right Frame 2"
+  },
+  {
+   "slot": 5,
+   "sprite": 60,
+   "room": 167,
+   "column": 7,
+   "row": 10,
+   "role": "native",
+   "handler": "$AB74",
+   "label": "domorodec",
+   "spriteName": "Tribesman: Left Frame 4"
+  },
+  {
+   "slot": 6,
+   "sprite": 60,
+   "room": 68,
+   "column": 4,
+   "row": 4,
+   "role": "native",
+   "handler": "$AB74",
+   "label": "domorodec",
+   "spriteName": "Tribesman: Left Frame 4"
+  },
+  {
+   "slot": 7,
+   "sprite": 60,
+   "room": 226,
+   "column": 2,
+   "row": 14,
+   "role": "native",
+   "handler": "$AB74",
+   "label": "domorodec",
+   "spriteName": "Tribesman: Left Frame 4"
+  },
+  {
+   "slot": 8,
+   "sprite": 0,
+   "room": 0,
+   "column": 0,
+   "row": 0,
+   "role": "fireball",
+   "handler": "$ADBD",
+   "label": "ohniv\u00e1 koule (slot je pr\u00e1zdn\u00fd, dokud se neobjev\u00ed)",
+   "spriteName": "None"
+  },
+  {
+   "slot": 9,
+   "sprite": 80,
+   "room": 246,
+   "column": 6,
+   "row": 15,
+   "role": "wulf",
+   "handler": "$A858",
+   "label": "Sabre Wulf",
+   "spriteName": "Wulf: Left Frame 1"
+  },
+  {
+   "slot": 10,
+   "sprite": 160,
+   "room": 131,
+   "column": 3,
+   "row": 8,
+   "role": "hippo",
+   "handler": "$9E72",
+   "label": "hroch",
+   "spriteName": "Hippo: Left Frame 1"
+  },
+  {
+   "slot": 11,
+   "sprite": 148,
+   "room": 136,
+   "column": 8,
+   "row": 8,
+   "role": "keeper",
+   "handler": "$9F16",
+   "label": "str\u00e1\u017ece br\u00e1ny",
+   "spriteName": "The Guardian: Frame 1"
+  }
+ ],
+ "speeds": {
+  "spawnColours": [
+   66,
+   67,
+   69,
+   70
+  ],
+  "nastie": [
+   -96,
+   -80,
+   -64,
+   -48,
+   48,
+   64,
+   80,
+   96
+  ],
+  "nastieRaw": [
+   160,
+   176,
+   192,
+   208,
+   48,
+   64,
+   80,
+   96
+  ],
+  "fireball": [
+   80,
+   96,
+   112,
+   96,
+   -128,
+   -112,
+   -96,
+   -80
+  ],
+  "fireballRaw": [
+   80,
+   96,
+   112,
+   96,
+   128,
+   144,
+   160,
+   176
+  ],
+  "native": [
+   -48,
+   -32,
+   32,
+   48
+  ],
+  "nativeRaw": [
+   208,
+   224,
+   32,
+   48
+  ],
+  "note": "rychlosti jsou v 1/16 pixelu za pruchod, jako u Sabremana (M3): $B031 z nich dela cele pixely smerem k nule"
+ },
+ "score": {
+  "enemy": [
+   165,
+   175,
+   185,
+   195
+  ],
+  "note": "AddPointsToScore ($B5A9) scita BCD. Body za nepr\u00edtele delaji bity 1-2 sprite ID: 165, 175, 185 nebo 195. Procento navstivenych obrazovek do skore nevstupuje \u2013 $9CC6 ho jen tiskne na obrazovce GAME OVER.",
+  "percentInScore": false
+ },
+ "values": {
+  "jumpTable": 39742,
+  "nastieSlots": 6,
+  "nastieStride": 12,
+  "spawnDelayAddress": 38577,
+  "spawnDelay": 16,
+  "spawnDelayStart": 16,
+  "aliveFirstSprite": 16,
+  "aliveSpriteCount": 32,
+  "nastiePerRoomAddress": 38590,
+  "nastiePerRoom": 3,
+  "spawnRandMask": 127,
+  "spawnBase": 48,
+  "spawnFramesMask": 127,
+  "spawnBoxHeight": 23,
+  "spawnBoxWidth": 23,
+  "spawnColourTable": 39608,
+  "spawnColourMask": 3,
+  "spawnSprite": 1,
+  "materialiseStep": 0,
+  "difficultyPieces": 4,
+  "difficultyBase": 8,
+  "difficultyMask": 15,
+  "difficultyFallback": 7,
+  "kindTable": 42010,
+  "shimmerSwordFrom": 32,
+  "shimmerSwordCount": 16,
+  "shimmerHitHeight": 12,
+  "shimmerHitWidth": 16,
+  "explodeSprite": 8,
+  "explodeClear": 0,
+  "despawnAge": 64,
+  "enemyScoreMask": 48,
+  "enemyScoreBase": 101,
+  "enemyScoreHigh": 1,
+  "bounceWidthAddress": 38573,
+  "bounceMaxY": 191,
+  "bounceMinY": 39,
+  "nastieWidth": 23,
+  "nastieBoxHeight": 23,
+  "nastieBoxWidth": 23,
+  "nastieHitHeight": 19,
+  "nastieHitWidth": 19,
+  "nastieSpeedTable": 42497,
+  "nastieSpeedMask": 7,
+  "nastieTimerMask": 7,
+  "nastieTimerBase": 8,
+  "chaserWidth": 23,
+  "chaserAccel": 8,
+  "chaserCap": 48,
+  "killSwordFrom": 16,
+  "killSwordCount": 16,
+  "killSwordSide": 3,
+  "killStateAddress": 38660,
+  "fireballSlot": 38754,
+  "fireballTimerAddress": 38580,
+  "fireballDelay": 128,
+  "fireballDelayStart": 128,
+  "fireballRespawn": 16,
+  "fireballSprite": 52,
+  "fireballColour": 70,
+  "fireballAlignMask": 1,
+  "fireballWidth": 23,
+  "fireballBoxHeight": 23,
+  "fireballBoxWidth": 15,
+  "fireballHitHeight": 19,
+  "fireballHitWidth": 15,
+  "fireballLife": 8,
+  "fireballTurnEvery": 64,
+  "fireballHomeMask": 1,
+  "fireballSpeedTable": 40540,
+  "fireballSpeedMask": 7,
+  "fireballHomeRight": 64,
+  "fireballHomeLeft": 192,
+  "fireballHomeDown": 64,
+  "fireballHomeUpOffset": 6,
+  "fireballHomeUp": 64,
+  "fireballFlickerMask": 3,
+  "fireballFlickerBase": 52,
+  "fireballColourMask": 7,
+  "fireballColourMin": 2,
+  "fireballColourFill": 6,
+  "fireballColourBase": 64,
+  "rhinoWidth": 32,
+  "rhinoBoxHeight": 23,
+  "rhinoBoxWidth": 31,
+  "rhinoHitHeight": 15,
+  "rhinoHitWidth": 28,
+  "rhinoTurnSpeed": 48,
+  "rhinoRepelLeft": 160,
+  "rhinoRepelRight": 96,
+  "rhinoFacingBit": 3,
+  "animateEvery": 1,
+  "hippoWidth": 32,
+  "hippoBoxHeight": 23,
+  "hippoBoxWidth": 31,
+  "hippoHitHeight": 15,
+  "hippoHitWidth": 28,
+  "hippoStun": 15,
+  "hippoRoamBit": 2,
+  "roamRowGap": 2,
+  "roamRowStep": 16,
+  "roamRowStepUp": 16,
+  "roamColumnKeep": 252,
+  "roamColumnMask": 3,
+  "nativeWidth": 16,
+  "nativeBoxHeight": 23,
+  "nativeBoxWidth": 15,
+  "nativeHitHeight": 15,
+  "nativeHitWidth": 12,
+  "nativeSpeedTable": 44068,
+  "nativeSpeedMask": 3,
+  "nativeRepelRight": 64,
+  "nativeRepelLeft": 192,
+  "nativeFacingBit": 8,
+  "wulfWidth": 32,
+  "wulfBoxHeight": 23,
+  "wulfBoxWidth": 31,
+  "wulfHitHeight": 15,
+  "wulfHitWidth": 28,
+  "wulfRowMask": 240,
+  "wulfChargeLeft": 192,
+  "wulfChargeRight": 64,
+  "wulfSwordLeftFrom": 40,
+  "wulfSwordRightFrom": 32,
+  "wulfSwordCount": 8,
+  "wulfWardSprite": 8,
+  "wulfWardTimer": 15,
+  "wulfRecoilTimer": 8,
+  "wulfReturnTimer": 16,
+  "wulfSpeedUp": 32,
+  "wulfSpeedUpNeg": 64,
+  "keeperAmuletMask": 15,
+  "keeperAmuletAll": 15,
+  "keeperHitHeight": 23,
+  "keeperHitWidth": 15,
+  "keeperKill": 128,
+  "keeperStepLeft": 224,
+  "keeperLimitLeft": 64,
+  "keeperStepRight": 32,
+  "keeperLimitRight": 192,
+  "keeperSideBit": 7,
+  "gameDelay": 128,
+  "livesStart": 5,
+  "twoPlayerBit": 1,
+  "inactiveLivesAddress": 38624,
+  "swapStates": 35,
+  "swapMapBytes": 512,
+  "swapEntityBytes": 300
+ },
+ "source": {
+  "jumpTable": {
+   "address": "$99DE",
+   "note": "LD BC,nn \u2014 `JumpTable` ($99DE): obsluha entity je `JumpTable[sprite ID]`, tak\u017ee **rozd\u011blen\u00ed entit nen\u00ed odhad, ale tabulka**"
+  },
+  "nastieSlots": {
+   "address": "$9A5B",
+   "note": "LD B,n \u2014 kolik slot\u016f `NastieData` m\u00e1, tedy **kolik zv\u00ed\u0159at m\u016f\u017ee b\u00fdt ve sv\u011bt\u011b nar\u00e1z**"
+  },
+  "nastieStride": {
+   "address": "$9A58",
+   "note": "LD DE,nn \u2014 a o kolik se mezi nimi sk\u00e1\u010de (d\u00e9lka z\u00e1znamu)"
+  },
+  "spawnDelayAddress": {
+   "address": "$9A41",
+   "note": "LD A,(nn) \u2014 prodleva, ne\u017e se za\u010dnou dosazovat zv\u00ed\u0159ata ($96B1)"
+  },
+  "spawnDelay": {
+   "address": "$AA4D",
+   "note": "LD A,n \u2192 $96B1 \u2014 na tolik pr\u016fchod\u016f se dosazov\u00e1n\u00ed zastav\u00ed po smrti ($AA4D) i na za\u010d\u00e1tku kola ($B1BA)"
+  },
+  "spawnDelayStart": {
+   "address": "$B1BA",
+   "note": "LD A,n \u2192 $96B1 \u2014 a tot\u00e9\u017e na za\u010d\u00e1tku kola; mus\u00ed to b\u00fdt tot\u00e9\u017e \u010d\u00edslo"
+  },
+  "aliveFirstSprite": {
+   "address": "$9A4F",
+   "note": "SUB n \u2014 zv\u00ed\u0159ata se dosazuj\u00ed, jen kdy\u017e je Sabremanovo sprite ID od n v\u00fd\u0161\u2026"
+  },
+  "aliveSpriteCount": {
+   "address": "$9A51",
+   "note": "\u2026a nejv\u00fd\u0161 o tolik d\u00e1l ($10\u2013$2F), tedy kdy\u017e je **na\u017eivu a na nohou**"
+  },
+  "nastiePerRoomAddress": {
+   "address": "$9A85",
+   "note": "LD A,(nn) \u2014 kolik zv\u00ed\u0159at sm\u00ed b\u00fdt na obrazovce ($96BE); v\u00edc se nedosad\u00ed"
+  },
+  "nastiePerRoom": {
+   "address": "$B223",
+   "note": "LD A,n \u2192 $96BE \u2014 \u2605 a je to **t\u0159i** ($B21E, na za\u010d\u00e1tku ka\u017ed\u00e9ho kola)"
+  },
+  "spawnRandMask": {
+   "address": "$9B10",
+   "note": "AND n \u2014 x nov\u00e9ho zv\u00ed\u0159ete: `Rand8` ($9695) & n\u2026"
+  },
+  "spawnBase": {
+   "address": "$9B12",
+   "note": "ADD A,n \u2014 \u2026plus n; y stejn\u011b z `FRAMES` ($9B18)"
+  },
+  "spawnFramesMask": {
+   "address": "$9B1B",
+   "note": "AND n \u2014 a y z `FRAMES` ($5C78) & n"
+  },
+  "spawnBoxHeight": {
+   "address": "$9B29",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka, kterou se hl\u00edd\u00e1, \u017ee zv\u00ed\u0159e nevznikne na Sabremanovi"
+  },
+  "spawnBoxWidth": {
+   "address": "$9B29",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka; tot\u00e9\u017e pak jde do `$B81C` proti kulise"
+  },
+  "spawnColourTable": {
+   "address": "$9A96",
+   "note": "LD BC,nn \u2014 `ColourBytes` ($9AB8): \u010dty\u0159i barvy, index `$9693` & 3"
+  },
+  "spawnColourMask": {
+   "address": "$9A91",
+   "note": "AND n \u2014 a takhle se z po\u010d\u00edtadla pr\u016fchod\u016f vyb\u00edr\u00e1"
+  },
+  "spawnSprite": {
+   "address": "$9A9E",
+   "note": "LD (IX+$00),n \u2014 nov\u00e9 zv\u00ed\u0159e za\u010d\u00edn\u00e1 **zhmot\u0148ov\u00e1n\u00edm**, ne rovnou sebou"
+  },
+  "materialiseStep": {
+   "address": "$A3D7",
+   "note": "INC (IX+n) \u2014 f\u00e1ze zhmotn\u011bn\u00ed je prost\u011b sprite ID o jedna d\u00e1l ($A3C5)"
+  },
+  "difficultyPieces": {
+   "address": "$A3F1",
+   "note": "LD B,n \u2014 kolik bit\u016f `$970D` (kus\u016f amuletu) se po\u010d\u00edt\u00e1 ($A3E0)"
+  },
+  "difficultyBase": {
+   "address": "$A3FC",
+   "note": "ADD A,n \u2014 \u2605 **z kolika druh\u016f se losuje**: `kusy*2 + n`, tak\u017ee bez amuletu osm a se \u010dty\u0159mi kusy v\u0161ech \u0161estn\u00e1ct"
+  },
+  "difficultyMask": {
+   "address": "$A402",
+   "note": "AND n \u2014 losuje se z `$9693` & n\u2026"
+  },
+  "difficultyFallback": {
+   "address": "$A407",
+   "note": "\u2026a kdy\u017e padne v\u00edc, ne\u017e je dovoleno, o\u0159\u00edzne se na n"
+  },
+  "kindTable": {
+   "address": "$A40C",
+   "note": "LD HL,nn \u2014 `SpriteReference` ($A41A): \u0161estn\u00e1ct druh\u016f zv\u00ed\u0159at"
+  },
+  "shimmerSwordFrom": {
+   "address": "$A3BA",
+   "note": "SUB n \u2014 zhmot\u0148uj\u00edc\u00ed se zv\u00ed\u0159e jde zab\u00edt, ale **jen tasen\u00fdm me\u010dem**: sprite ID Sabremana od n\u2026"
+  },
+  "shimmerSwordCount": {
+   "address": "$A3BC",
+   "note": "CP n \u2014 \u2026a o tolik d\u00e1l ($A3B7)"
+  },
+  "shimmerHitHeight": {
+   "address": "$A3BF",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka toho seku"
+  },
+  "shimmerHitWidth": {
+   "address": "$A3BF",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka"
+  },
+  "explodeSprite": {
+   "address": "$A4AC",
+   "note": "LD (IX+$00),n \u2014 sprite ID prvn\u00edho sn\u00edmku v\u00fdbuchu"
+  },
+  "explodeClear": {
+   "address": "$A446",
+   "note": "LD (IX+$00),n \u2014 a \u010d\u00edm v\u00fdbuch skon\u010d\u00ed: slot je voln\u00fd"
+  },
+  "despawnAge": {
+   "address": "$A499",
+   "note": "CP n \u2014 zv\u00ed\u0159e, kter\u00e9 z\u016fstalo na jin\u00e9 obrazovce, po n pr\u016fchodech zmiz\u00ed ($A493)"
+  },
+  "enemyScoreMask": {
+   "address": "$A4B9",
+   "note": "AND n \u2014 \u2605 **body za nep\u0159\u00edtele nejsou jedno \u010d\u00edslo**: ze sprite ID se `RLCA` 3x a n vybere krok"
+  },
+  "enemyScoreBase": {
+   "address": "$A4BB",
+   "note": "ADD A,n \u2014 \u2026a p\u0159i\u010dte se z\u00e1klad, tak\u017ee doln\u00ed bajt je $65/$75/$85/$95"
+  },
+  "enemyScoreHigh": {
+   "address": "$A4BE",
+   "note": "LD B,n \u2192 `AddPointsToScore` ($B5A9) \u2014 horn\u00ed bajt **BCD**: 165 a\u017e 195 bod\u016f"
+  },
+  "bounceWidthAddress": {
+   "address": "$A44D",
+   "note": "LD A,(nn) \u2014 \u0161\u00ed\u0159ka entity ($96AD), kterou si ka\u017ed\u00e1 obsluha nastav\u00ed sama"
+  },
+  "bounceMaxY": {
+   "address": "$A46E",
+   "note": "CP n \u2014 doln\u00ed okraj hrac\u00ed plochy, od kter\u00e9ho se zv\u00ed\u0159e odraz\u00ed"
+  },
+  "bounceMinY": {
+   "address": "$A48C",
+   "note": "CP n \u2014 a horn\u00ed; \u2605 zv\u00ed\u0159e **nikdy neopust\u00ed obrazovku** (na rozd\u00edl od nesmrteln\u00fdch entit, kter\u00e9 jdou p\u0159es `$AFE8`)"
+  },
+  "nastieWidth": {
+   "address": "$A558",
+   "note": "LD A,n \u2192 $96AD \u2014 \u0161\u00ed\u0159ka chod\u00edc\u00edho zv\u00ed\u0159ete"
+  },
+  "nastieBoxHeight": {
+   "address": "$A52D",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka proti kulise"
+  },
+  "nastieBoxWidth": {
+   "address": "$A52D",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka"
+  },
+  "nastieHitHeight": {
+   "address": "$A539",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka kontaktu se Sabremanem ($AB36)"
+  },
+  "nastieHitWidth": {
+   "address": "$A539",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka"
+  },
+  "nastieSpeedTable": {
+   "address": "$A5DD",
+   "note": "LD BC,nn \u2014 osm rychlost\u00ed, ze kter\u00fdch si zv\u00ed\u0159e losuje sm\u011br ($A601)"
+  },
+  "nastieSpeedMask": {
+   "address": "$A5D8",
+   "note": "AND n \u2014 vodorovn\u00e1 z `Rand8` & n, svisl\u00e1 z `FRAMES` & n ($A5F0)"
+  },
+  "nastieTimerMask": {
+   "address": "$A613",
+   "note": "AND n \u2014 jak dlouho zv\u00ed\u0159e stoj\u00ed, ne\u017e se zase rozejde ($A609)\u2026"
+  },
+  "nastieTimerBase": {
+   "address": "$A615",
+   "note": "OR n \u2014 \u2026nejm\u00e9n\u011b tolik pr\u016fchod\u016f"
+  },
+  "chaserWidth": {
+   "address": "$A4DF",
+   "note": "LD A,n \u2192 $96AD \u2014 \u0161\u00ed\u0159ka nah\u00e1n\u011b\u010de"
+  },
+  "chaserAccel": {
+   "address": "$A4F0",
+   "note": "LD BC,nn \u2014 `C`: \u2605 o kolik nah\u00e1n\u011b\u010d **p\u0159id\u00e1 k rychlosti** ke Sabremanovi ka\u017ed\u00fd pr\u016fchod"
+  },
+  "chaserCap": {
+   "address": "$A4F0",
+   "note": "LD BC,nn \u2014 `B`: a strop t\u00e9 rychlosti ($AFD0)"
+  },
+  "killSwordFrom": {
+   "address": "$AB4C",
+   "note": "SUB n \u2014 kontakt: pod t\u00edmhle sprite ID Sabreman me\u010d nem\u00e1 ($AB49)\u2026"
+  },
+  "killSwordCount": {
+   "address": "$AB4E",
+   "note": "CP n \u2014 \u2026a o tolik d\u00e1l za\u010d\u00edn\u00e1 me\u010d, tedy $20\u2013$2F"
+  },
+  "killSwordSide": {
+   "address": "$AB52",
+   "note": "BIT b,A \u2014 \u2605 a **kter\u00fd bit rozhoduje, na kterou stranu me\u010d plat\u00ed**: zv\u00ed\u0159e zem\u0159e jen tehdy, kdy\u017e je Sabreman na spr\u00e1vn\u00e9 stran\u011b"
+  },
+  "killStateAddress": {
+   "address": "$AB65",
+   "note": "LD (nn),A \u2014 kam se zap\u00ed\u0161e, \u017ee Sabreman um\u00edr\u00e1 (`+2` jeho z\u00e1znamu, $9704)"
+  },
+  "fireballSlot": {
+   "address": "$9AC9",
+   "note": "LD DE,nn \u2014 \u2605 ohniv\u00e1 koule m\u00e1 **vlastn\u00ed slot mezi nesmrteln\u00fdmi entitami** ($9762, slot 8) \u2013 to je ten pr\u00e1zdn\u00fd, kter\u00fd M4 na\u0161el"
+  },
+  "fireballTimerAddress": {
+   "address": "$9ACF",
+   "note": "LD HL,nn \u2014 \u2605 `$96B4` **nen\u00ed nedotknutelnost po respawnu, jak M3 h\u00e1dal, ale odpo\u010det do ohniv\u00e9 koule**: $9ABC ho ub\u00edr\u00e1 a na nule kouli polo\u017e\u00ed"
+  },
+  "fireballDelay": {
+   "address": "$B164",
+   "note": "LD A,n \u2192 $96B4 \u2014 \u2605 a **p\u0159i ka\u017ed\u00e9 zm\u011bn\u011b obrazovky se nastav\u00ed znovu** ($B148), tak\u017ee kdo chod\u00ed, kouli nedostane"
+  },
+  "fireballDelayStart": {
+   "address": "$B1BF",
+   "note": "LD A,n \u2192 $96B4 \u2014 tot\u00e9\u017e na za\u010d\u00e1tku kola ($B1BF) a po smrti ($AA52)"
+  },
+  "fireballRespawn": {
+   "address": "$A4A1",
+   "note": "LD A,n \u2192 $96B4 \u2014 \u2605 a **kdy\u017e kouli sebere \u010das, vr\u00e1t\u00ed se mnohem d\u0159\u00edv**"
+  },
+  "fireballSprite": {
+   "address": "$9ADF",
+   "note": "LD (IX+$00),n \u2014 sprite ID koule p\u0159i polo\u017een\u00ed"
+  },
+  "fireballColour": {
+   "address": "$9AE3",
+   "note": "LD (IX+$05),n \u2014 a jej\u00ed barva"
+  },
+  "fireballAlignMask": {
+   "address": "$9AEC",
+   "note": "AND n \u2014 \u2605 koule se pokl\u00e1d\u00e1 **do p\u0159\u00edmky se Sabremanem**: podle `$9693` & n bu\u010f na jeho x, nebo na jeho y ($9AE9)"
+  },
+  "fireballWidth": {
+   "address": "$9D9A",
+   "note": "LD A,n \u2192 $96AD \u2014 \u0161\u00ed\u0159ka koule"
+  },
+  "fireballBoxHeight": {
+   "address": "$9DC3",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka proti kulise"
+  },
+  "fireballBoxWidth": {
+   "address": "$9DC3",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka"
+  },
+  "fireballHitHeight": {
+   "address": "$9DEC",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka, kterou koule zab\u00edj\u00ed"
+  },
+  "fireballHitWidth": {
+   "address": "$9DEC",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka"
+  },
+  "fireballLife": {
+   "address": "$9DAC",
+   "note": "DEC (IX+n) \u2014 \u2605 koule m\u00e1 **omezen\u00fd \u017eivot**: `+8` se ub\u00edr\u00e1 od nuly, tak\u017ee vydr\u017e\u00ed 256 pr\u016fchod\u016f a pak sama vybuchne"
+  },
+  "fireballTurnEvery": {
+   "address": "$9E0E",
+   "note": "LD (IX+$02),n \u2014 po tolika pr\u016fchodech koule zm\u011bn\u00ed sm\u011br"
+  },
+  "fireballHomeMask": {
+   "address": "$9E15",
+   "note": "AND n \u2014 \u2605 a **st\u0159\u00edd\u00e1 se v tom**: p\u0159i `$9693` & n m\u00ed\u0159\u00ed na Sabremana, jinak si losuje"
+  },
+  "fireballSpeedTable": {
+   "address": "$9E53",
+   "note": "LD BC,nn \u2014 osm rychlost\u00ed pro losovan\u00fd sm\u011br ($9E5C)"
+  },
+  "fireballSpeedMask": {
+   "address": "$9E1C",
+   "note": "AND n \u2014 index z `Rand8` & n"
+  },
+  "fireballHomeRight": {
+   "address": "$9E37",
+   "note": "LD (IX+$06),n \u2014 kdy\u017e je Sabreman vpravo, koule jede doprava\u2026"
+  },
+  "fireballHomeLeft": {
+   "address": "$9E48",
+   "note": "LD (IX+$06),n \u2014 \u2026a doleva, kdy\u017e vlevo"
+  },
+  "fireballHomeDown": {
+   "address": "$9E43",
+   "note": "LD (IX+$07),n \u2014 a kdy\u017e je Sabreman **pod** koul\u00ed, jede dol\u016f"
+  },
+  "fireballHomeUpOffset": {
+   "address": "$9E4E",
+   "note": "LD (IX+n),$40 \u2014 \u2605 ale kdy\u017e je Sabreman **nad** koul\u00ed, zap\u00ed\u0161e hra do `+6` m\u00edsto do `+7`, tedy do **vodorovn\u00e9** rychlosti. Koule t\u00edm nahoru nikdy nem\u00ed\u0159\u00ed a m\u00edsto toho se rozjede doprava. **Chyba origin\u00e1lu, a reprodukuje se**"
+  },
+  "fireballHomeUp": {
+   "address": "$9E4E",
+   "note": "LD (IX+$06),n \u2014 a tohle je ta hodnota, kterou tam zap\u00ed\u0161e"
+  },
+  "fireballFlickerMask": {
+   "address": "$9DD2",
+   "note": "AND n \u2014 sn\u00edmek koule z `Rand8` & n\u2026"
+  },
+  "fireballFlickerBase": {
+   "address": "$9DD4",
+   "note": "OR n \u2014 \u2026plus z\u00e1klad sprite ID"
+  },
+  "fireballColourMask": {
+   "address": "$9E67",
+   "note": "AND n \u2014 barva koule z `Rand8` & n ($9E64)\u2026"
+  },
+  "fireballColourMin": {
+   "address": "$9E69",
+   "note": "CP n \u2014 \u2026pod n se dopln\u00ed\u2026"
+  },
+  "fireballColourFill": {
+   "address": "$9E6D",
+   "note": "OR n \u2014 \u2026t\u00edmhle\u2026"
+  },
+  "fireballColourBase": {
+   "address": "$9E6F",
+   "note": "OR n \u2014 \u2026a nakonec se p\u0159id\u00e1 `BRIGHT`"
+  },
+  "rhinoWidth": {
+   "address": "$AD0D",
+   "note": "LD A,n \u2192 $96AD \u2014 \u0161\u00ed\u0159ka nosoro\u017ece"
+  },
+  "rhinoBoxHeight": {
+   "address": "$AD15",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka proti kulise"
+  },
+  "rhinoBoxWidth": {
+   "address": "$AD15",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka"
+  },
+  "rhinoHitHeight": {
+   "address": "$AD35",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka kontaktu"
+  },
+  "rhinoHitWidth": {
+   "address": "$AD35",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka"
+  },
+  "rhinoTurnSpeed": {
+   "address": "$AD20",
+   "note": "LD A,n \u2014 do \u010deho se nosoro\u017eec zabrzd\u00ed o kulisu a oto\u010d\u00ed se ($AD86)"
+  },
+  "rhinoRepelLeft": {
+   "address": "$AD74",
+   "note": "LD A,n \u2014 \u2605 nosoro\u017eec **se ned\u00e1 zab\u00edt, jen zahnat**: podle toho, kam Sabreman kouk\u00e1, se rozjede doleva\u2026"
+  },
+  "rhinoRepelRight": {
+   "address": "$AD82",
+   "note": "LD A,n \u2014 \u2026nebo doprava, a to **rychleji, ne\u017e chodil**"
+  },
+  "rhinoFacingBit": {
+   "address": "$AD6C",
+   "note": "BIT b,A \u2014 a rozhoduje o tom tenhle bit Sabremanova sprite ID"
+  },
+  "animateEvery": {
+   "address": "$AD96",
+   "note": "AND n \u2014 sn\u00edmek ch\u016fze se p\u0159epne, kdy\u017e je `$9693` d\u011bliteln\u00e9 n+1 ($AD93)"
+  },
+  "hippoWidth": {
+   "address": "$9E78",
+   "note": "LD A,n \u2192 $96AD \u2014 \u0161\u00ed\u0159ka hrocha"
+  },
+  "hippoBoxHeight": {
+   "address": "$9E86",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka proti kulise"
+  },
+  "hippoBoxWidth": {
+   "address": "$9E86",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka"
+  },
+  "hippoHitHeight": {
+   "address": "$9ED8",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka kontaktu"
+  },
+  "hippoHitWidth": {
+   "address": "$9ED8",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka"
+  },
+  "hippoStun": {
+   "address": "$9EF7",
+   "note": "LD (IX+$02),n \u2014 \u2605 hroch se taky **jen za\u017eene**: na tolik pr\u016fchod\u016f se zastav\u00ed a neh\u00fdbe se"
+  },
+  "hippoRoamBit": {
+   "address": "$9E92",
+   "note": "SET b,(IX+$00) \u2014 \u2605 a kdy\u017e ho zastav\u00ed kulisa, **p\u0159epne se na obsluhu, kter\u00e1 ho odst\u011bhuje na jinou obrazovku** ($9EB3 \u2192 $A630)"
+  },
+  "roamRowGap": {
+   "address": "$A64E",
+   "note": "CP n \u2014 \u2605 nesmrteln\u00e1 entita se za Sabremanem **st\u011bhuje po sv\u011bt\u011b**: kdy\u017e je od jeho \u0159\u00e1dku d\u00e1l ne\u017e n, p\u0159esko\u010d\u00ed\u2026"
+  },
+  "roamRowStep": {
+   "address": "$A679",
+   "note": "ADD A,n \u2014 \u2026o \u0159\u00e1dek pod n\u011bj\u2026"
+  },
+  "roamRowStepUp": {
+   "address": "$A659",
+   "note": "SUB n \u2014 \u2026nebo nad n\u011bj (`Rand8` bit 0 rozhodne)\u2026"
+  },
+  "roamColumnKeep": {
+   "address": "$A65D",
+   "note": "AND n \u2014 \u2026a ze sloupce si nech\u00e1 Sabremanovy horn\u00ed bity\u2026"
+  },
+  "roamColumnMask": {
+   "address": "$A663",
+   "note": "AND n \u2014 \u2026a sv\u00e9 vlastn\u00ed doln\u00ed, tak\u017ee skon\u010d\u00ed ve stejn\u00e9 \u010dtvrtin\u011b \u0159\u00e1dku"
+  },
+  "nativeWidth": {
+   "address": "$AB7A",
+   "note": "LD A,n \u2192 $96AD \u2014 \u0161\u00ed\u0159ka domorodce"
+  },
+  "nativeBoxHeight": {
+   "address": "$AB82",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka proti kulise"
+  },
+  "nativeBoxWidth": {
+   "address": "$AB82",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka"
+  },
+  "nativeHitHeight": {
+   "address": "$AB9C",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka kontaktu"
+  },
+  "nativeHitWidth": {
+   "address": "$AB9C",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka"
+  },
+  "nativeSpeedTable": {
+   "address": "$ABE2",
+   "note": "LD BC,nn \u2014 \u010dty\u0159i rychlosti ($AC24), ze kter\u00fdch si domorodec losuje sm\u011br"
+  },
+  "nativeSpeedMask": {
+   "address": "$ABE8",
+   "note": "AND n \u2014 vodorovn\u00e1 z `Rand8` & n, svisl\u00e1 z `FRAMES` & n ($ABFD)"
+  },
+  "nativeRepelRight": {
+   "address": "$ABAB",
+   "note": "LD A,n \u2014 \u2605 domorodec se **jen zah\u00e1n\u00ed**: doprava\u2026"
+  },
+  "nativeRepelLeft": {
+   "address": "$ABDA",
+   "note": "LD A,n \u2014 \u2026nebo doleva, podle toho, kam Sabreman kouk\u00e1"
+  },
+  "nativeFacingBit": {
+   "address": "$ABA7",
+   "note": "AND n \u2014 a rozhoduje o tom tenhle bit Sabremanova sprite ID"
+  },
+  "wulfWidth": {
+   "address": "$A85B",
+   "note": "LD A,n \u2192 $96AD \u2014 \u0161\u00ed\u0159ka Sabre Wulfa"
+  },
+  "wulfBoxHeight": {
+   "address": "$A86C",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka proti kulise"
+  },
+  "wulfBoxWidth": {
+   "address": "$A86C",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka"
+  },
+  "wulfHitHeight": {
+   "address": "$A88F",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka, kterou zab\u00edj\u00ed"
+  },
+  "wulfHitWidth": {
+   "address": "$A88F",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka"
+  },
+  "wulfRowMask": {
+   "address": "$A925",
+   "note": "AND n \u2014 \u2605 Sabre Wulf se rozjede, **jen kdy\u017e je Sabreman v t\u00e9m\u017ee \u0159\u00e1dku sv\u011bta** ($A922); v jin\u00e9m \u0159\u00e1dku stoj\u00ed"
+  },
+  "wulfChargeLeft": {
+   "address": "$A948",
+   "note": "LD (IX+$06),n \u2014 a pak se rozjede doleva\u2026"
+  },
+  "wulfChargeRight": {
+   "address": "$A951",
+   "note": "LD (IX+$06),n \u2014 \u2026nebo doprava, p\u0159\u00edmo na n\u011bj"
+  },
+  "wulfSwordLeftFrom": {
+   "address": "$A8D0",
+   "note": "SUB n \u2014 \u2605 **me\u010dem se d\u00e1 odehnat**: kdy\u017e jede doleva, plat\u00ed sprite ID od n\u2026"
+  },
+  "wulfSwordRightFrom": {
+   "address": "$A8EE",
+   "note": "SUB n \u2014 \u2026a kdy\u017e doprava, od n"
+  },
+  "wulfSwordCount": {
+   "address": "$A8D2",
+   "note": "CP n \u2014 a v obou p\u0159\u00edpadech o tolik d\u00e1l (osm p\u00f3z seku)"
+  },
+  "wulfWardSprite": {
+   "address": "$A8DA",
+   "note": "OR n \u2014 odehnan\u00fd Sabre Wulf p\u0159ejde na sprite ID s t\u00edmhle bitem\u2026"
+  },
+  "wulfWardTimer": {
+   "address": "$A8DF",
+   "note": "LD (IX+$02),n \u2014 \u2026a couv\u00e1 tolik pr\u016fchod\u016f ($A8F5)"
+  },
+  "wulfRecoilTimer": {
+   "address": "$A91B",
+   "note": "LD (IX+$02),n \u2014 pak p\u0159ejde do druh\u00e9 f\u00e1ze na tolik pr\u016fchod\u016f ($A964)"
+  },
+  "wulfReturnTimer": {
+   "address": "$A970",
+   "note": "LD (IX+$02),n \u2014 a nakonec se vr\u00e1t\u00ed zp\u00e1tky"
+  },
+  "wulfSpeedUp": {
+   "address": "$A97D",
+   "note": "ADD A,n \u2014 \u2605 a **po ka\u017ed\u00e9m odehn\u00e1n\u00ed je rychlej\u0161\u00ed** ($A964): kladn\u00e9 rychlosti se p\u0159i\u010dte n\u2026"
+  },
+  "wulfSpeedUpNeg": {
+   "address": "$A97B",
+   "note": "SUB n \u2014 \u2026a z\u00e1porn\u00e9 se n ode\u010dte, tak\u017ee roste v obou sm\u011brech"
+  },
+  "keeperAmuletMask": {
+   "address": "$9F23",
+   "note": "AND n \u2014 \u2605 str\u00e1\u017ece se d\u00edv\u00e1 na **kusy amuletu** v `$970D`\u2026"
+  },
+  "keeperAmuletAll": {
+   "address": "$9F25",
+   "note": "CP n \u2014 \u2026a uhne, jen kdy\u017e je m\u00e1 hr\u00e1\u010d v\u0161echny \u010dty\u0159i"
+  },
+  "keeperHitHeight": {
+   "address": "$9F2C",
+   "note": "LD BC,nn \u2014 `B`: ob\u00e1lka, kterou bez amuletu zab\u00edj\u00ed"
+  },
+  "keeperHitWidth": {
+   "address": "$9F2C",
+   "note": "LD BC,nn \u2014 `C`: a jej\u00ed \u0161\u00ed\u0159ka"
+  },
+  "keeperKill": {
+   "address": "$9F35",
+   "note": "LD A,n \u2192 $9704 \u2014 \u2605 a je to **jin\u00e1 smrt ne\u017e od zv\u00ed\u0159at**: do `+2` Sabremanova z\u00e1znamu jde n, ne 1 nebo 2"
+  },
+  "keeperStepLeft": {
+   "address": "$9F47",
+   "note": "LD (IX+$06),n \u2014 s amuletem str\u00e1\u017ece ustupuje doleva\u2026"
+  },
+  "keeperLimitLeft": {
+   "address": "$9F4F",
+   "note": "CP n \u2014 \u2026dokud nedojde sem"
+  },
+  "keeperStepRight": {
+   "address": "$9F5D",
+   "note": "LD (IX+$06),n \u2014 nebo doprava\u2026"
+  },
+  "keeperLimitRight": {
+   "address": "$9F65",
+   "note": "CP n \u2014 \u2026a tam se zastav\u00ed; kudy uhne, rozhoduje **bit 7 Sabremanova x**"
+  },
+  "keeperSideBit": {
+   "address": "$9F43",
+   "note": "BIT b,A \u2014 a to je ten bit ($9705)"
+  },
+  "gameDelay": {
+   "address": "$B1C4",
+   "note": "LD A,n \u2192 `GameDelayTimer` ($96B5) \u2014 \u2605 **a je to jedin\u00e9 m\u00edsto, kde se nastavuje**: $80 pro jednoho i pro dva hr\u00e1\u010de, ne $FF, jak \u0159\u00edk\u00e1 ve\u0159ejn\u00e1 disassembly"
+  },
+  "livesStart": {
+   "address": "$B21E",
+   "note": "LD A,n \u2192 `ActivePlayer_Lives` \u2014 na za\u010d\u00e1tku kola\u2026"
+  },
+  "twoPlayerBit": {
+   "address": "$AA2A",
+   "note": "AND n \u2014 `GameOptions` ($9692) bit 0: jeden hr\u00e1\u010d, nebo dva ($AA27)"
+  },
+  "inactiveLivesAddress": {
+   "address": "$AA5A",
+   "note": "LD A,(nn) \u2014 \u017eivoty druh\u00e9ho hr\u00e1\u010de ($96E0); kdy\u017e je nem\u00e1, st\u0159\u00edd\u00e1n\u00ed se p\u0159esko\u010d\u00ed a hraje se d\u00e1l jako jeden hr\u00e1\u010d"
+  },
+  "swapStates": {
+   "address": "$B242",
+   "note": "LD BC,nn \u2014 `ChangePlayer` ($B235) prohod\u00ed tolik bajt\u016f stavu hr\u00e1\u010de ($96BC: hr\u00e1\u010d, \u017eivoty, po\u010det zv\u00ed\u0159at a `VisitedRooms`)"
+  },
+  "swapMapBytes": {
+   "address": "$B24E",
+   "note": "LD BC,nn \u2014 \u2026celou mapu p\u0159edm\u011bt\u016f ($DDEC \u2194 $DFEC)\u2026"
+  },
+  "swapEntityBytes": {
+   "address": "$B25A",
+   "note": "LD BC,nn \u2014 \u2026a celou tabulku entit ($9702 \u2194 $982E), tak\u017ee **ka\u017ed\u00fd hr\u00e1\u010d m\u00e1 sv\u00e1 zv\u00ed\u0159ata i sv\u00e9ho Sabre Wulfa**"
+  }
+ }
+}

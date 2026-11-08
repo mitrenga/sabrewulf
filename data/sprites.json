@@ -1,0 +1,18 @@
+{
+  "note": "M1: sprity vy\u0159\u00edznut\u00e9 z b\u011bhu origin\u00e1lu (tools/mksprite.py). \u00daplnou tabulku sprit\u016f vyt\u00e1hne M2 z dat hry (tools/dumpsprites.py).",
+  "panel": {
+    "frames": {
+      "life": {
+        "attributes": "Rw==",
+        "bitmap": "GCQ8flo8PGY=",
+        "cols": 1,
+        "height": 8,
+        "rows": 1,
+        "source": "gameplay_start.scr",
+        "sourceCol": 9,
+        "sourceRow": 0,
+        "width": 8
+      }
+    }
+  }
+}

@@ -1,0 +1,435 @@
+{
+ "about": "Texty a obrazovka basne, ctene z runtime obrazu originalu (tools/dumptext.py, M6). Zaznam textu je x, y, atribut a pak znaky, posledni s bitem 7 ($B53D). Font je ROM fontu ZX Spectra, takze tady jsou jen bajty textu.",
+ "format": {
+  "record": [
+   "x",
+   "y",
+   "attribute",
+   "text"
+  ],
+  "terminator": "bit 7 posledniho znaku",
+  "routine": "$B53D",
+  "font": "ROM ZX Spectra ($3C00, CHARS $5C36) \u2013 M1, disasm_notes \u00a78"
+ },
+ "poem": {
+  "routine": "$A01B",
+  "screenRoutine": "$A207",
+  "handler": "$A234",
+  "pieces": 4,
+  "linesPerStanza": 4,
+  "music": "poem",
+  "pauseRounds": 8,
+  "pauseFrames": 195,
+  "stanzas": [
+   {
+    "pieces": 1,
+    "address": "$A055",
+    "lines": [
+     {
+      "x": 32,
+      "y": 128,
+      "column": 4,
+      "row": 16,
+      "attribute": 71,
+      "text": "ONE PIECE IS ALL THAT YOU"
+     },
+     {
+      "x": 88,
+      "y": 144,
+      "column": 11,
+      "row": 18,
+      "attribute": 71,
+      "text": "HAVE FOUND"
+     },
+     {
+      "x": 40,
+      "y": 160,
+      "column": 5,
+      "row": 20,
+      "attribute": 69,
+      "text": "COLLECT THREE MORE AND"
+     },
+     {
+      "x": 72,
+      "y": 176,
+      "column": 9,
+      "row": 22,
+      "attribute": 69,
+      "text": "OUTWARD BOUND"
+     }
+    ]
+   },
+   {
+    "pieces": 2,
+    "address": "$A0A7",
+    "lines": [
+     {
+      "x": 24,
+      "y": 128,
+      "column": 3,
+      "row": 16,
+      "attribute": 71,
+      "text": "TWO PIECES FOUND ARE YOURS"
+     },
+     {
+      "x": 96,
+      "y": 144,
+      "column": 12,
+      "row": 18,
+      "attribute": 71,
+      "text": "TO KEEP"
+     },
+     {
+      "x": 32,
+      "y": 160,
+      "column": 4,
+      "row": 20,
+      "attribute": 69,
+      "text": "THIS SCORE AGAIN IS WHAT"
+     },
+     {
+      "x": 96,
+      "y": 176,
+      "column": 12,
+      "row": 22,
+      "attribute": 69,
+      "text": "YOU SEEK"
+     }
+    ]
+   },
+   {
+    "pieces": 3,
+    "address": "$A0F4",
+    "lines": [
+     {
+      "x": 56,
+      "y": 128,
+      "column": 7,
+      "row": 16,
+      "attribute": 71,
+      "text": "ONE PIECE MORE MUST"
+     },
+     {
+      "x": 96,
+      "y": 144,
+      "column": 12,
+      "row": 18,
+      "attribute": 71,
+      "text": "YOU AMASS"
+     },
+     {
+      "x": 40,
+      "y": 160,
+      "column": 5,
+      "row": 20,
+      "attribute": 69,
+      "text": "AND FIND THE KEEPER YOU"
+     },
+     {
+      "x": 96,
+      "y": 176,
+      "column": 12,
+      "row": 22,
+      "attribute": 69,
+      "text": "MAY PASS"
+     }
+    ]
+   },
+   {
+    "pieces": 4,
+    "address": "$A13B",
+    "lines": [
+     {
+      "x": 24,
+      "y": 128,
+      "column": 3,
+      "row": 16,
+      "attribute": 71,
+      "text": "FOUR PIECES FOUND HAVE NOW"
+     },
+     {
+      "x": 88,
+      "y": 144,
+      "column": 11,
+      "row": 18,
+      "attribute": 71,
+      "text": "MADE WHOLE"
+     },
+     {
+      "x": 32,
+      "y": 160,
+      "column": 4,
+      "row": 20,
+      "attribute": 69,
+      "text": "TO FIND THE CAVE MUST BE"
+     },
+     {
+      "x": 88,
+      "y": 176,
+      "column": 11,
+      "row": 22,
+      "attribute": 69,
+      "text": "YOUR GOAL"
+     }
+    ]
+   }
+  ],
+  "note": "\u2605 Ukaze se **jedna** sloka, ta, ktera odpovida poctu kusu amuletu \u2013 ne vsechny predchozi. $A01B secte bity +$0B a skoci na jednu ze ctyr adres. Pred ni $A207 smaze hraci plochu a nakresli obrazek amuletu, po ni se hraje MusicData_Poem a ceka se 8 x 65536 kol smycky $A1FF (asi 3.9 s pri 50,08 Hz)."
+ },
+ "amulet": {
+  "table": "$C374",
+  "flagAddress": "$96B2",
+  "drawRoutine": "$BC0B",
+  "pieces": [
+   {
+    "piece": 0,
+    "graphic": "$E67C",
+    "x": 128,
+    "y": 88,
+    "width": 6,
+    "height": 32
+   },
+   {
+    "piece": 1,
+    "graphic": "$E588",
+    "x": 80,
+    "y": 88,
+    "width": 6,
+    "height": 32
+   },
+   {
+    "piece": 2,
+    "graphic": "$E494",
+    "x": 128,
+    "y": 56,
+    "width": 6,
+    "height": 32
+   },
+   {
+    "piece": 3,
+    "graphic": "$E3A0",
+    "x": 80,
+    "y": 56,
+    "width": 6,
+    "height": 32
+   }
+  ],
+  "graphics": {
+   "$E67C": {
+    "address": "$E67C",
+    "width": 6,
+    "height": 32,
+    "widthPixels": 48,
+    "attrRows": 4,
+    "attrCols": 6,
+    "bitmap": "AAD8AD/AwAADwB/gPAAAAA/w/8AAAAPw3DAAAAHwwBAAHgHwUA+AH+D4IABwD/74QAAMB//4gCAAA//4AEAAA//4AMACAf/4AcBDgf/4A8Dn4P/4A8H3/P/4B+P////4D+f////4H//////wH//////wP//////wf/////9gf/////+A//////+A/gAAD/8A/gAAAAAB/gAAAAAD/AP/AAAH/B//+AAf+D//////AH//////AP//////AP//////",
+    "attributes": "aWlpaWlpaWlpaWlpaWlpaWlpaWhoaGho",
+    "attributesDull": "EhISEhISEhISEhISEhISEhISEhAQEBAQ"
+   },
+   "$E588": {
+    "address": "$E588",
+    "width": 6,
+    "height": 32,
+    "widthPixels": 48,
+    "attrRows": 4,
+    "attrCols": 6,
+    "bitmap": "AfAAAAAAAefwEIAPH9/8AAA4H/+fRADjH7MfAEMnH7M8KAZuHh/4AB9OHo/ggG/eHiOGA5+eHgAAfFg6HwADuPp5H3gMPPp6H08yPsT6H0/zP8n8H1/5P9P8H1/8n9P8H5/+n8/4H5//Lt/wH8//zj/wH///9q/gH///v2fgD///nuPAD///zbHAB3//wphBgP////yBgP//wAMDwP//wAADwH//4H8P4B//////8AAAAAAA/AAAAAAA/wAAAAAA",
+    "attributes": "aWlpaWlpaWlpaWlpaWlpaWlpaGlpaWlp",
+    "attributesDull": "EhISEhISEhISEhISEhISEhISEBISEhIS"
+   },
+   "$E494": {
+    "address": "$E494",
+    "width": 6,
+    "height": 32,
+    "widthPixels": 48,
+    "attrRows": 4,
+    "attrCols": 6,
+    "bitmap": "PwCAAP//HwAAAD//ngAAAA//nAP/8Qf/mB///gP/MH///wP/IH///wH/AP8f/wH/APg//uD/gOd///D//4l///D//jL///j//ML///j/yQX///j/kgX///j/JAn///j/QQv///j/UBP///j/APP///j/AAX///j/AJj///j/AGD///j/AAB///j/AAA///j/AAAf//j/AQAP//h/AQAD//h/AQMA//g/AgEAH/gfAjAAB/wPAkAAAf4HA/8AAP+D",
+    "attributes": "aGlpaWhoaWlpaWloaWlpaWloaWlpaWlo",
+    "attributesDull": "EBISEhAQEhISEhIQEhISEhIQEhISEhIQ"
+   },
+   "$E3A0": {
+    "address": "$E3A0",
+    "width": 6,
+    "height": 32,
+    "widthPixels": 48,
+    "attrRows": 4,
+    "attrCols": 6,
+    "bitmap": "///////8///////w///////z///////z///////z/+AAB//4/4AAAf/w/4AAAA+A/wf/gAAA/x//+AAB/x///4AP/x///////x///////x///////x///////x///////x/////+/x/+P//4/x/xw//g/x/mOP8A/x//hxgA/x//wYAA/x//4CAA/x//8MAA/h//+QG4/h//+geE/j//9HsE/D//+IME/D//8GGI+H//ABjw4H4AAAeAAPgAAAAA",
+    "attributes": "aGhoaGhoaGlpaWlpaGlpaWlpaGlpaWlo",
+    "attributesDull": "EBAQEBAQEBISEhISEBISEhISEBISEhIS"
+   }
+  },
+  "note": "\u2605 Kazda grafika kusu ma **dva bloky atributu**: prvni pro kus, ktery hrac jeste nema, druhy pro sebrany. $BC0B vybira podle $96B2 ($A220). Format je tentyz jako u kusu kulisy (M2): hlavicka vyska/sirka a znegovane pixely, takze to nakresli app/roomComposer.js drawPiece()."
+ },
+ "gameComplete": {
+  "address": "$9F91",
+  "music": "gameComplete",
+  "lines": [
+   {
+    "x": 96,
+    "y": 32,
+    "column": 12,
+    "row": 4,
+    "attribute": 71,
+    "text": "THE NEXT"
+   },
+   {
+    "x": 40,
+    "y": 48,
+    "column": 5,
+    "row": 6,
+    "attribute": 71,
+    "text": "ADVENTURES OF SABRE MAN"
+   },
+   {
+    "x": 32,
+    "y": 64,
+    "column": 4,
+    "row": 8,
+    "attribute": 71,
+    "text": "WILL BE CONTINUED IN THE"
+   },
+   {
+    "x": 16,
+    "y": 136,
+    "column": 2,
+    "row": 17,
+    "attribute": 69,
+    "text": "THE UNDER-WURLDE \u007f COPYRIGHT"
+   },
+   {
+    "x": 72,
+    "y": 152,
+    "column": 9,
+    "row": 19,
+    "attribute": 69,
+    "text": "1984 A.C.G. LTD."
+   },
+   {
+    "x": 48,
+    "y": 168,
+    "column": 6,
+    "row": 21,
+    "attribute": 69,
+    "text": "-ALL RIGHTS RESERVED-"
+   }
+  ]
+ },
+ "gameOver": {
+  "address": "$AAC1",
+  "x": 56,
+  "y": 96,
+  "attribute": 71,
+  "text": "GAME OVER PLAYER 1",
+  "playerDigitAt": 17,
+  "music": "gameOver",
+  "note": "\u2605 cislo hrace se prepisuje primo v textu ($AA6C), takze \u201ePLAYER 1\" a \u201ePLAYER 2\" je jeden retezec; znak je na pozici 17"
+ },
+ "adventureCompleted": {
+  "address": "$AAD4",
+  "x": 32,
+  "y": 120,
+  "attribute": 71,
+  "text": "ADVENTURE COMPLETED    %"
+ },
+ "values": {
+  "poemPieces": 4,
+  "poemLines": 4,
+  "poem1": 41045,
+  "poem2": 41127,
+  "poem3": 41204,
+  "poem4": 41275,
+  "poemMusic": 48435,
+  "poemPause": 8,
+  "amuletTable": 50036,
+  "amuletFlag": 38578,
+  "gameCompleteCopy": 40849,
+  "gameCompleteLines": 6,
+  "gameCompleteMusic": 48231,
+  "gameOverText": 43713,
+  "gameOverPosition": 24632,
+  "gameOverPlayerAt": 43731,
+  "adventureText": 43732,
+  "adventurePosition": 30752,
+  "gameOverMusic": 48424
+ },
+ "source": {
+  "poemPieces": {
+   "address": "$A01E",
+   "note": "LD BC,nn \u2014 `B`: kolik bit\u016f `+$0B` se po\u010d\u00edt\u00e1, tedy **kolik kus\u016f amulet m\u00e1** (`DisplayPoem`, $A01B)"
+  },
+  "poemLines": {
+   "address": "$A034",
+   "note": "LD B,n \u2014 a kolik \u0159\u00e1dk\u016f m\u00e1 sloka"
+  },
+  "poem1": {
+   "address": "$A046",
+   "note": "LD DE,nn \u2014 sloka za **jeden** kus amuletu"
+  },
+  "poem2": {
+   "address": "$A04B",
+   "note": "LD DE,nn \u2014 za dva"
+  },
+  "poem3": {
+   "address": "$A050",
+   "note": "LD DE,nn \u2014 za t\u0159i"
+  },
+  "poem4": {
+   "address": "$A031",
+   "note": "LD DE,nn \u2014 a za v\u0161echny \u010dty\u0159i"
+  },
+  "poemMusic": {
+   "address": "$A23A",
+   "note": "LD DE,nn / CALL $BD6E \u2014 `MusicData_Poem` ($BD33), viz dumpmusic.py"
+  },
+  "poemPause": {
+   "address": "$A240",
+   "note": "LD B,n / CALL $A1FF \u2014 \u2605 a po hudb\u011b **prodleva na \u010dten\u00ed**: n \u00d7 65536 kol smy\u010dky `$A1FF`, tedy zhruba p\u016fl vte\u0159iny na kolo"
+  },
+  "amuletTable": {
+   "address": "$A211",
+   "note": "LD HL,nn \u2014 tabulka kus\u016f amuletu na obrazovce b\u00e1sn\u011b ($C374)"
+  },
+  "amuletFlag": {
+   "address": "$A220",
+   "note": "LD A,1 \u2192 nn \u2014 \u2605 p\u0159\u00edznak \u201etenhle kus u\u017e hr\u00e1\u010d m\u00e1\" ($96B2); `$BC0B` podle n\u011bj bere **druh\u00fd blok atribut\u016f** t\u00e9 grafiky"
+  },
+  "gameCompleteCopy": {
+   "address": "$9F76",
+   "note": "LD DE,nn \u2014 obrazovka po dohr\u00e1n\u00ed ($9F91)"
+  },
+  "gameCompleteLines": {
+   "address": "$9F79",
+   "note": "LD B,n \u2014 a kolik m\u00e1 \u0159\u00e1dk\u016f"
+  },
+  "gameCompleteMusic": {
+   "address": "$9F7E",
+   "note": "LD DE,nn / CALL $BD6E \u2014 `MusicData_GameComplete` ($BC67)"
+  },
+  "gameOverText": {
+   "address": "$AA7E",
+   "note": "LD DE,nn \u2014 `GAME OVER PLAYER n` ($AAC1)"
+  },
+  "gameOverPosition": {
+   "address": "$AA81",
+   "note": "LD HL,nn \u2014 a kde se tiskne: `L` je x, `H` je y"
+  },
+  "gameOverPlayerAt": {
+   "address": "$AA6C",
+   "note": "LD (nn),A \u2014 \u2605 \u010d\u00edslo hr\u00e1\u010de se **p\u0159episuje p\u0159\u00edmo v textu** ($AAD3), tak\u017ee \u201ePLAYER 1\" a \u201ePLAYER 2\" je jeden \u0159et\u011bzec"
+  },
+  "adventureText": {
+   "address": "$AA75",
+   "note": "LD DE,nn \u2014 druh\u00fd \u0159\u00e1dek obrazovky konce ($AAD4) \u2013 \u2605 tiskne se **prvn\u00ed**, nad \u201eGAME OVER\""
+  },
+  "adventurePosition": {
+   "address": "$AA78",
+   "note": "LD HL,nn \u2014 a jeho pozice"
+  },
+  "gameOverMusic": {
+   "address": "$AA8A",
+   "note": "LD DE,nn / CALL $BD6E \u2014 `MusicData_GameOver` ($BD28)"
+  }
+ }
+}

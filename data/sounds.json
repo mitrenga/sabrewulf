@@ -1,0 +1,434 @@
+{
+ "about": "Zvukove efekty Sabre Wulf, ctene z runtime obrazu originalu (tools/dumpsound.py, M6). Cely zvuk hry stoji na dvou rutinach: PlaySquareWave ($BF74) dela jeden obdelnikovy kmit delky B a PlayWaveSequence ($BF6D) jich udela C. Kazdy efekt je tedy dvojice (B, C) nebo smycka, ktera B meni. app/beeper.js pocita tytez delky v T-stavech Z80, tools/tracesound.py + tools/matchsound.js to porovnaji pulz po pulzu proti originalu.",
+ "machine": {
+  "port": 254,
+  "speakerOn": 16,
+  "speakerOff": 0,
+  "clock": 3500000,
+  "note": "bit 4 portu $FE; dolu se jde nulou, takze zvuk srazi border na cernou"
+ },
+ "effects": [
+  {
+   "name": "squareWave",
+   "routine": "$BF74",
+   "kind": "primitive",
+   "note": "jeden kmit: reproduktor nahoru, `DJNZ B`, dolu, `DJNZ B`. Vyska tonu je B a nic jineho."
+  },
+  {
+   "name": "waveSequence",
+   "routine": "$BF6D",
+   "kind": "primitive",
+   "note": "C kmitu za sebou. Delka tonu je C a nic jineho."
+  },
+  {
+   "name": "step",
+   "routine": "$BF4B",
+   "kind": "step",
+   "counter": 38579,
+   "bit": 3,
+   "mask": 7,
+   "high": {
+    "b": 64,
+    "c": 4
+   },
+   "low": {
+    "b": 96,
+    "c": 4
+   },
+   "colourOffset": 5,
+   "colourFast": 69,
+   "note": "pipne kazdy osmy krok, vyska podle bitu 3 pocitadla $96B3; pod modrozelenou orchideji ($45) dvakrat"
+  },
+  {
+   "name": "fly",
+   "routine": "$A9F8",
+   "kind": "wavePhase",
+   "offset": 2,
+   "c": 4,
+   "note": "B je faze odletu (+$02 zaznamu), takze t\u00f3n s odletem klesa"
+  },
+  {
+   "name": "land",
+   "routine": "$BF2F",
+   "kind": "sweepXor",
+   "start": 48,
+   "xor": 85,
+   "note": "C od $30 k jedne, B = (C XOR $55) + C"
+  },
+  {
+   "name": "repel",
+   "routine": "$BF17",
+   "kind": "sweepDaa",
+   "start": 48,
+   "or": 24,
+   "note": "C od $30 k jedne, B = DAA(C OR $18)"
+  },
+  {
+   "name": "object",
+   "routine": "$BF25",
+   "kind": "wave",
+   "b": 64,
+   "c": 48,
+   "note": "sebrany predmet, extra zivot a posun kurzoru v sini slavy"
+  },
+  {
+   "name": "orchid",
+   "routine": "$BF2A",
+   "kind": "wave",
+   "b": 128,
+   "c": 16,
+   "note": "sebrana orchidej a klapnuti pismene v sini slavy"
+  },
+  {
+   "name": "orchidEnd",
+   "routine": "$BEC6",
+   "kind": "wave",
+   "b": 160,
+   "c": 8,
+   "note": "rutina schovana uvnitr tabulky not (polozka 61)"
+  },
+  {
+   "name": "explosion",
+   "routine": "$BEEE",
+   "kind": "memoryTones",
+   "tones": 16,
+   "byteMask": 127,
+   "c": 2,
+   "randAddress": 38549,
+   "sweepsAddress": 38547,
+   "addressMask": 31,
+   "note": "16 tonu, jejichz delky jsou bajty ROM na ($9693 & $1F)*256 + Rand8 \u2013 stejna studna nahody jako mapa predmetu v M4"
+  },
+  {
+   "name": "materialise",
+   "routine": "$BF08",
+   "kind": "spriteTone",
+   "offset": 0,
+   "rotate": 3,
+   "mask": 224,
+   "c": 6,
+   "note": "B = ((~sprite ID) >>> 3) & $E0, takze kazdy druh zvirete zni jinak"
+  },
+  {
+   "name": "pointing",
+   "routine": "$BF3D",
+   "kind": "distanceTone",
+   "xOffset": 3,
+   "yOffset": 4,
+   "rotate": 2,
+   "c": 8,
+   "note": "B = (vzdalenost + x + y) rotovane dvakrat doleva; cim bliz ke kusu amuletu, tim vys"
+  },
+  {
+   "name": "fireball",
+   "routine": "$BECC",
+   "kind": "tableTone",
+   "table": [
+    32,
+    48,
+    64,
+    80,
+    96,
+    112,
+    128,
+    144,
+    64,
+    96,
+    64,
+    96,
+    64,
+    96,
+    64,
+    96
+   ],
+   "mask": 15,
+   "c": 16,
+   "sweepsAddress": 38547,
+   "note": "B = tabulka $BEDE[$9693 & $0F]"
+  }
+ ],
+ "events": [
+  {
+   "event": "step",
+   "routine": "$BF4B",
+   "calledFrom": "$AF52",
+   "note": "krok Sabremana ($AF52 s me\u010dem $AE2E, oboj\u00ed `CALL NZ` \u2013 tedy jen kdy\u017e se opravdu pohnul)"
+  },
+  {
+   "event": "fly",
+   "routine": "$BF6D",
+   "calledFrom": "$A9FD",
+   "note": "odlet po smrti ($A9FD), `B` je f\u00e1ze odletu"
+  },
+  {
+   "event": "land",
+   "routine": "$BF2F",
+   "calledFrom": "$AA0A",
+   "note": "dopad na zem ($AA0A)"
+  },
+  {
+   "event": "orchid",
+   "routine": "$BF2A",
+   "calledFrom": "$A760",
+   "note": "sebran\u00e1 orchidej ($A759 barevn\u00e1, $A760 b\u00edl\u00e1)"
+  },
+  {
+   "event": "orchidEnd",
+   "routine": "$BEC6",
+   "calledFrom": "$AF91",
+   "note": "dohas\u00ednaj\u00edc\u00ed orchidej: posledn\u00edch $2F p\u016flsn\u00edmk\u016f blik\u00e1 a p\u00edp\u00e1 ($AF91/$AFA6, `CALL Z`)"
+  },
+  {
+   "event": "object",
+   "routine": "$BF25",
+   "calledFrom": "$A338",
+   "note": "sebran\u00fd p\u0159edm\u011bt nebo extra \u017eivot ($A338)"
+  },
+  {
+   "event": "life",
+   "routine": "$BF25",
+   "calledFrom": "$A338",
+   "note": "a je to t\u00fd\u017e zvuk \u2013 extra \u017eivot jde p\u0159es tut\u00e9\u017e cestu ($A305 \u2192 $A323)"
+  },
+  {
+   "event": "explosion",
+   "routine": "$BEEE",
+   "calledFrom": "$A4A6",
+   "note": "v\u00fdbuch zv\u00ed\u0159ete ($A4A6)"
+  },
+  {
+   "event": "materialise",
+   "routine": "$BF08",
+   "calledFrom": "$A3DA",
+   "note": "zhmot\u0148uj\u00edc\u00ed se zv\u00ed\u0159e ($A3DA)"
+  },
+  {
+   "event": "repel",
+   "routine": "$BF17",
+   "calledFrom": "$9EFE",
+   "note": "zahn\u00e1n\u00ed me\u010dem: hroch ($9EFE), nosoro\u017eec ($AD79), domorodec ($ABB3), Sabre Wulf"
+  },
+  {
+   "event": "keeper",
+   "routine": "$BF17",
+   "calledFrom": "$9F3A",
+   "note": "a str\u00e1\u017ece br\u00e1ny ($9F3A) \u2013 t\u00fd\u017e zvuk"
+  },
+  {
+   "event": "pointing",
+   "routine": "$BF3D",
+   "calledFrom": "$ABC7",
+   "note": "domorodec ukazuj\u00edc\u00ed k amuletu ($ABC7)"
+  },
+  {
+   "event": "fireball",
+   "routine": "$BECC",
+   "calledFrom": "$9E01",
+   "note": "ohniv\u00e1 koule ($9E01)"
+  }
+ ],
+ "silent": [
+  {
+   "event": "amulet",
+   "routine": "$A1AB",
+   "note": "\u2605 **sebr\u00e1n\u00ed kusu amuletu je n\u011bm\u00e9**: `$A1AB` jen p\u0159i\u010dte 7500 bod\u016f a nastav\u00ed bit b\u00e1sn\u011b. Co se u n\u011bj sly\u0161\u00ed, je hudba b\u00e1sn\u011b (dumpmusic.py)"
+  }
+ ],
+ "fireballDurations": [
+  32,
+  48,
+  64,
+  80,
+  96,
+  112,
+  128,
+  144,
+  64,
+  96,
+  64,
+  96,
+  64,
+  96,
+  64,
+  96
+ ],
+ "values": {
+  "speakerOn": 16,
+  "speakerPort": 254,
+  "squareWaveLoop": 254,
+  "fireballTable": 48862,
+  "fireballSweeps": 38547,
+  "fireballMask": 15,
+  "fireballRepeats": 16,
+  "explosionRand": 38549,
+  "explosionSweeps": 38547,
+  "explosionMask": 31,
+  "explosionTones": 16,
+  "explosionByteMask": 127,
+  "explosionRepeats": 2,
+  "materialiseOffset": 0,
+  "materialiseMask": 224,
+  "materialiseRepeats": 6,
+  "repelStart": 48,
+  "repelOrMask": 24,
+  "landStart": 48,
+  "landXorMask": 85,
+  "flyOffset": 2,
+  "flyRepeats": 4,
+  "pointingXOffset": 3,
+  "pointingYOffset": 4,
+  "pointingRepeats": 8,
+  "stepColourOffset": 5,
+  "stepColourFast": 69,
+  "stepCounter": 38579,
+  "stepCounterBit": 3,
+  "stepMask": 7
+ },
+ "source": {
+  "speakerOn": {
+   "address": "$BF74",
+   "note": "LD A,n / OUT ($FE),A \u2014 \u2605 **cel\u00fd zvuk hry je tenhle jeden bit**: `$10` je bit 4 portu `$FE`, reproduktor nahoru (`PlaySquareWave`, `$BF74`)"
+  },
+  "speakerPort": {
+   "address": "$BF76",
+   "note": "OUT (n),A \u2014 a port, na kter\u00fd se to p\u00ed\u0161e"
+  },
+  "squareWaveLoop": {
+   "address": "$BF79",
+   "note": "DJNZ n \u2014 a mezi t\u00edm se jen \u010dek\u00e1 `B`kr\u00e1t; **v\u00fd\u0161ka t\u00f3nu nen\u00ed nic ne\u017e `B`**"
+  },
+  "orchidEndWave": {
+   "address": "$BEC6",
+   "note": "LD BC,nn / JP $BF6D \u2014 \u2605 **p\u00edp\u00e1n\u00ed dohas\u00ednaj\u00edc\u00ed orchideje** ($AF91/$AFA6). Le\u017e\u00ed **uvnit\u0159** `MusicData` ($BDD2), za 61. polo\u017ekou tabulky not \u2014 proto ji ve\u0159ejn\u00e1 disassembly vede jako data a nepojmenovala ji",
+   "value": "B=$A0, C=$08"
+  },
+  "objectWave": {
+   "address": "$BF25",
+   "note": "LD BC,nn / JR $BF6D \u2014 sebran\u00fd p\u0159edm\u011bt i **extra \u017eivot** ($A323), a t\u00fdm\u017e zvukem se posouv\u00e1 kurzor v s\u00edni sl\u00e1vy ($B74E)",
+   "value": "B=$40, C=$30"
+  },
+  "orchidWave": {
+   "address": "$BF2A",
+   "note": "LD BC,nn / JR $BF6D \u2014 sebran\u00e1 orchidej ($A759/$A760); t\u00fdm\u017e zvukem hra **klapne p\u00edsmenem**, kdy\u017e se zapisuje jm\u00e9no do s\u00edn\u011b sl\u00e1vy ($B72C)",
+   "value": "B=$80, C=$10"
+  },
+  "fireballTable": {
+   "address": "$BECC",
+   "note": "LD BC,nn \u2014 tabulka d\u00e9lek kmitu ohniv\u00e9 koule ($BEDE)"
+  },
+  "fireballSweeps": {
+   "address": "$BECF",
+   "note": "LD A,(nn) \u2014 a vyb\u00edr\u00e1 se z n\u00ed po\u010d\u00edtadlem pr\u016fchod\u016f smy\u010dkou entit ($9693, M4)"
+  },
+  "fireballMask": {
+   "address": "$BED2",
+   "note": "AND n \u2014 \u2026po jeho spodn\u00edch \u010dty\u0159ech bitech, tak\u017ee tabulka m\u00e1 \u0161estn\u00e1ct polo\u017eek"
+  },
+  "fireballRepeats": {
+   "address": "$BED9",
+   "note": "LD C,n / JP $BF6D \u2014 a tolik kmit\u016f se z toho zahraje"
+  },
+  "explosionRand": {
+   "address": "$BEEE",
+   "note": "LD A,(nn) / LD L,A \u2014 \u2605 **v\u00fdbuch se \u010dte z pam\u011bti**: spodn\u00ed bajt adresy je `Rand8` ($9695)\u2026"
+  },
+  "explosionSweeps": {
+   "address": "$BEF2",
+   "note": "LD A,(nn) \u2014 \u2026a horn\u00ed bajt po\u010d\u00edtadlo pr\u016fchod\u016f ($9693)\u2026"
+  },
+  "explosionMask": {
+   "address": "$BEF5",
+   "note": "AND n \u2014 \u2026o\u0159\u00edznut\u00e9 na n, tedy adresa `$0000`-`$1FFF`: **je to ROM Spectra**, stejn\u00e1 studna n\u00e1hody jako mapa p\u0159edm\u011bt\u016f v M4 ($A2BD)"
+  },
+  "explosionTones": {
+   "address": "$BEF8",
+   "note": "LD E,n \u2014 kolik t\u00f3n\u016f za sebou (\u0161estn\u00e1ct po sob\u011b jdouc\u00edch bajt\u016f)"
+  },
+  "explosionByteMask": {
+   "address": "$BEFC",
+   "note": "AND n \u2014 z ka\u017ed\u00e9ho bajtu se bere n, tedy sedm bit\u016f \u2192 d\u00e9lka kmitu"
+  },
+  "explosionRepeats": {
+   "address": "$BEFF",
+   "note": "LD C,n / CALL $BF6D \u2014 a ka\u017ed\u00fd t\u00f3n je jen tak kr\u00e1tk\u00fd"
+  },
+  "materialiseOffset": {
+   "address": "$BF08",
+   "note": "LD A,(IX+n) / CPL \u2014 \u2605 t\u00f3n zhmotn\u011bn\u00ed d\u011bl\u00e1 **negovan\u00e9 sprite ID**, tak\u017ee ka\u017ed\u00fd druh zv\u00ed\u0159ete se ozve jinak"
+  },
+  "materialiseMask": {
+   "address": "$BF0F",
+   "note": "AND n \u2014 \u2026a nechaj\u00ed se horn\u00ed t\u0159i bity, tak\u017ee `B` je n\u00e1sobek `$20`"
+  },
+  "materialiseRepeats": {
+   "address": "$BF12",
+   "note": "LD C,n / JP $BF6D \u2014 tolik kmit\u016f"
+  },
+  "repelStart": {
+   "address": "$BF17",
+   "note": "LD C,n \u2014 zahn\u00e1n\u00ed je **rozm\u00edt\u00e1n\u00ed**: `C` jde od n dol\u016f k jedn\u00e9 a je z\u00e1rove\u0148 po\u010d\u00edtadlo i zdroj v\u00fd\u0161ky"
+  },
+  "repelOrMask": {
+   "address": "$BF1A",
+   "note": "OR n / DAA \u2014 \u2605 a v\u00fd\u0161ka je `DAA(C OR n)`: **des\u00edtkov\u00e1 korekce Z80** v roli zvukov\u00e9ho gener\u00e1toru"
+  },
+  "landStart": {
+   "address": "$BF2F",
+   "note": "LD C,n \u2014 dopad je tot\u00e9\u017e rozm\u00edt\u00e1n\u00ed, jen jinou aritmetikou"
+  },
+  "landXorMask": {
+   "address": "$BF32",
+   "note": "XOR n / ADD A,C \u2014 v\u00fd\u0161ka je `(C XOR n) + C`"
+  },
+  "flyOffset": {
+   "address": "$A9F8",
+   "note": "LD B,(IX+n) \u2014 \u2605 **t\u00f3n odletu je f\u00e1ze odletu**: `+$02` z\u00e1znamu roste ka\u017ed\u00fd pr\u016fchod, tak\u017ee t\u00f3n kles\u00e1, jak Sabreman let\u00ed"
+  },
+  "flyRepeats": {
+   "address": "$A9FB",
+   "note": "LD C,n / JP $BF6D \u2014 a je kr\u00e1tk\u00fd, proto\u017ee se hraje ka\u017ed\u00fd pr\u016fchod"
+  },
+  "pointingXOffset": {
+   "address": "$BF3D",
+   "note": "ADD A,(IX+n) \u2014 \u2605 **t\u00f3n domorodce je vzd\u00e1lenost k zakopan\u00e9mu kusu amuletu**: `$9D41` (M4) vr\u00e1t\u00ed rozd\u00edl v `A`\u2026"
+  },
+  "pointingYOffset": {
+   "address": "$BF40",
+   "note": "ADD A,(IX+n) \u2014 \u2026a p\u0159ipo\u010dte se x i y domorodce"
+  },
+  "pointingRepeats": {
+   "address": "$BF46",
+   "note": "LD C,n / JP $BF6D \u2014 a kr\u00e1tce, jednou za pr\u016fchod, proto to cvrlik\u00e1"
+  },
+  "stepColourOffset": {
+   "address": "$BF4E",
+   "note": "LD A,(IX+n) \u2014 barva Sabremana, tedy **jeho orchidej** (M4)"
+  },
+  "stepColourFast": {
+   "address": "$BF51",
+   "note": "CP n / RET NZ \u2014 \u2605 a kdy\u017e je `$45` (modrozelen\u00e1, 4 px za krok), rutina **propadne do sebe podruh\u00e9**: pod tou orchidej\u00ed kroky dun\u00ed dvakr\u00e1t tak \u010dasto"
+  },
+  "stepCounter": {
+   "address": "$BF54",
+   "note": "LD HL,nn / INC (HL) \u2014 po\u010d\u00edtadlo krok\u016f ($96B3)"
+  },
+  "stepCounterBit": {
+   "address": "$BF59",
+   "note": "BIT b,A \u2014 \u2026jeho\u017e bit rozhoduje o v\u00fd\u0161ce\u2026"
+  },
+  "stepMask": {
+   "address": "$BF5D",
+   "note": "AND n / RET NZ \u2014 \u2026a spodn\u00ed t\u0159i bity o tom, \u017ee se p\u00edpne **jen ka\u017ed\u00fd osm\u00fd krok**"
+  },
+  "stepWaveHigh": {
+   "address": "$BF60",
+   "note": "LD BC,nn \u2014 krok s nastaven\u00fdm bitem 3",
+   "value": "B=$40, C=$04"
+  },
+  "stepWaveLow": {
+   "address": "$BF68",
+   "note": "LD BC,nn \u2014 a bez n\u011bj; \u2605 ch\u016fze je tedy **osmikrokov\u00fd vzor dvou t\u00f3n\u016f**",
+   "value": "B=$60, C=$04"
+  }
+ }
+}

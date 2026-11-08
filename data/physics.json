@@ -1,0 +1,814 @@
+{
+ "note": "M3: fyzika Sabremana vytazena z originalu (tools/dumpphysics.py). Kazda hodnota je operand skutecne instrukce v build/sabrewulf-run.bin, adresa je v \"source\". Popis rutin: sources/docs/disasm_notes.md 14.",
+ "stepRate": "jeden herni krok = jeden snimek ULA (50,08 Hz)",
+ "record": {
+  "length": 12,
+  "address": "$9702",
+  "fields": [
+   "+0 sprite ID",
+   "+1 obrazovka (radek<<4 | sloupec)",
+   "+2 stav (0 = ziv, jinak odpocet smrti)",
+   "+3 x",
+   "+4 y (SPODNI radka spritu)",
+   "+5 atribut",
+   "+6 dx v 1/16 px",
+   "+7 dy v 1/16 px",
+   "+8..+11 nepouzite"
+  ]
+ },
+ "start": {
+  "sprite": 16,
+  "room": 168,
+  "state": 0,
+  "x": 120,
+  "y": 112,
+  "colour": 71,
+  "dx": 0,
+  "dy": 0,
+  "column": 8,
+  "row": 10,
+  "bytes": "10A800787047000000000000"
+ },
+ "enterTopX": [
+  0,
+  0,
+  0,
+  112,
+  168,
+  120,
+  120,
+  0,
+  120,
+  120,
+  120,
+  120,
+  0,
+  0,
+  0,
+  120,
+  120,
+  120,
+  0,
+  0,
+  0,
+  120,
+  0,
+  120,
+  120,
+  120,
+  0,
+  0,
+  120,
+  0,
+  0,
+  0,
+  120,
+  0,
+  112,
+  112,
+  168,
+  104,
+  0,
+  104,
+  104,
+  104,
+  0,
+  120,
+  0,
+  120,
+  0,
+  120
+ ],
+ "enterTopXNote": "$6036-$6065, 48 bajtu indexovanych predlohou: x, na ktere se vstupuje horni hranou obrazovky ($B12F). Tabulka konci presne tam, kde zacina Layout ($6066), a zacina hned za textem copyrightu; prvni tri polozky jsou nuly, protoze predlohy $00-$02 jsou rohy sveta, do kterych se zespodu nevstupuje.",
+ "values": {
+  "walkAccel": 7,
+  "speedCap": 48,
+  "speedCapSlow": 32,
+  "speedCapFast": 64,
+  "colourSlow": 66,
+  "colourFast": 69,
+  "speedDecay": 1,
+  "velocityMask": 15,
+  "colourNormal": 71,
+  "swordSpeed": 32,
+  "swordSpeedLeft": -32,
+  "swordSpeedUp": -32,
+  "swordSpeedDown": 32,
+  "boxHeight": 22,
+  "boxWidth": 14,
+  "exitWidth": 16,
+  "exitWidthSword": 24,
+  "exitBottomY": 192,
+  "enterTopY": 39,
+  "exitTopY": 40,
+  "enterBottomY": 191,
+  "enterLeftX": 0,
+  "roomStepRow": 16,
+  "roomStepRowUp": 16,
+  "roomColMask": 15,
+  "redrawFirstSprite": 16,
+  "redrawSpriteCount": 32,
+  "poseBase": 16,
+  "poseDirDown": 12,
+  "poseDirUp": 8,
+  "poseDirRight": 4,
+  "poseDirMask": 243,
+  "posePhaseMask": 3,
+  "posePhaseEvery": 1,
+  "swordPoseBase": 32,
+  "swordPoseFace": 8,
+  "swordPoseFaceMask": 247,
+  "swordPhaseMask": 7,
+  "swordPhaseEvery": 3,
+  "swordPhaseKeep": 248,
+  "deathCounter": 32,
+  "deathSpriteRight": 64,
+  "deathSpeedRight": 3,
+  "deathSpriteLeft": 68,
+  "deathSpeedLeft": 253,
+  "deathBoxHeight": 23,
+  "deathBoxWidth": 15,
+  "deathMinX": 4,
+  "deathMaxX": 236,
+  "deathMinY": 40,
+  "deathMaxY": 192,
+  "explodeCounter": 63,
+  "explodeSecond": 48,
+  "respawnSpriteMask": 7,
+  "respawnSpriteBase": 16,
+  "respawnColour": 71,
+  "fireballDelay": 128,
+  "startLives": 5,
+  "gameDelay": 128,
+  "colourReverse": 67,
+  "reverseMask": 15,
+  "colourYellow": 70,
+  "yellowPoseMask": 4,
+  "yellowPoseBase": 67,
+  "yellowTime": 96,
+  "standUpMask": 7,
+  "standUpBase": 16,
+  "effectTickEvery": 1,
+  "effectEndColour": 71,
+  "effectFlashBelow": 47,
+  "effectFlashMask": 15,
+  "effectFlashHalf": 8,
+  "effectBeepMask": 7,
+  "colourImmune": 71,
+  "hitReachDown": 15,
+  "hitReachRight": 12,
+  "hitReachRightSword": 28,
+  "keyLeft": 0,
+  "keyRight": 1,
+  "keyUp": 2,
+  "keyDown": 3,
+  "keyFire": 4,
+  "upDecreasesY": true,
+  "poemBit": 128,
+  "velocityShift": 4
+ },
+ "source": {
+  "walkAccel": {
+   "address": "$AF21",
+   "note": "LD B,n \u2014 o kolik se za sn\u00edmek zm\u011bn\u00ed rychlost ve stisknut\u00e9m sm\u011bru (1/16 px)"
+  },
+  "speedCap": {
+   "address": "$AFCD",
+   "note": "LD B,n \u2014 strop rychlosti v 1/16 px za sn\u00edmek ($AFC1, b\u011b\u017en\u00fd stav)"
+  },
+  "speedCapSlow": {
+   "address": "$AFE0",
+   "note": "LD B,n \u2014 strop, kdy\u017e je Sabreman v barv\u011b `colourSlow` (orchidej, M4)"
+  },
+  "speedCapFast": {
+   "address": "$AFE4",
+   "note": "LD B,n \u2014 strop, kdy\u017e je Sabreman v barv\u011b `colourFast` (orchidej, M4)"
+  },
+  "colourSlow": {
+   "address": "$AFC5",
+   "note": "CP n \u2014 atribut, p\u0159i kter\u00e9m plat\u00ed `speedCapSlow`"
+  },
+  "colourFast": {
+   "address": "$AFC9",
+   "note": "CP n \u2014 atribut, p\u0159i kter\u00e9m plat\u00ed `speedCapFast`"
+  },
+  "speedDecay": {
+   "address": "$AF69",
+   "note": "LD B,n \u2014 o kolik rychlost ka\u017ed\u00fd sn\u00edmek kles\u00e1 k nule ($B047)"
+  },
+  "velocityMask": {
+   "address": "$B040",
+   "note": "RRCA 4x / AND n \u2014 posun v pixelech = rychlost/16 (zaokrouhleno k nule)"
+  },
+  "colourNormal": {
+   "address": "$ADEB",
+   "note": "CP n \u2014 barva Sabremana pod kontrolou hr\u00e1\u010de (b\u00edl\u00e1); jinak ovl\u00e1d\u00e1n\u00ed nefunguje"
+  },
+  "swordSpeed": {
+   "address": "$ADF7",
+   "note": "ADD A,n \u2014 rychlost vpravo s tasen\u00fdm me\u010dem, nastaven\u00e1 natvrdo (1/16 px)"
+  },
+  "swordSpeedLeft": {
+   "address": "$ADFF",
+   "note": "SUB n \u2014 a tot\u00e9\u017e vlevo"
+  },
+  "swordSpeedUp": {
+   "address": "$AE07",
+   "note": "SUB n \u2014 svisle vzh\u016fru (kl\u00e1vesa `keyUp`)"
+  },
+  "swordSpeedDown": {
+   "address": "$AE0F",
+   "note": "ADD A,n \u2014 svisle dol\u016f (kl\u00e1vesa `keyDown`)"
+  },
+  "boxHeight": {
+   "address": "$AF40",
+   "note": "LD BC,nn \u2014 `B`: svisl\u00fd rozm\u011br ob\u00e1lky Sabremana v px ($B873 `CP B`)"
+  },
+  "boxWidth": {
+   "address": "$AF41",
+   "note": "LD BC,nn \u2014 `C`: vodorovn\u00fd rozm\u011br ob\u00e1lky Sabremana v px ($B873 `CP C`)"
+  },
+  "exitWidth": {
+   "address": "$AEFF",
+   "note": "LD A,n \u2192 $96AD \u2014 o kolik d\u0159\u00edv ne\u017e na x=256 se odch\u00e1z\u00ed vpravo"
+  },
+  "exitWidthSword": {
+   "address": "$ADCA",
+   "note": "LD A,n \u2192 $96AD \u2014 a tot\u00e9\u017e s tasen\u00fdm me\u010dem ($ADBF)"
+  },
+  "exitBottomY": {
+   "address": "$B014",
+   "note": "CP n \u2014 na t\u00e9hle y a n\u00ed\u017e se odch\u00e1z\u00ed do obrazovky pod ($B12F)"
+  },
+  "enterTopY": {
+   "address": "$B12F",
+   "note": "LD D,n \u2014 a vstupuje se na t\u00e9hle y"
+  },
+  "exitTopY": {
+   "address": "$B02B",
+   "note": "CP n \u2014 pod touhle y se odch\u00e1z\u00ed do obrazovky nad ($B1AB)"
+  },
+  "enterBottomY": {
+   "address": "$B1AB",
+   "note": "LD D,n \u2014 a vstupuje se na t\u00e9hle y"
+  },
+  "enterLeftX": {
+   "address": "$B19F",
+   "note": "LD E,n \u2014 vstupn\u00ed x p\u0159i odchodu vpravo"
+  },
+  "roomStepRow": {
+   "address": "$B131",
+   "note": "ADD A,n \u2014 o kolik se zm\u011bn\u00ed \u010d\u00edslo obrazovky p\u0159i odchodu dol\u016f (\u0159\u00e1dek +1)"
+  },
+  "roomStepRowUp": {
+   "address": "$B1AD",
+   "note": "SUB n \u2014 a p\u0159i odchodu nahoru (\u0159\u00e1dek -1)"
+  },
+  "roomColMask": {
+   "address": "$B193",
+   "note": "AND n \u2014 sloupec se m\u011bn\u00ed jen v doln\u00edch \u010dty\u0159ech bitech (sv\u011bt se nep\u0159et\u00e1\u010d\u00ed do dal\u0161\u00edho \u0159\u00e1dku)"
+  },
+  "redrawFirstSprite": {
+   "address": "$B148",
+   "note": "SUB n \u2014 obrazovku p\u0159ekresl\u00ed jen entita se sprite ID od tohohle"
+  },
+  "redrawSpriteCount": {
+   "address": "$B14D",
+   "note": "CP n \u2014 \u2026a nejv\u00fd\u0161 o tolik v\u00fd\u0161, tedy jen Sabreman ($10\u2013$2F)"
+  },
+  "poseBase": {
+   "address": "$B20E",
+   "note": "OR n \u2014 z\u00e1klad sprite ID Sabremana pod kontrolou hr\u00e1\u010de"
+  },
+  "poseDirDown": {
+   "address": "$B061",
+   "note": "OR n \u2014 bity sm\u011bru \u201edol\u016f\" ($B053)"
+  },
+  "poseDirUp": {
+   "address": "$B09B",
+   "note": "OR n \u2014 bity sm\u011bru \u201enahoru\""
+  },
+  "poseDirRight": {
+   "address": "$B072",
+   "note": "OR n \u2014 bity sm\u011bru \u201evpravo\"; vlevo je nula (`poseDirMask` vynuluje)"
+  },
+  "poseDirMask": {
+   "address": "$B070",
+   "note": "AND n \u2014 maska, kter\u00e1 bity sm\u011bru zahod\u00ed"
+  },
+  "posePhaseMask": {
+   "address": "$B08E",
+   "note": "AND n \u2014 f\u00e1ze ch\u016fze cykl\u00ed v doln\u00edch bitech sprite ID"
+  },
+  "posePhaseEvery": {
+   "address": "$B07B",
+   "note": "AND n \u2014 f\u00e1ze se m\u011bn\u00ed, kdy\u017e je `FRAMES` ($5C78) d\u011bliteln\u00e9 n+1"
+  },
+  "swordPoseBase": {
+   "address": "$ADC3",
+   "note": "OR n \u2014 z\u00e1klad sprite ID s tasen\u00fdm me\u010dem ($ADBF)"
+  },
+  "swordPoseFace": {
+   "address": "$AE57",
+   "note": "OR n \u2014 bit \u201e\u010delem vpravo\" p\u0159i seku ($AE4B)"
+  },
+  "swordPoseFaceMask": {
+   "address": "$AE76",
+   "note": "AND n \u2014 a jeho zhasnut\u00ed, kdy\u017e jde Sabreman vlevo"
+  },
+  "swordPhaseMask": {
+   "address": "$AE68",
+   "note": "AND n \u2014 f\u00e1ze seku se bere z `Rand8` ($9695), ne z po\u010d\u00edtadla"
+  },
+  "swordPhaseEvery": {
+   "address": "$AE5F",
+   "note": "AND n \u2014 a m\u011bn\u00ed se, kdy\u017e je `FRAMES` d\u011bliteln\u00e9 n+1"
+  },
+  "swordPhaseKeep": {
+   "address": "$AE6C",
+   "note": "AND n \u2014 kter\u00e9 bity sprite ID f\u00e1ze seku nech\u00e1 b\u00fdt"
+  },
+  "deathCounter": {
+   "address": "$A985",
+   "note": "LD (IX+$02),n \u2014 po\u010d\u00edtadlo, na kter\u00e9 se nastav\u00ed odlet po zabit\u00ed"
+  },
+  "deathSpriteRight": {
+   "address": "$A995",
+   "note": "LD (IX+$00),n \u2014 sprite odletu doprava"
+  },
+  "deathSpeedRight": {
+   "address": "$A999",
+   "note": "LD (IX+$06),n \u2014 a jeho vodorovn\u00e1 rychlost (cel\u00e9 pixely, ne 1/16)"
+  },
+  "deathSpriteLeft": {
+   "address": "$A9A0",
+   "note": "LD (IX+$00),n \u2014 sprite odletu doleva (stav $02)"
+  },
+  "deathSpeedLeft": {
+   "address": "$A9A4",
+   "note": "LD (IX+$06),n \u2014 a jeho vodorovn\u00e1 rychlost"
+  },
+  "deathBoxHeight": {
+   "address": "$A9CF",
+   "note": "LD BC,nn \u2014 `B`: svisl\u00fd rozm\u011br ob\u00e1lky p\u0159i odletu ($A9BE)"
+  },
+  "deathBoxWidth": {
+   "address": "$A9D0",
+   "note": "LD BC,nn \u2014 `C`: vodorovn\u00fd rozm\u011br ob\u00e1lky p\u0159i odletu"
+  },
+  "deathMinX": {
+   "address": "$A9DB",
+   "note": "CP n \u2014 pod touhle x odlet skon\u010d\u00ed v\u00fdbuchem"
+  },
+  "deathMaxX": {
+   "address": "$A9DF",
+   "note": "CP n \u2014 a nad touhle taky"
+  },
+  "deathMinY": {
+   "address": "$A9E4",
+   "note": "CP n \u2014 a pod touhle y"
+  },
+  "deathMaxY": {
+   "address": "$A9E8",
+   "note": "CP n \u2014 a nad touhle y"
+  },
+  "explodeCounter": {
+   "address": "$AA03",
+   "note": "LD (IX+$02),n \u2014 po\u010d\u00edtadlo v\u00fdbuchu, odkud se odpo\u010d\u00edt\u00e1v\u00e1 k nule ($AA00)"
+  },
+  "explodeSecond": {
+   "address": "$AA1E",
+   "note": "CP n \u2014 p\u0159i t\u00e9hle hodnot\u011b se sprite v\u00fdbuchu posune na druhou f\u00e1zi"
+  },
+  "respawnSpriteMask": {
+   "address": "$AA3E",
+   "note": "AND n \u2014 z \u010deho z\u016fstane po respawnu f\u00e1ze p\u00f3zy"
+  },
+  "respawnSpriteBase": {
+   "address": "$AA40",
+   "note": "OR n \u2014 a jak\u00fd je z\u00e1klad sprite ID po respawnu"
+  },
+  "respawnColour": {
+   "address": "$AA45",
+   "note": "LD (IX+$05),n \u2014 barva Sabremana po respawnu"
+  },
+  "fireballDelay": {
+   "address": "$AA52",
+   "note": "LD A,n \u2192 $96B4 \u2014 \u2605 **odpo\u010det do ohniv\u00e9 koule**, ne nedotknutelnost po respawnu, jak M3 h\u00e1dal: jedin\u00e1 rutina, kter\u00e1 `$96B4` \u010dte, je `$9ABC`, a co na nule ud\u011bl\u00e1, je polo\u017eit na obrazovku ohnivou kouli (M5, \u00a717). Stejn\u00e9 \u010d\u00edslo p\u00ed\u0161e `$B148` po ka\u017ed\u00e9 zm\u011bn\u011b obrazovky a `$B1BF` na za\u010d\u00e1tku kola"
+  },
+  "startLives": {
+   "address": "$B21E",
+   "note": "LD A,n \u2192 $96BD \u2014 \u017eivoty p\u0159i startu; prvn\u00ed Sabreman jeden hned ubere (\u00a79)"
+  },
+  "gameDelay": {
+   "address": "$B1C4",
+   "note": "LD A,n \u2192 $96B5 \u2014 kolik sn\u00edmk\u016f po startu hry ovl\u00e1d\u00e1n\u00ed je\u0161t\u011b nereaguje"
+  },
+  "colourReverse": {
+   "address": "$AF14",
+   "note": "CP n \u2014 purpurov\u00e1 orchidej: obr\u00e1cen\u00e9 ovl\u00e1d\u00e1n\u00ed ($AF11)"
+  },
+  "reverseMask": {
+   "address": "$AF19",
+   "note": "XOR n \u2014 a takhle se obrac\u00ed: \u010dty\u0159i bity sm\u011bru nar\u00e1z"
+  },
+  "colourYellow": {
+   "address": "$AEF8",
+   "note": "CP n \u2014 \u017elut\u00e1 orchidej: Sabreman sedne a neh\u00fdbe se ($AE8F)"
+  },
+  "yellowPoseMask": {
+   "address": "$AE92",
+   "note": "AND n \u2014 ze sprite ID z\u016fstane jen bit \u201e\u010delem vpravo\""
+  },
+  "yellowPoseBase": {
+   "address": "$AE94",
+   "note": "OR n \u2014 a z\u00e1klad p\u00f3zy sed\u00edc\u00edho Sabremana ($43 vlevo, $47 vpravo)"
+  },
+  "yellowTime": {
+   "address": "$AE99",
+   "note": "LD A,n \u2192 $96B0 \u2014 jak dlouho sed\u00ed; nastavuje se p\u0159i ka\u017ed\u00e9m kroku, tak\u017ee odpo\u010det za\u010dne a\u017e sprite p\u0159ejde na obsluhu sezen\u00ed ($A61B)"
+  },
+  "standUpMask": {
+   "address": "$A626",
+   "note": "AND n \u2014 ze sprite ID sed\u00edc\u00edho z\u016fstane f\u00e1ze ($A61B)"
+  },
+  "standUpBase": {
+   "address": "$A628",
+   "note": "OR n \u2014 a p\u0159id\u00e1 se z\u00e1klad ch\u016fze; Sabreman vstane"
+  },
+  "effectTickEvery": {
+   "address": "$AE7D",
+   "note": "AND n \u2014 `OrchidEffectTimer` ($96B0) se ub\u00edr\u00e1, kdy\u017e je `FRAMES` d\u011bliteln\u00e9 n+1 ($AE7A)"
+  },
+  "effectEndColour": {
+   "address": "$AE8A",
+   "note": "LD (IX+$05),n \u2014 barva Sabremana, a\u017e \u00fa\u010dinek dojde"
+  },
+  "effectFlashBelow": {
+   "address": "$AF84",
+   "note": "CP n \u2014 pod touhle hodnotou \u010dasova\u010de Sabreman blik\u00e1 ($AF7D)"
+  },
+  "effectFlashMask": {
+   "address": "$AF89",
+   "note": "AND n \u2014 f\u00e1ze blik\u00e1n\u00ed z doln\u00edch bit\u016f \u010dasova\u010de"
+  },
+  "effectFlashHalf": {
+   "address": "$AF8B",
+   "note": "CP n \u2014 v prvn\u00ed polovin\u011b f\u00e1ze se kresl\u00ed b\u00edl\u00fd, v druh\u00e9 barevn\u00fd"
+  },
+  "effectBeepMask": {
+   "address": "$AF8F",
+   "note": "AND n \u2014 a p\u0159i ka\u017ed\u00e9m n+1 se p\u00edpne ($BEC6)"
+  },
+  "colourImmune": {
+   "address": "$AB39",
+   "note": "SUB n \u2014 kontakt s entitou zab\u00edj\u00ed **jen b\u00edl\u00e9ho** Sabremana ($AB36), tak\u017ee pod \u00fa\u010dinkem orchideje je nedotknuteln\u00fd"
+  },
+  "hitReachDown": {
+   "address": "$AB0E",
+   "note": "LD HL,nn \u2014 `H`: svisl\u00fd dosah kontaktu s entitou ($AB01)"
+  },
+  "hitReachRight": {
+   "address": "$AB0F",
+   "note": "LD HL,nn \u2014 `L`: dosah vpravo bez tasen\u00e9ho me\u010de"
+  },
+  "hitReachRightSword": {
+   "address": "$AB16",
+   "note": "LD HL,nn \u2014 `L`: dosah vpravo s tasen\u00fdm me\u010dem ($AB15)"
+  },
+  "keyLeft": {
+   "address": "$AF28",
+   "note": "BIT 0,C \u2014 p\u016fl\u0159\u00e1dek $FBFE bit 0 = Q"
+  },
+  "keyRight": {
+   "address": "$AF23",
+   "note": "BIT 1,C \u2014 p\u016fl\u0159\u00e1dek $FBFE bit 1 = W"
+  },
+  "keyUp": {
+   "address": "$AF34",
+   "note": "BIT 2,C \u2014 p\u016fl\u0159\u00e1dek $FBFE bit 2 = E"
+  },
+  "keyDown": {
+   "address": "$AF2F",
+   "note": "BIT 3,C \u2014 p\u016fl\u0159\u00e1dek $FBFE bit 3 = R"
+  },
+  "keyFire": {
+   "address": "$AF5F",
+   "note": "BIT 4,A \u2014 p\u016fl\u0159\u00e1dek $FBFE bit 4 = T"
+  },
+  "poemBit": {
+   "address": "$A19F",
+   "note": "BIT n,(IX+$0B) \u2014 bit, kter\u00fd po sebr\u00e1n\u00ed kusu amuletu uk\u00e1\u017ee sloku b\u00e1sn\u011b ($A18C -> $A207); nastavuje ho M4, ukazuje ho M6. V datech je z opk\u00f3du odvozen\u00e1 maska `poemBit`"
+  },
+  "velocityShift": {
+   "address": "$B031, $B040",
+   "note": "RRCA 4x / AND $0F \u2014 posun v pixelech = rychlost/16, zaokrouhleno k nule"
+  }
+ },
+ "poses": [
+  {
+   "state": "walkLeft",
+   "firstSprite": 16,
+   "sprites": 4,
+   "note": "ch\u016fze vlevo; $10 je i st\u00e1n\u00ed vlevo (bity sm\u011bru 00)",
+   "frames": [
+    {
+     "sprite": "$10",
+     "frame": 23,
+     "address": "$C514",
+     "name": "Sabreman: Left Frame 1"
+    },
+    {
+     "sprite": "$11",
+     "frame": 24,
+     "address": "$C540",
+     "name": "Sabreman: Left Frame 2"
+    },
+    {
+     "sprite": "$12",
+     "frame": 25,
+     "address": "$C56E",
+     "name": "Sabreman: Left Frame 3"
+    },
+    {
+     "sprite": "$13",
+     "frame": 24,
+     "address": "$C540",
+     "name": "Sabreman: Left Frame 4"
+    }
+   ]
+  },
+  {
+   "state": "walkRight",
+   "firstSprite": 20,
+   "sprites": 4,
+   "note": "ch\u016fze vpravo (bit 2)",
+   "frames": [
+    {
+     "sprite": "$14",
+     "frame": 32,
+     "address": "$C720",
+     "name": "Sabreman: Right Frame 1"
+    },
+    {
+     "sprite": "$15",
+     "frame": 33,
+     "address": "$C74C",
+     "name": "Sabreman: Right Frame 2"
+    },
+    {
+     "sprite": "$16",
+     "frame": 34,
+     "address": "$C77A",
+     "name": "Sabreman: Right Frame 3"
+    },
+    {
+     "sprite": "$17",
+     "frame": 33,
+     "address": "$C74C",
+     "name": "Sabreman: Right Frame 4"
+    }
+   ]
+  },
+  {
+   "state": "walkUp",
+   "firstSprite": 24,
+   "sprites": 4,
+   "note": "ch\u016fze vzh\u016fru, tedy k horn\u00ed hran\u011b obrazovky (bit 3)",
+   "frames": [
+    {
+     "sprite": "$18",
+     "frame": 17,
+     "address": "$C40C",
+     "name": "Sabreman: Up Frame 1"
+    },
+    {
+     "sprite": "$19",
+     "frame": 18,
+     "address": "$C438",
+     "name": "Sabreman: Up Frame 2"
+    },
+    {
+     "sprite": "$1A",
+     "frame": 19,
+     "address": "$C464",
+     "name": "Sabreman: Up Frame 3"
+    },
+    {
+     "sprite": "$1B",
+     "frame": 18,
+     "address": "$C438",
+     "name": "Sabreman: Up Frame 4"
+    }
+   ]
+  },
+  {
+   "state": "walkDown",
+   "firstSprite": 28,
+   "sprites": 4,
+   "note": "ch\u016fze dol\u016f (bity 2 a 3)",
+   "frames": [
+    {
+     "sprite": "$1C",
+     "frame": 20,
+     "address": "$C490",
+     "name": "Sabreman: Down Frame 1"
+    },
+    {
+     "sprite": "$1D",
+     "frame": 21,
+     "address": "$C4BC",
+     "name": "Sabreman: Down Frame 2"
+    },
+    {
+     "sprite": "$1E",
+     "frame": 22,
+     "address": "$C4E8",
+     "name": "Sabreman: Down Frame 3"
+    },
+    {
+     "sprite": "$1F",
+     "frame": 21,
+     "address": "$C4BC",
+     "name": "Sabreman: Down Frame 4"
+    }
+   ]
+  },
+  {
+   "state": "swordLeft",
+   "firstSprite": 32,
+   "sprites": 8,
+   "note": "sek me\u010dem vlevo; f\u00e1ze je n\u00e1hodn\u00e1 (`Rand8`), ne cyklick\u00e1",
+   "frames": [
+    {
+     "sprite": "$20",
+     "frame": 26,
+     "address": "$C59A",
+     "name": "Sabreman: Left Fighting Frame 1"
+    },
+    {
+     "sprite": "$21",
+     "frame": 27,
+     "address": "$C5DB",
+     "name": "Sabreman: Left Fighting Frame 2"
+    },
+    {
+     "sprite": "$22",
+     "frame": 28,
+     "address": "$C61C",
+     "name": "Sabreman: Left Fighting Frame 3"
+    },
+    {
+     "sprite": "$23",
+     "frame": 29,
+     "address": "$C65D",
+     "name": "Sabreman: Left Fighting Frame 4"
+    },
+    {
+     "sprite": "$24",
+     "frame": 30,
+     "address": "$C69E",
+     "name": "Sabreman: Left Fighting Frame 5"
+    },
+    {
+     "sprite": "$25",
+     "frame": 29,
+     "address": "$C65D",
+     "name": "Sabreman: Left Fighting Frame 4"
+    },
+    {
+     "sprite": "$26",
+     "frame": 31,
+     "address": "$C6DF",
+     "name": "Sabreman: Left Fighting Frame 6"
+    },
+    {
+     "sprite": "$27",
+     "frame": 27,
+     "address": "$C5DB",
+     "name": "Sabreman: Left Fighting Frame 2"
+    }
+   ]
+  },
+  {
+   "state": "swordRight",
+   "firstSprite": 40,
+   "sprites": 8,
+   "note": "sek me\u010dem vpravo (bit 3)",
+   "frames": [
+    {
+     "sprite": "$28",
+     "frame": 35,
+     "address": "$C7A6",
+     "name": "Sabreman: Right Fighting Frame 1"
+    },
+    {
+     "sprite": "$29",
+     "frame": 36,
+     "address": "$C7E7",
+     "name": "Sabreman: Right Fighting Frame 2"
+    },
+    {
+     "sprite": "$2A",
+     "frame": 37,
+     "address": "$C828",
+     "name": "Sabreman: Right Fighting Frame 3"
+    },
+    {
+     "sprite": "$2B",
+     "frame": 38,
+     "address": "$C869",
+     "name": "Sabreman: Right Fighting Frame 4"
+    },
+    {
+     "sprite": "$2C",
+     "frame": 39,
+     "address": "$C8AA",
+     "name": "Sabreman: Right Fighting Frame 5"
+    },
+    {
+     "sprite": "$2D",
+     "frame": 38,
+     "address": "$C869",
+     "name": "Sabreman: Right Fighting Frame 4"
+    },
+    {
+     "sprite": "$2E",
+     "frame": 40,
+     "address": "$C8EB",
+     "name": "Sabreman: Right Fighting Frame 6"
+    },
+    {
+     "sprite": "$2F",
+     "frame": 36,
+     "address": "$C7E7",
+     "name": "Sabreman: Right Fighting Frame 2"
+    }
+   ]
+  },
+  {
+   "state": "deathRight",
+   "firstSprite": 64,
+   "sprites": 4,
+   "note": "odlet po zabit\u00ed doprava a v\u00fdbuch ($40 odlet, $41\u2013$43 v\u00fdbuch)",
+   "frames": [
+    {
+     "sprite": "$40",
+     "frame": 74,
+     "address": "$D282",
+     "name": "Sabreman: Flying Left"
+    },
+    {
+     "sprite": "$41",
+     "frame": 75,
+     "address": "$D2B0",
+     "name": "Sabreman: Sitting Left"
+    },
+    {
+     "sprite": "$42",
+     "frame": 76,
+     "address": "$D2D6",
+     "name": "Sabreman: Dead Left"
+    },
+    {
+     "sprite": "$43",
+     "frame": 75,
+     "address": "$D2B0",
+     "name": "Sabreman: Sitting Left"
+    }
+   ]
+  },
+  {
+   "state": "deathLeft",
+   "firstSprite": 68,
+   "sprites": 4,
+   "note": "odlet doleva a v\u00fdbuch",
+   "frames": [
+    {
+     "sprite": "$44",
+     "frame": 77,
+     "address": "$D2FC",
+     "name": "Sabreman: Flying Right"
+    },
+    {
+     "sprite": "$45",
+     "frame": 78,
+     "address": "$D32A",
+     "name": "Sabreman: Sitting Right"
+    },
+    {
+     "sprite": "$46",
+     "frame": 79,
+     "address": "$D350",
+     "name": "Sabreman: Dead Right"
+    },
+    {
+     "sprite": "$47",
+     "frame": 78,
+     "address": "$D32A",
+     "name": "Sabreman: Sitting Right"
+    }
+   ]
+  }
+ ]
+}
